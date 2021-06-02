@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>HEADER</title>
+    <!-- META -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!--::::: FABICON ICON :::::::-->
+    <link rel="icon" href="{{asset('/img/Headerfrontend/fabicon.png')}}">
+    <!--::::: ALL CSS FILES :::::::-->
+    <link rel="stylesheet" href="{{asset('/css/Headerfrontent/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{asset('/css/Headerfrontent/animate.min.css')}}">
+    <link rel="stylesheet" href="{{asset('/css/Headerfrontent/fontawesome.css')}}">
+    <link rel="stylesheet" href="{{asset('/css/Headerfrontent/modal-video.min.css')}}">
+    <link rel="stylesheet" href="{{asset('/css/Headerfrontent/stellarnav.css')}}">
+    <link rel="stylesheet" href="{{asset('/css/Headerfrontent/owl.carousel.css')}}">
+    <link rel="stylesheet" href="{{asset('/css/Headerfrontent/slick.css')}}">
+    <link rel="stylesheet" href="{{asset('/css/Headerfrontent/theme.css')}}">
+</head>
+
+<body class="theme-1">
+    
+    <div class="searching">
+        <div class="container">
+            <div class="row">
+                <div class="col-8 text-center m-auto">
+                    <div class="v1search_form">
+                        <form action="#">
+                            <input type="search" placeholder="Search Here...">
+                            <button type="submit" class="cbtn1">Search</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="close_btn"> <i class="fal fa-times"></i>
+        </div>
+    </div>
+    <!--:::::SEARCH FORM END :::::::-->
+    <!--::::: TOP BAR START :::::::-->
+    <div class="topbar white_bg" id="top">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-lg-8 align-self-center">
+                    <div class="trancarousel_area">
+                        <p class="trand">Tranding</p>
+                        <div class="trancarousel owl-carousel nav_style1">
+                            <div class="trancarousel_item">
+                                <p><a href="#">Top 10 Best Movies of 2018 So Far: Great Movies</a>
+                                </p>
+                            </div>
+                            <div class="trancarousel_item">
+                                <p><a href="#">Top 10 Best Movies of 2018 So Far: Great Movies</a>
+                                </p>
+                            </div>
+                            <div class="trancarousel_item">
+                                <p><a href="#">Top 10 Best Movies of 2018 So Far: Great Movies</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 align-self-center">
+                    <div class="top_date_social text-right">
+                        <div class="paper_date">
+                            <p>Thursday, March 26, 2020</p>
+                        </div>
+                        <div class="social1">
+                            <ul class="inline">
+                                <li><a href="#"><i class="fab fa-twitter"></i></a>
+                                </li>
+                                <li><a href="#"><i class="fab fa-facebook-f"></i></a>
+                                </li>
+                                <li><a href="#"><i class="fab fa-youtube"></i></a>
+                                </li>
+                                <li><a href="#"><i class="fab fa-instagram"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--::::: TOP BAR END :::::::-->
+    <div class="border_black"></div>
+    <!--::::: LOGO AREA START  :::::::-->
+    <div class="logo_area white_bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 align-self-center">
+                    <div class="logo">
+                        <a href="index.html">
+                            <img src="{{asset('/img/Headerfrontend/pellikkenlogo.png')}}">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-8 align-self-center">
+                    {{-- <div class="banner1">
+                        <a href="#">
+                            <img src="{{asset('/img/Headerfrontend/banner.jpg')}}">
+                        </a>
+                    </div> --}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--::::: LOGO AREA END :::::::-->
+
+    <!--::::: MENU AREA START  :::::::-->
+    <div class="main-menu" id="header"> <a href="#top" class="up_btn up_btn1"><i
+                class="far fa-chevron-double-up"></i></a>
+        <div class="main-nav clearfix is-ts-sticky">
+            <div class="container">
+                <div class="row justify-content-between">
+
+                    <div class="col-6 col-lg-8">
+                        <div class="newsprk_nav stellarnav">
+                            <ul id="newsprk_menu">
+                                <li><a href="#">Home <i class="fal fa-angle-down"></i></a>
+                                    
+                                </li>
+                                <li><a href="#">Latest News <i class="fal fa-angle-down"></i></a>
+                                    
+                                </li>
+                                <li><a href="#">World <i class="fal fa-angle-down"></i></a>
+                                    <ul>
+                                        <li><a href="#">General Posts <i class="fal fa-angle-right"></i></a>
+                                            <ul>
+                                                <li><a href="post1.html">Post 1</a>
+                                                </li>
+                                                <li><a href="post2.html">Post 2</a>
+                                                </li>
+                                                <li><a href="post3.html">Post 3</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#">Video Posts <i class="fal fa-angle-right"></i></a>
+                                            <ul>
+                                                <li><a href="video_post1.html">Video Style 1</a>
+                                                </li>
+                                                <li><a href="video_post2.html">Video Style 2</a>
+                                                </li>
+                                                <li><a href="video_post3.html">Video Style 3</a>
+                                                </li>
+                                            </ul>
+
+                                        </li>
+
+                                        <li><a href="#">Audio Posts <i class="fal fa-angle-right"></i></a>
+                                            <ul>
+                                                <li><a href="audio_post1.html">Audio Style 1</a>
+                                                </li>
+                                                <li><a href="audio_post2.html">Audio Style 2</a>
+                                                </li>
+                                                <li><a href="audio_post3.html">Audio Style 3</a>
+                                                </li>
+                                            </ul>
+
+                                        </li>
+                                        <li><a href="#">Sidebars <i class="fal fa-angle-right"></i></a>
+                                            <ul>
+                                                <li><a href="post1.html">Right Sidebar</a>
+                                                </li>
+                                                <li><a href="left_post2.html">Left Sidebar</a>
+                                                </li>
+                                                <li><a href="post2.html">No Sidebar <i
+                                                            class="fal fa-angle-right"></i></a>
+                                                    <ul>
+                                                        <li><a href="#">Simple menu</a></li>
+                                                    </ul>
+
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li><a href="#">India <i class="fal fa-angle-down"></i></a>
+
+                                  
+
+                                </li>
+
+                                @if(count(menu_helper())>0)
+                                @foreach (menu_helper() as $category)
+                                <li><a href="#">{{$category->category_name}}<i class="fal fa-angle-down"></i></a>
+                                    @if(count($category->get_subcategories)>0)
+                                    <ul>
+                                        
+                                            @foreach ($category->get_subcategories as $item)
+                                            <li><a href="post1.html">{{$item->sub_category_name}}</a>
+                                            </li>
+                                            @endforeach
+                                        
+                                        
+                                        
+                                    </ul>
+                                    @endif
+                                </li>
+                                @endforeach
+                                
+                                
+
+                               
+                                @endif
+
+                               
+                            </ul>
+                        </div>
+
+                    </div>
+                    <div class="col-6 col-lg-4 align-self-center">
+                        <div class="menu_right">
+                            <div class="users_area">
+                                <ul class="inline">
+                                    <li class="search_btn"><i class="far fa-search"></i>
+                                    </li>
+                                    {{-- <li><i class="fal fa-user-circle"></i>
+                                    </li> --}}
+                                </ul>
+                            </div>
+                            {{-- <div class="lang d-none d-xl-block">
+                                <ul>
+                                    <li><a href="#">English <i class="far fa-angle-down"></i></a>
+                                        <ul>
+                                            <li><a href="#">Spanish</a>
+                                            </li>
+                                            <li><a href="#">China</a>
+                                            </li>
+                                            <li><a href="#">Hindi</a>
+                                            </li>
+                                            <li><a href="#">Corian</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div> --}}
+                            <div class="temp d-none d-lg-block">
+                                <div class="temp_wap">
+                                    <div class="temp_icon">
+                                        <img src="{{asset('/img/Headerfrontend/temp.png')}}">
+                                    </div>
+                                    <h3 class="temp_count">13</h3>
+                                    <p>San Francisco</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--HEADER END-->
+
+    {{-- section start --}}
+
+    <div class="post_gallary_area fifth_bg mb40">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="row">
+						<div class="col-xl-8">
+							<div class="slider_demo2">
+								<div class="single_post post_type6 xs-mb30">
+									<div class="post_img gradient1">
+										<img src="{{asset('/img/Headerfrontend/temp.png')}}" alt=""><span class="tranding">
+											<i class="fas fa-play"></i>
+										</span>
+									</div>
+									<div class="single_post_text">
+										<div class="meta meta_separator1">	<a href="#">TECHNOLOGY</a>
+											<a href="#">March 26, 2020</a>
+										</div>
+										<h4><a class="play_btn" href="video_post1.html">Japan’s virus success has puzzled the world. Is its luck running out?</a></h4>
+										<div class="space-10"></div>
+										<p class="post-p">The property, complete with 30-seat screening from room, a 100-seat amphitheater and a swimming pond with sandy shower…</p>
+									</div>
+								</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    {{-- Scetion end --}}
+
+    <!--Footer Start-->
+    <div class="footer footer_area1 primay_bg">
+        <div class="container">
+            <div class="cta">
+                <div class="row">
+                    <div class="col-md-6 align-self-center">
+                        <div class="footer_logo logo">
+                            <a href="index.html">
+                                <img src="{{asset('/img/Headerfrontend/pellikkenlogo.png')}}">
+                            </a>
+                        </div>
+                        <div class="social2">
+                            <ul class="inline">
+                                <li><a href="#"><i class="fab fa-instagram"></i></a>
+                                </li>
+                                <li><a href="#"><i class="fab fa-facebook-f"></i></a>
+                                </li>
+                                <li><a href="#"><i class="fab fa-youtube"></i></a>
+                                </li>
+                                <li><a href="#"><i class="fab fa-instagram"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 offset-lg-2 align-self-center">
+                        <div class="signup_form">
+                            <form action="index.html" method="post">
+                                <input class="signup" type="email" placeholder="Your email address">
+                                <input type="button" style="background-color: #307773" class="cbtn" value="sign up">
+                            </form>
+                            <p>We hate spam as much as you do</p>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+            <div class="border_white"></div>
+            <div class="space-40"></div>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="row">
+                        <div class="col-sm-6 col-lg">
+                            <div class="single_footer_nav border_white_right">
+                                <h3 class="widget-title2">News categories</h3>
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <ul>
+                                            <li><a href="#">Politics</a>
+                                            </li>
+                                            <li><a href="#">Business</a>
+                                            </li>
+                                            <li><a href="#">Technology</a>
+                                            </li>
+                                            <li><a href="#">Science</a>
+                                            </li>
+                                            <li><a href="#">Health</a>
+                                            </li>
+                                            <li><a href="#">Sports</a>
+                                            </li>
+                                            <li><a href="#">Entertainment</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <ul>
+                                            <li><a href="#">Education</a>
+                                            </li>
+                                            <li><a href="#">Obituaries</a>
+                                            </li>
+                                            <li><a href="#">Corrections</a>
+                                            </li>
+                                            <li><a href="#">Education</a>
+                                            </li>
+                                            <li><a href="#">Today’s Paper</a>
+                                            </li>
+                                            <li><a href="#">Corrections</a>
+                                            </li>
+                                            <li><a href="#">Foods</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-lg">
+                            <div class="single_footer_nav">
+                                <h3 class="widget-title2">Living</h3>
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <ul>
+                                            <li><a href="#">Crossword</a>
+                                            </li>
+                                            <li><a href="#">Food</a>
+                                            </li>
+                                            <li><a href="#">Automobiles</a>
+                                            </li>
+                                            <li><a href="#">Education</a>
+                                            </li>
+                                            <li><a href="#">Health</a>
+                                            </li>
+                                            <li><a href="#">Magazine</a>
+                                            </li>
+                                            <li><a href="#">Weddings</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <ul>
+                                            <li><a href="#">Classifieds</a>
+                                            </li>
+                                            <li><a href="#">Photographies</a>
+                                            </li>
+                                            <li><a href="#">NYT Store</a>
+                                            </li>
+                                            <li><a href="#">Journalisms</a>
+                                            </li>
+                                            <li><a href="#">Public Editor</a>
+                                            </li>
+                                            <li><a href="#">Tools & Services</a>
+                                            </li>
+                                            <li><a href="#">My Account</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="space-40"></div>
+                    <div class="border_white"></div>
+                    <div class="space-40"></div>
+
+                    {{-- <div class="row">
+                        <div class="col-sm-6 col-lg-5">
+                            <div class="single_footer_nav border_white_right">
+                                <h3 class="widget-title2">Opinion</h3>
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <ul>
+                                            <li><a href="#">Today’s Opinion</a>
+                                            </li>
+                                            <li><a href="#">Op-Ed Contributing</a>
+                                            </li>
+                                            <li><a href="#">Contributing Writers</a>
+                                            </li>
+                                            <li><a href="#">Business News</a>
+                                            </li>
+                                            <li><a href="#">Collections</a>
+                                            </li>
+                                            <li><a href="#">Today’s Paper</a>
+                                            </li>
+                                            <li><a href="#">Saturday Review</a>
+                                            </li>
+                                            <li><a href="#">Product Review</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-lg-7">
+                            <div class="twitter_feeds">
+                                <h3 class="widget-title2">Twitter feed</h3>
+                                <div class="single_twitter_feed border_white_bottom">
+                                    <div class="twitter_feed_icon"> <i class="fab fa-twitter"></i>
+                                    </div>
+                                    <h6>Cyber Monday Sale, Save 33% on Jannah theme during our year-end Sale, Purchase a new
+                                        license for your next project… <span>@newspark #TECHNOLOGY
+                                            https://dribbble.com/subash_chandra</span></h6>
+                                    <p>March 26, 2020</p>
+                                </div>
+                                <div class="single_twitter_feed">
+                                    <div class="twitter_feed_icon"> <i class="fab fa-twitter"></i>
+                                    </div>
+                                    <h6>Cyber Monday Sale, Save 33% on Jannah theme during our year-end Sale, Purchase a new
+                                        license for your next project… <span>@newspark #TECHNOLOGY
+                                            https://dribbble.com/subash_chandra</span></h6>
+                                    <p>March 26, 2020</p>
+                                </div>
+                                <div class="single_twitter_feed">
+                                    <div class="twitter_feed_icon"> <i class="fab fa-twitter"></i>
+                                    </div>
+                                    <h6>Cyber Monday Sale, Save 33% on Jannah theme during our year-end Sale, Purchase a new
+                                        license for your next project… <span>@newspark #TECHNOLOGY
+                                            https://dribbble.com/subash_chandra</span></h6>
+                                    <p>March 26, 2020</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div> --}}
+                </div>
+                <div class="col-lg-4">
+                    <div class="extra_newss border_white_left pl-4">
+                        <h3 class="widget-title2">More news</h3>
+                        <div class="single_extra_news border_white_bottom">
+                            <p>TECHNOLOGY <span> / March 26, 2020</span>
+                            </p> <a href="#">Nancy zhang a chinese busy woman and dhaka</a>
+                            <span class="news_counter">1</span>
+                        </div>
+                        <div class="single_extra_news border_white_bottom">
+                            <p>TECHNOLOGY <span> / March 26, 2020</span>
+                            </p> <a href="#">Nancy zhang a chinese busy woman and dhaka</a>
+                            <span class="news_counter">2</span>
+
+                        </div>
+                        
+                        {{-- <div class="single_extra_news border_white_bottom">
+                            <p>TECHNOLOGY <span> / March 26, 2020</span>
+                            </p> <a href="#">Nancy zhang a chinese busy woman and dhaka</a>
+                            <span class="news_counter">4</span>
+                        </div>
+                        <div class="single_extra_news">
+                            <p>TECHNOLOGY <span> / March 26, 2020</span>
+                            </p> <a href="#">Nancy zhang a chinese busy woman and dhaka</a>
+                            <span class="news_counter">5</span>
+                        </div>
+                        <div class="space-40"></div>
+                        <div class="border_white_bottom"></div>
+                        <div class="space-40"></div> --}}
+
+                        <div class="footer_contact">
+                            <h3 class="widget-title2">Newspark news services</h3>
+                            <div class="single_fcontact">
+                                <div class="fcicon">
+                                    <img src="{{asset('/img/Headerfrontend/mobile.png')}}">
+                                </div> <a href="#">On your mobile</a>
+                            </div>
+                            <div class="single_fcontact">
+                                <div class="fcicon">
+                                    <img src="{{asset('/img/Headerfrontend/speacker.png')}}">
+                                </div> <a href="#">On smart speakers</a>
+                            </div>
+                            <div class="single_fcontact">
+                                <div class="fcicon">
+                                    <img src="{{asset('/img/Headerfrontend/evelope.png')}}">
+                                </div> <a href="#">Contact Newspark news</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    
+        <div class="copyright">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 align-self-center">
+                        <p>&copy; Copyright 2020, All Rights Reserved</p>
+                    </div>
+                    <div class="col-lg-6 align-self-center">
+                        <div class="copyright_menus text-right">
+                            <div class="language"></div>
+                            <div class="copyright_menu inline">
+                                <ul>
+                                    <li><a href="#">About</a>
+                                    </li>
+                                    <li><a href="#">Advertise</a>
+                                    </li>
+                                    <li><a href="#">Privacy & Policy</a>
+                                    </li>
+                                    <li><a href="#">Contact Us</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--::::: FOOTER AREA END :::::::-->
+    <!--ALL JS FILE-->
+
+	<script src="{{asset('/js/frontent/jquery.2.1.0.min.js')}}"></script>
+	<script src="{{asset('/js/frontent/bootstrap.min.js')}}"></script>
+	<script src="{{asset('/js/frontent/jquery.nav.js')}}"></script>
+	<script src="{{asset('/js/frontent/jquery.waypoints.min.js')}}"></script>
+	<script src="{{asset('/js/frontent/jquery-modal-video.min.js')}}"></script>
+	<script src="{{asset('/js/frontent/owl.carousel.js')}}"></script>
+	<script src="{{asset('/js/frontent/popper.min.js')}}"></script>
+	<script src="{{asset('/js/frontent/circle-progress.js')}}"></script>
+	<script src="{{asset('/js/frontent/slick.min.js')}}"></script>
+	<script src="{{asset('/js/frontent/stellarnav.js')}}"></script>
+	<script src="{{asset('/js/frontent/wow.min.js')}}"></script>
+	<script src="{{asset('/js/frontent/main.js')}}"></script>
+</body>
+
+</html>
