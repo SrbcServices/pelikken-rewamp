@@ -4497,6 +4497,7 @@ readers do not read off random characters that represent icons */
   display: inline-block;
   width: 58px;
   height: 28px;
+
 }
 
 /* Hide default HTML checkbox */
@@ -4554,6 +4555,7 @@ input:checked + .slider:before {
   border-radius: 50%;
 }
 /* END SWITCHES */
+
 #wysiwig .content-wrapper{
   min-height: 200px!important;
 }

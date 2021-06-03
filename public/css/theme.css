@@ -7070,7 +7070,7 @@ body.dark-theme {
   transition: all 0.3s;
 }
 .dark-theme .single_post:hover .single_post_text a {
-  color: #secondary_color;
+  color: #2e6069;
   transition: all 0.3s;
 }
 .dark-theme .topbar ul {
@@ -13838,12 +13838,12 @@ body {
   word-break: break-word;
 }
 
-a.up_btn {
+/* a.up_btn{
   height: 70px;
   width: 50px;
   text-align: center;
   line-height: 70px;
-  background: #FF5555;
+  background: #2e6069!important;
   color: #fff;
   border-radius: 50px;
   position: fixed;
@@ -13853,12 +13853,28 @@ a.up_btn {
   visibility: hidden;
   opacity: 0;
   transition: all 0.3s;
-}
+} */
 
 .sticky a.up_btn {
   visibility: visible;
   opacity: 1;
   bottom: 7%;
+  transition: all 0.3s;
+}
+a.up_btn{
+  height: 70 px;
+  width: 50 px;
+  text-align: center;
+  line-height: 70 px;
+  background: #03a8c5!important;
+  color: #fff;
+  border-radius: 50 px;
+  position: fixed;
+  z-index: 9999;
+  bottom: 10%;
+  right: 2%;
+  visibility: hidden;
+  opacity: 0;
   transition: all 0.3s;
 }
 
@@ -15774,7 +15790,6 @@ textarea::placeholder {
   .widget_tab ul li {
     width: 30.3%;
   }
-
   .author_social.text-right {
     text-align: left !important;
     margin-top: 20px;

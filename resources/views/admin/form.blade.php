@@ -116,7 +116,7 @@
                             <h6>Select Tags</h6>
                         </label>
                         {{-- <select class="form-control" name="tags" style="width: 100%;"> --}}
-                        <select class="select2 select2bs4" multiple="multiple" name="tags" data-placeholder="Select a State"
+                        <select class="select2 select2bs4" multiple="multiple" name="tags[]" data-placeholder="Select a Tag"
                             style="width: 100%;" id="tags">
 
                             @foreach ($tags as $tags)
@@ -177,6 +177,7 @@
 
                         <div class="col-md-4">
                             <div class="row">
+
                                 <div class="col-md-3">
                                     <h6 style="color: grey">Highlight</h6>
                                 </div>
@@ -329,6 +330,9 @@
                let banner_image = $(`input[name="news_banner"]`)[0].files;
                let news_video = $(`input[name="news_video"]`)[0].files;
                let tags = $(`#tags`).val();
+              
+              
+
                var form = new FormData();
 
                form.append("_token", "{{csrf_token()}}");
@@ -362,7 +366,7 @@
                     },
                     success: function(response) {
                         if (response.status == 'success') {
-                            window.location.href = '/news'
+                            // window.location.href = '/news'
                         }else if(response.status == 'fail'){
                             $('#error-show').html('<li class="error">something went wrong, Please try again</li>')
                             $('#submit-news').html('submit')

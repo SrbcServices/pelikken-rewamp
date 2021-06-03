@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\news;
+use App\Models\subCategory;
 
 
 class category extends Model
@@ -18,5 +19,11 @@ class category extends Model
 
         return $this->belongstoMany(news::class);
     }
+
+    public function sub_category(){
+
+        return $this->hasOne(subCategory::class,'id','news_id');
+        
+     }
 }
 

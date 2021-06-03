@@ -4,21 +4,16 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\subCategory;
+use App\Models\category;
 
 class SubCategoryController extends Controller
     {
     Public function index()
      {
-         $sub_categories = subCategory::all();
+         $sub_categories = subCategory::with('category')->get();
 
-         // $sub_categories = \DB::table('categories')
-         //      ->leftJoin('sub_categories', 'categories.id', '=', 'sub_categories.category_id')
-         //  ->select('category_id as id', 'category_name as category_name')
-         //         ->get();
-
-         //return $sub_categories;
+        // return $sub_categories;
         
-
          return view('admin.sub-category',['sub_categories'=>$sub_categories]);
 
      }

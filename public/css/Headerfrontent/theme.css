@@ -13804,9 +13804,9 @@ body {
   margin-top: -15px;
 }
 .trancarousel_area .nav_style1 .owl-nav div {
-  height: 23px;
-  width: 23px;
-  line-height: 23px;
+  /* height: 23px;
+  width: 23px; */
+  /* line-height: 23px; */
 }
 .trancarousel_area .nav_style1 .owl-nav div:last-child {
   margin-left: 7px;

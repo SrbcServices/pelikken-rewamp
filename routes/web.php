@@ -138,6 +138,32 @@ Route::get('/fetch_sub_category/{id}',[NewsController::Class,'fetch_sub_category
 
 Route::get('/fetch_country/{id}',[NewsController::Class,'fetch_country']);
 
+//header
+
+Route::get('/latest_news', function(){
+    return view('frontent.latest_news');
+});
+
+Route::get('/', function(){
+    return view('frontent.home_page');
+});
+
+Route::get('/world', function(){
+    return view('frontent.world');
+});
+
+Route::get('/life_style', function(){
+    return view('frontent.life_style');
+});
+
+Route::get('/sports', function(){
+    return view('frontent.sports');
+});
+
+Route::get('/exclusive', function(){
+    return view('frontent.exclusive');
+});
+
 
 
 

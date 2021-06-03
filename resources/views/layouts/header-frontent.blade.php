@@ -9,6 +9,7 @@
     <!--::::: FABICON ICON :::::::-->
     <link rel="icon" href="{{asset('/img/Headerfrontend/fabicon.png')}}">
     <!--::::: ALL CSS FILES :::::::-->
+    
     <link rel="stylesheet" href="{{asset('/css/Headerfrontent/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{asset('/css/Headerfrontent/animate.min.css')}}">
     <link rel="stylesheet" href="{{asset('/css/Headerfrontent/fontawesome.css')}}">
@@ -17,6 +18,7 @@
     <link rel="stylesheet" href="{{asset('/css/Headerfrontent/owl.carousel.css')}}">
     <link rel="stylesheet" href="{{asset('/css/Headerfrontent/slick.css')}}">
     <link rel="stylesheet" href="{{asset('/css/Headerfrontent/theme.css')}}">
+    
 </head>
 
 <body class="theme-1">
@@ -44,7 +46,7 @@
             <div class="row">
                 <div class="col-md-6 col-lg-8 align-self-center">
                     <div class="trancarousel_area">
-                        <p class="trand">Tranding</p>
+                        <p class="trand">Trending</p>
                         <div class="trancarousel owl-carousel nav_style1">
                             <div class="trancarousel_item">
                                 <p><a href="#">Top 10 Best Movies of 2018 So Far: Great Movies</a>
@@ -118,13 +120,13 @@
                     <div class="col-6 col-lg-8">
                         <div class="newsprk_nav stellarnav">
                             <ul id="newsprk_menu">
-                                <li><a href="#">Home <i class="fal fa-angle-down"></i></a>
+                                <li><a href="/">Home <i class="fal fa-angle-down"></i></a>
                                     
                                 </li>
-                                <li><a href="#">Latest News <i class="fal fa-angle-down"></i></a>
+                                <li><a href="latest_news">Latest News <i class="fal fa-angle-down"></i></a>
                                     
                                 </li>
-                                <li><a href="#">World <i class="fal fa-angle-down"></i></a>
+                                <li><a href="world">World <i class="fal fa-angle-down"></i></a>
                                     <ul>
                                         <li><a href="#">General Posts <i class="fal fa-angle-right"></i></a>
                                             <ul>
@@ -184,7 +186,7 @@
 
                                 @if(count(menu_helper())>0)
                                 @foreach (menu_helper() as $category)
-                                <li><a href="#">{{$category->category_name}}<i class="fal fa-angle-down"></i></a>
+                                <li><a href="sports">{{$category->category_name}}<i class="fal fa-angle-down"></i></a>
                                     @if(count($category->get_subcategories)>0)
                                     <ul>
                                         
@@ -201,11 +203,15 @@
                                 @endforeach
                                 
                                 
+                                
 
                                
                                 @endif
 
-                               
+                                <li><a href="life_style">Life Style<i class="fal fa-angle-down"></i></a>
+
+
+                                <li><a href="exclusive">Exclusive</a>
                             </ul>
                         </div>
 
@@ -251,42 +257,15 @@
             </div>
         </div>
     </div>
-    <!--HEADER END-->
 
+   
+    <!--HEADER END-->
+    
+@yield('content')
     {{-- section start --}}
 
-    <div class="post_gallary_area fifth_bg mb40">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-12">
-					<div class="row">
-						<div class="col-xl-8">
-							<div class="slider_demo2">
-								<div class="single_post post_type6 xs-mb30">
-									<div class="post_img gradient1">
-										<img src="{{asset('/img/Headerfrontend/temp.png')}}" alt=""><span class="tranding">
-											<i class="fas fa-play"></i>
-										</span>
-									</div>
-									<div class="single_post_text">
-										<div class="meta meta_separator1">	<a href="#">TECHNOLOGY</a>
-											<a href="#">March 26, 2020</a>
-										</div>
-										<h4><a class="play_btn" href="video_post1.html">Japan’s virus success has puzzled the world. Is its luck running out?</a></h4>
-										<div class="space-10"></div>
-										<p class="post-p">The property, complete with 30-seat screening from room, a 100-seat amphitheater and a swimming pond with sandy shower…</p>
-									</div>
-								</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
     
-    {{-- Scetion end --}}
+    
 
     <!--Footer Start-->
     <div class="footer footer_area1 primay_bg">

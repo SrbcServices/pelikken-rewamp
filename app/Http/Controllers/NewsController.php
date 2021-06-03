@@ -25,7 +25,7 @@ class NewsController extends Controller
         // return news::with('source')->get();
         // return country::with('condinent')->get();
 
-        return news::with('condinent','source','category','sub_category','tags')->get();
+        //return news::with('condinent','source','category','sub_category','tags')->get();
             
             
 
@@ -55,7 +55,6 @@ public function fetch_country($id){
   }
 
   public function store(Request $request){
-
     
     $validated = \Validator::make($request->all(),[
         'news_heading' => 'required',
@@ -125,26 +124,30 @@ public function fetch_country($id){
                     $video->move(public_path('uploads/news_video'),$video_name);
                     $news_video = new newsVideo();
                     $news_video->News_id =$news->id;
-                    $news_video->	VideoName =$video_name;
+                    $news_video->VideoName =$video_name;
                     $news_video->save();
                     
                     
                 }
+                // return tags;
        
                 //save tags
-                if($request->tags){
+                
+                
                     
-                    $tags_array = explode(',',$request->tags);
-                    foreach($tags_array as $tag){
+                  
+                  $tags = explode(',',$request->tags);
+
+                    foreach($tags as $tag){
+                      
                       $news_tag = new newstags();
                       $news_tag->News_id = $news->id;
                       $news_tag->tag_id = $tag;
                       $news_tag->save();
                     }
-                }
-                
             });
-        } catch (\Exception $e) {
+        } 
+        catch (\Exception $e) {
             $error = $e;
             $x = false;
         }
@@ -157,9 +160,6 @@ public function fetch_country($id){
             return response()->Json(['status' => 'fail','error'=>$error]);
         }
 
-
-        
-/////////////////
       
   }
 
