@@ -117,6 +117,38 @@ Route::get('/adsdelete/{id}',[AdsController::class,'delete']);
 
 //news
 
+Route::get('/latest_news', function(){
+    return view('frontent.latest_news');
+});
+
+Route::get('/', function(){
+    return view('frontent.home_page');
+});
+
+Route::get('/world', function(){
+    return view('frontent.world');
+});
+
+Route::get('/life_style', function(){
+    return view('frontent.life_style');
+});
+
+Route::get('/sports', function(){
+    return view('frontent.sports');
+});
+
+Route::get('/exclusive', function(){
+    return view('frontent.exclusive');
+});
+
+Route::get('/business', function(){
+    return view('frontent.business');
+});
+
+Route::get('/finance', function(){
+    return view('frontent.finance');
+});
+
 
 
 Route::get('/fetch_sub_category/{id}',[NewsController::class,'fetch_sub_category']);

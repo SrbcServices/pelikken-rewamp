@@ -13,7 +13,7 @@ use App\Models\news;
 use App\Models\newsImages;
 use App\Models\newsVideo;
 use App\Models\newstags;
-use GuzzleHttp\Psr7\Message;
+
 use Illuminate\Support\Facades\DB;
 
 class NewsController extends Controller
@@ -25,14 +25,6 @@ class NewsController extends Controller
         $category = category::all();
         $quantinet = condinent::all();
         $tags = tags::all();
-
-        // return news::with('source')->get();
-        // return country::with('condinent')->get();
-
-        //return news::with('condinent','source','category','sub_category','tags')->get();
-            
-            
-=======
 
 
 
