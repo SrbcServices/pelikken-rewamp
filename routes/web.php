@@ -164,6 +164,13 @@ Route::get('/exclusive', function(){
     return view('frontent.exclusive');
 });
 
+Route::get('/business', function(){
+    return view('frontent.business');
+});
+
+Route::get('/finance', function(){
+    return view('frontent.finance');
+});
 
 
 

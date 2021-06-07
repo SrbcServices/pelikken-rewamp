@@ -117,7 +117,7 @@
             <div class="container">
                 <div class="row justify-content-between">
 
-                    <div class="col-6 col-lg-8">
+                    <div class="col-10 col-lg-10">
                         <div class="newsprk_nav stellarnav">
                             <ul id="newsprk_menu">
                                 <li><a href="/">Home <i class="fal fa-angle-down"></i></a>
@@ -208,15 +208,27 @@
                                
                                 @endif
 
-                                <li><a href="life_style">Life Style<i class="fal fa-angle-down"></i></a>
+                                <li><a href="life_style">Life Style<i class="fal fa-angle-down"></i></a></li>
 
 
                                 <li><a href="exclusive">Exclusive</a>
+
+                                <li><a href="business">Business<i class="fal fa-angle-down"></i></a>
+
+                                    <ul>
+                                        <li><a href="finance">Finance</a>
+                                        </li>
+                                      
+                                    </ul>
+
+                                </li>
+
                             </ul>
                         </div>
 
                     </div>
-                    <div class="col-6 col-lg-4 align-self-center">
+
+                    <div class="col-2 col-lg-2 align-self-center">
                         <div class="menu_right">
                             <div class="users_area">
                                 <ul class="inline">
