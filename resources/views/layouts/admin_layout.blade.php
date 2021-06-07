@@ -207,7 +207,7 @@
                         <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
                         <li class="nav-item has-treeview">
-                            <a href="#" class="nav-link">
+                            <a href="/" class="nav-link">
                                 <i class="fas fa-th-large"></i>&nbsp;
                                 <p>
                                     Dashboard
@@ -227,37 +227,37 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="category" class="nav-link">
+                                    <a href="/category" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Category</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="sub_category" class="nav-link">
+                                    <a href="/sub_category" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Sub-Category</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="tags" class="nav-link">
+                                    <a href="/tags" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Tags</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="condinent" class="nav-link">
+                                    <a href="/condinent" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Condinent</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="country" class="nav-link">
+                                    <a href="/country" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Country</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="source" class="nav-link">
+                                    <a href="/source" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Source</p>
                                     </a>
@@ -267,7 +267,7 @@
                         <!--MASTER END-->
 
                         <li class="nav-item has-treeview menu-open">
-                            <a href="#" class="nav-link">
+                            <a href="" class="nav-link">
                                 <i class="fas fa-newspaper"></i>&nbsp;
                                 <p>
                                     News
@@ -276,13 +276,13 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="all-news" class="nav-link">
+                                    <a href="/all-news" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>All  News</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="add-news" class="nav-link">
+                                    <a href="/add-news" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Add News</p>
                                     </a>
@@ -293,7 +293,7 @@
                         </li>
                         <!--NEWS END-->
                         <li class="nav-item">
-                            <a href="comments" class="nav-link">
+                            <a href="/comments" class="nav-link">
                                 <i class="fa fa-comments" aria-hidden="true"></i>&nbsp;
                                 <p>
                                     COMMENTS
@@ -443,15 +443,7 @@
     
 @yield('scripts')
 
-<script>
-    $(function() {
 
-        $('.select2bs4').select2({
-            theme: 'bootstrap4',
-        })
-    })
-    
-</script>
 
 </body>
 

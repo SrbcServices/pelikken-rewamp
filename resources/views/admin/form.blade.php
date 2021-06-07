@@ -150,7 +150,7 @@
 
                                 <div class="col-md-3">
                                     <label class="switch">
-                                        <input type="checkbox" name="featured"id="featured">
+                                        <input type="checkbox" name="featured" id="featured">
                                         <span class="slider round"></span>
                                     </label>
                                 </div>
@@ -322,9 +322,9 @@
                let Country =$(`select[name="country"]`).val();
                let Category=$(`select[name="category"]`).val();
                let SubCategory=$(`select[name="sub_category"]`).val();
-               let Featured =$(`input[name="featured"]:checked`).val()
-               let trending =$(`input[name="trending"]:checked`).val()
-               let highlight =$(`input[name="highlight"]:checked`).val()
+               let featured = $(`input[name="featured"]:checked`).val();
+               let trending =$(`input[name="trending"]:checked`).val();
+               let highlight =$(`input[name="highlight"]:checked`).val();
                let NewsDiscription =$(`textarea[name="discription"]`).val();
                let banner_image = $(`input[name="news_banner"]`)[0].files;
                let news_video = $(`input[name="news_video"]`)[0].files;
@@ -339,7 +339,7 @@
                form.append('Country',Country)
                form.append('Category',Category)
                form.append('SubCategory',SubCategory)
-               form.append('Featured ',Featured)
+               form.append('Featured',featured)
                form.append('trending',trending)
                form.append('highlight',highlight)
                form.append('NewsDiscription',NewsDiscription)
@@ -353,7 +353,7 @@
                     url: "/add-news",
                     type: "POST",
                     contentType: false,
-          processData: false,
+                    processData: false,
 
                     data: form,
                     beforeSend: function() {

@@ -5,48 +5,97 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\source;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class news extends Model
 {
     use HasFactory;
+    use SoftDeletes;
 
-    public function source(){
 
-       return $this->hasOne(source::class,'id','news_id');
+
+    //if a news is deleted perform these options 
+    protected static function booted()
+    {
+        parent::boot();
+
+        news::deleted(function ($news) {
+            //delete thumbnail image
+            $path = public_path('uploads/news/'.$news->ThumbImage.'');
+            unlink($path);
+            //delete all news tags
+            $news->newstags()->delete();
+
+            //find and delete the existing news  images and videos
+            if ($news->newsImages()->count() > 0) {
+                $banner_image_name = $news->newsImages->ImageName;
+                $news->newsImages()->delete();
+                $banner_image = public_path('uploads/news_banners/' . $banner_image_name . '');
+                unlink($banner_image);
+            }
+
+            //find and delte news videos
+            if ($news->newsVideo()->count() > 0) {
+                $news_video_image = $news->newsVideo->VideoName;
+
+                if ($news_video_image) {
+                    $news_vid = public_path('uploads/news_video/' . $news_video_image . '');
+                    unlink($news_vid);
+                }
+                
+                $news->newsVideo()->delete();
+            }
+        });
     }
-    public function condinent(){
 
-        return $this->hasOne(condinent::class,'id','news_id');
-        
-     }
 
-     public function country(){
 
-        return $this->hasOne(country::class,'id','news_id');
-        
-     }
+    public function source()
+    {
 
-     public function category(){
+        return $this->hasOne(source::class, 'id', 'Source');
+    }
+    public function condinent()
+    {
 
-        return $this->hasone(category::class,'id','news_id');
-     }
+        return $this->hasOne(condinent::class, 'id', 'Condinent');
+    }
 
-     public function sub_category(){
-         return $this->hasone(subCategory::class,'id','news_id');
-     }
+    public function country()
+    {
 
-     public function tags(){
-         return $this->hasone(tags::class,'id','news_id');
-     }
+        return $this->hasOne(country::class, 'id', 'Country');
+    }
 
-     public function newsImages(){
-         return $this->hasmany(newsImages::class,'id','news_id');
-     }
+    public function category()
+    {
 
-     public function newsVideo(){
-         
-         return $this->hasone(newsVideo::class,'id','news_id');
-     }
+        return $this->hasone(category::class, 'id', 'Category');
+    }
+
+    public function sub_category()
+    {
+        return $this->hasone(subCategory::class, 'id', 'SubCategory');
+    }
+
+    public function tags()
+    {
+        return $this->hasManyThrough(tags::class, newstags::class, 'News_id', 'id', 'id', 'tag_id');
+    }
+    //get product tags only
+    public function newstags()
+    {
+        return $this->hasMany(newstags::class);
+    }
+
+    public function newsImages()
+    {
+        return $this->hasOne(newsImages::class, 'News_id', 'id');
+    }
+
+    public function newsVideo()
+    {
+
+        return $this->hasone(newsVideo::class, 'News_id', 'id');
+    }
 }
-
-
