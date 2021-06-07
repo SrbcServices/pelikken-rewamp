@@ -13,7 +13,7 @@ use App\Models\news;
 use App\Models\newsImages;
 use App\Models\newsVideo;
 use App\Models\newstags;
-use GuzzleHttp\Psr7\Message;
+
 use Illuminate\Support\Facades\DB;
 
 class NewsController extends Controller
@@ -25,15 +25,6 @@ class NewsController extends Controller
         $category = category::all();
         $quantinet = condinent::all();
         $tags = tags::all();
-<<<<<<< HEAD
-        // return news::with('source')->get();
-        // return country::with('condinent')->get();
-
-        //return news::with('condinent','source','category','sub_category','tags')->get();
-            
-            
-=======
->>>>>>> backend
 
 
     
@@ -64,17 +55,6 @@ class NewsController extends Controller
     public function store(Request $request)
     {
 
-<<<<<<< HEAD
-  public function store(Request $request){
-    
-    $validated = \Validator::make($request->all(),[
-        'news_heading' => 'required',
-        'news_sub_heading' => 'required',
-        'source' => 'required',
-        'Category' => 'required',
-        'NewsDiscription' => 'required',
-        'thumb_image' => 'required',
-=======
 
         $validated = \Validator::make($request->all(), [
             'news_heading' => 'required',
@@ -88,7 +68,6 @@ class NewsController extends Controller
             return response()->json([
                 'status' => 'error',
                 'errors' => $validated->getMessageBag()->toarray()
->>>>>>> backend
             ]);
         }
 
@@ -152,33 +131,10 @@ class NewsController extends Controller
                     //move video to the folder
                     $video->move(public_path('uploads/news_video'), $video_name);
                     $news_video = new newsVideo();
-<<<<<<< HEAD
-                    $news_video->News_id =$news->id;
-                    $news_video->VideoName =$video_name;
-=======
                     $news_video->News_id = $news->id;
                     $news_video->VideoName = $video_name;
->>>>>>> backend
                     $news_video->save();
                 }
-<<<<<<< HEAD
-                // return tags;
-       
-                //save tags
-                
-                
-                    
-                  
-                  $tags = explode(',',$request->tags);
-
-                    foreach($tags as $tag){
-                      
-                      $news_tag = new newstags();
-                      $news_tag->News_id = $news->id;
-                      $news_tag->tag_id = $tag;
-                      $news_tag->save();
-                    }
-=======
 
                 //save tags
                 if ($request->tags) {
@@ -191,7 +147,6 @@ class NewsController extends Controller
                         $news_tag->save();
                     }
                 }
->>>>>>> backend
             });
         } 
         catch (\Exception $e) {
@@ -282,10 +237,6 @@ class NewsController extends Controller
             $news->$name = null;
         }
 
-<<<<<<< HEAD
-      
-  }
-=======
         $saved = $news->save();
         if ($saved) {
             return response()->json([
@@ -402,7 +353,6 @@ class NewsController extends Controller
             if($news_video){
                 $video_path = public_path("uploads/news_video/{$news_video->VideoName}");
                 unlink($video_path);
->>>>>>> backend
 
                  //save new image to the folder
                  $file = $request->file('news_video');

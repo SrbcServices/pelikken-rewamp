@@ -19,7 +19,7 @@ class subCategory extends Model
 
     public function category() {
 
-        return $this->hasMany(category::class, 'category_id','id');
+        return $this->hasOne(category::class, 'id','category_id');
     }
 
 

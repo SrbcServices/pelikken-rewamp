@@ -484,8 +484,10 @@ console.log(selected);
         })
 
         //update the basic news details
+
         $('#basic_update').on('click', function(e) {
             e.preventDefault();
+            console.log('cliked');
             let update_data = $('#basic-form').serialize();
             $.ajax({
                 type: "post",
