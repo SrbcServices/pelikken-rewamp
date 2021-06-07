@@ -12,4 +12,8 @@ class country extends Model
 
         return $this->belongstoMany(news::class);
     }
+    public function condinent(){
+
+        return $this->belongstoMany(condinent::class);
+    }
 }
