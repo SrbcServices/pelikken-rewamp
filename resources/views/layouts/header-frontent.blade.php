@@ -208,7 +208,7 @@
                                
                                 @endif
 
-                                <li><a href="life_style">Life Style<i class="fal fa-angle-down"></i></a></li>
+                                
 
 
                                 <li><a href="exclusive">Exclusive</a>

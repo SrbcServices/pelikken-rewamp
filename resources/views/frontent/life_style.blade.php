@@ -44,74 +44,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-6">
-                        <div class="single_post post_type3 mb30">
-                            <div class="post_img">
-                                <div class="img_wrap">
-                                    <img src="{{asset('/img/Headerfrontend/sider-top.jpg')}}" alt="">
-                                </div>
-                            </div>
-                            <div class="single_post_text">
-                                <div class="meta3">	<a href="#">TECHNOLOGY</a>
-                                    <a href="#">March 26, 2020</a>
-                                </div>
-                                <h4><a href="post1.html">Japan’s virus success has puzzled the world. Is its luck running out?</a></h4>
-                                <div class="space-10"></div>
-                                <p class="post-p">The property, complete with 30-seat screening from room, a 100-seat amphitheater and a swimming pond with sandy shower…</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="single_post post_type3 mb30">
-                            <div class="post_img">
-                                <div class="img_wrap">
-                                    <img src="{{asset('/img/Headerfrontend/sider-top.jpg')}}" alt="">
-                                </div>
-                            </div>
-                            <div class="single_post_text">
-                                <div class="meta3">	<a href="#">TECHNOLOGY</a>
-                                    <a href="#">March 26, 2020</a>
-                                </div>
-                                <h4><a href="post1.html">Japan’s virus success has puzzled the world. Is its luck running out?</a></h4>
-                                <div class="space-10"></div>
-                                <p class="post-p">The property, complete with 30-seat screening from room, a 100-seat amphitheater and a swimming pond with sandy shower…</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="single_post post_type3 mb30">
-                            <div class="post_img">
-                                <div class="img_wrap">
-                                    <img src="{{asset('/img/Headerfrontend/sider-top.jpg')}}" alt="">
-                                </div>
-                            </div>
-                            <div class="single_post_text">
-                                <div class="meta3">	<a href="#">TECHNOLOGY</a>
-                                    <a href="#">March 26, 2020</a>
-                                </div>
-                                <h4><a href="post1.html">Japan’s virus success has puzzled the world. Is its luck running out?</a></h4>
-                                <div class="space-10"></div>
-                                <p class="post-p">The property, complete with 30-seat screening from room, a 100-seat amphitheater and a swimming pond with sandy shower…</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="single_post post_type3 mb30">
-                            <div class="post_img">
-                                <div class="img_wrap">
-                                    <img src="{{asset('/img/Headerfrontend/sider-top.jpg')}}" alt="">
-                                </div>
-                            </div>
-                            <div class="single_post_text">
-                                <div class="meta3">	<a href="#">TECHNOLOGY</a>
-                                    <a href="#">March 26, 2020</a>
-                                </div>
-                                <h4><a href="post1.html">Japan’s virus success has puzzled the world. Is its luck running out?</a></h4>
-                                <div class="space-10"></div>
-                                <p class="post-p">The property, complete with 30-seat screening from room, a 100-seat amphitheater and a swimming pond with sandy shower…</p>
-                            </div>
-                        </div>
-                    </div>
+                    
                     <div class="col-lg-6 d-md-none d-lg-block">
                         <div class="single_post post_type3 mb30">
                             <div class="post_img">
@@ -129,74 +62,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-6 d-md-none d-lg-block">
-                        <div class="single_post post_type3 mb30">
-                            <div class="post_img">
-                                <div class="img_wrap">
-                                    <img src="{{asset('/img/Headerfrontend/sider-top.jpg')}}" alt="">
-                                </div>
-                            </div>
-                            <div class="single_post_text">
-                                <div class="meta3">	<a href="#">TECHNOLOGY</a>
-                                    <a href="#">March 26, 2020</a>
-                                </div>
-                                <h4><a href="post1.html">Japan’s virus success has puzzled the world. Is its luck running out?</a></h4>
-                                <div class="space-10"></div>
-                                <p class="post-p">The property, complete with 30-seat screening from room, a 100-seat amphitheater and a swimming pond with sandy shower…</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 d-md-none d-lg-block">
-                        <div class="single_post post_type3 mb30">
-                            <div class="post_img">
-                                <div class="img_wrap">
-                                    <img src="{{asset('/img/Headerfrontend/sider-top.jpg')}}" alt="">
-                                </div>
-                            </div>
-                            <div class="single_post_text">
-                                <div class="meta3">	<a href="#">TECHNOLOGY</a>
-                                    <a href="#">March 26, 2020</a>
-                                </div>
-                                <h4><a href="post1.html">Japan’s virus success has puzzled the world. Is its luck running out?</a></h4>
-                                <div class="space-10"></div>
-                                <p class="post-p">The property, complete with 30-seat screening from room, a 100-seat amphitheater and a swimming pond with sandy shower…</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 d-md-none d-lg-block">
-                        <div class="single_post post_type3 mb30">
-                            <div class="post_img">
-                                <div class="img_wrap">
-                                    <img src="{{asset('/img/Headerfrontend/sider-top.jpg')}}" alt="">
-                                </div>
-                            </div>
-                            <div class="single_post_text">
-                                <div class="meta3">	<a href="#">TECHNOLOGY</a>
-                                    <a href="#">March 26, 2020</a>
-                                </div>
-                                <h4><a href="post1.html">Japan’s virus success has puzzled the world. Is its luck running out?</a></h4>
-                                <div class="space-10"></div>
-                                <p class="post-p">The property, complete with 30-seat screening from room, a 100-seat amphitheater and a swimming pond with sandy shower…</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 d-md-none d-lg-block">
-                        <div class="single_post post_type3 mb30">
-                            <div class="post_img">
-                                <div class="img_wrap">
-                                    <img src="{{asset('/img/Headerfrontend/sider-top.jpg')}}" alt="">
-                                </div>
-                            </div>
-                            <div class="single_post_text">
-                                <div class="meta3">	<a href="#">TECHNOLOGY</a>
-                                    <a href="#">March 26, 2020</a>
-                                </div>
-                                <h4><a href="post1.html">Japan’s virus success has puzzled the world. Is its luck running out?</a></h4>
-                                <div class="space-10"></div>
-                                <p class="post-p">The property, complete with 30-seat screening from room, a 100-seat amphitheater and a swimming pond with sandy shower…</p>
-                            </div>
-                        </div>
-                    </div>
+                   
 
                 </div>
                 <div class="row">
@@ -260,75 +126,7 @@
                                 <div class="space-15"></div>
                                 <div class="border_black"></div>
                                 <div class="space-15"></div>
-                                <div class="single_post widgets_small">
-                                    <div class="post_img">
-                                        <div class="img_wrap">
-                                            <a href="#">
-                                                <img src="{{asset('/img/Headerfrontend/sider-top.jpg')}}" alt="">
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="single_post_text">
-                                        <div class="meta2 meta_separator1">	<a href="#">TECHNOLOGY</a>
-                                            <a href="#">March 26, 2020</a>
-                                        </div>
-                                        <h4><a href="post1.html">Nancy Zhang a Chinese busy woman and Dhaka</a></h4>
-                                    </div>
-                                </div>
-                                <div class="space-15"></div>
-                                <div class="border_black"></div>
-                                <div class="space-15"></div>
-                                <div class="single_post widgets_small">
-                                    <div class="post_img">
-                                        <div class="img_wrap">
-                                            <a href="#">
-                                                <img src="{{asset('/img/Headerfrontend/sider-top.jpg')}}" alt="">
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="single_post_text">
-                                        <div class="meta2 meta_separator1">	<a href="#">TECHNOLOGY</a>
-                                            <a href="#">March 26, 2020</a>
-                                        </div>
-                                        <h4><a href="post1.html">U.S. Response subash says he will label regions by risk of…</a></h4>
-                                    </div>
-                                </div>
-                                <div class="space-15"></div>
-                                <div class="border_black"></div>
-                                <div class="space-15"></div>
-                                <div class="single_post widgets_small">
-                                    <div class="post_img">
-                                        <div class="img_wrap">
-                                            <a href="#">
-                                                <img src="{{asset('/img/Headerfrontend/sider-top.jpg')}}" alt="">
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="single_post_text">
-                                        <div class="meta2 meta_separator1">	<a href="#">TECHNOLOGY</a>
-                                            <a href="#">March 26, 2020</a>
-                                        </div>
-                                        <h4><a href="post1.html">Venezuela elan govt and opposit the property collect</a></h4>
-                                    </div>
-                                </div>
-                                <div class="space-15"></div>
-                                <div class="border_black"></div>
-                                <div class="space-15"></div>
-                                <div class="single_post widgets_small">
-                                    <div class="post_img">
-                                        <div class="img_wrap">
-                                            <a href="#">
-                                                <img src="{{asset('/img/Headerfrontend/sider-top.jpg')}}" alt="">
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="single_post_text">
-                                        <div class="meta2 meta_separator1">	<a href="#">TECHNOLOGY</a>
-                                            <a href="#">March 26, 2020</a>
-                                        </div>
-                                        <h4><a href="post1.html">Cheap smartphone sensor could help you old food safe</a></h4>
-                                    </div>
-                                </div>
+                                
                             </div>
                         </div>
                         <div id="post2" class="tab-pane fade">
@@ -351,75 +149,7 @@
                                 <div class="space-15"></div>
                                 <div class="border_black"></div>
                                 <div class="space-15"></div>
-                                <div class="single_post widgets_small">
-                                    <div class="post_img">
-                                        <div class="img_wrap">
-                                            <a href="#">
-                                                <img src="{{asset('/img/Headerfrontend/sider-top.jpg')}}" alt="">
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="single_post_text">
-                                        <div class="meta2 meta_separator1">	<a href="#">TECHNOLOGY</a>
-                                            <a href="#">March 26, 2020</a>
-                                        </div>
-                                        <h4><a href="post1.html">Nancy Zhang a Chinese busy woman and Dhaka</a></h4>
-                                    </div>
-                                </div>
-                                <div class="space-15"></div>
-                                <div class="border_black"></div>
-                                <div class="space-15"></div>
-                                <div class="single_post widgets_small">
-                                    <div class="post_img">
-                                        <div class="img_wrap">
-                                            <a href="#">
-                                                <img src="{{asset('/img/Headerfrontend/sider-top.jpg')}}" alt="">
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="single_post_text">
-                                        <div class="meta2 meta_separator1">	<a href="#">TECHNOLOGY</a>
-                                            <a href="#">March 26, 2020</a>
-                                        </div>
-                                        <h4><a href="post1.html">U.S. Response subash says he will label regions by risk of…</a></h4>
-                                    </div>
-                                </div>
-                                <div class="space-15"></div>
-                                <div class="border_black"></div>
-                                <div class="space-15"></div>
-                                <div class="single_post widgets_small">
-                                    <div class="post_img">
-                                        <div class="img_wrap">
-                                            <a href="#">
-                                                <img src="{{asset('/img/Headerfrontend/sider-top.jpg')}}" alt="">
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="single_post_text">
-                                        <div class="meta2 meta_separator1">	<a href="#">TECHNOLOGY</a>
-                                            <a href="#">March 26, 2020</a>
-                                        </div>
-                                        <h4><a href="post1.html">Venezuela elan govt and opposit the property collect</a></h4>
-                                    </div>
-                                </div>
-                                <div class="space-15"></div>
-                                <div class="border_black"></div>
-                                <div class="space-15"></div>
-                                <div class="single_post widgets_small">
-                                    <div class="post_img">
-                                        <div class="img_wrap">
-                                            <a href="#">
-                                                <img src="{{asset('/img/Headerfrontend/sider-top.jpg')}}" alt="">
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="single_post_text">
-                                        <div class="meta2 meta_separator1">	<a href="#">TECHNOLOGY</a>
-                                            <a href="#">March 26, 2020</a>
-                                        </div>
-                                        <h4><a href="post1.html">Cheap smartphone sensor could help you old food safe</a></h4>
-                                    </div>
-                                </div>
+                                
                             </div>
                         </div>
                     </div>
