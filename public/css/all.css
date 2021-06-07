@@ -4666,3 +4666,7 @@ table.dataTable.no-footer{
 .error{
 color: red;
 }
+
+#unit_table_wrapper{
+  padding: 20px;
+}

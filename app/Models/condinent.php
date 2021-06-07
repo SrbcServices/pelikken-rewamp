@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Country;
+use PhpParser\Builder\Function_;
 
 class condinent extends Model
 {
@@ -13,5 +14,8 @@ class condinent extends Model
     public function news(){
 
         return $this->belongstoMany(news::class);
+    }
+    public Function country(){
+        return $this->hasMany(Country::class);
     }
 }
