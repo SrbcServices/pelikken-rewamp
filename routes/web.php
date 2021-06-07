@@ -117,15 +117,13 @@ Route::get('/adsdelete/{id}',[AdsController::class,'delete']);
 
 //news
 
-Route::get('/fetch_sub_category/{id}',[NewsController::Class,'fetch_sub_category']);
+Route::get('/fetch_sub_category/{id}',[NewsController::class,'fetch_sub_category']);
 
-Route::get('/fetch_country/{id}',[NewsController::Class,'fetch_country']);
+Route::get('/fetch_country/{id}',[NewsController::class,'fetch_country']);
 
 //header
 
-Route::get('/latest_news', function(){
-    return view('frontent.latest_news');
-});
+
 
 Route::get('/', function(){
     return view('frontent.home_page');
@@ -183,6 +181,8 @@ Route::post('news/update/options/view',[NewsController::class,'update_single_all
 
 
 
+//frontent news showing area users
+Route::get('/latest-news',[frontentController::class,'latest_news']);
 
 
 
