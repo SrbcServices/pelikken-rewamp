@@ -152,6 +152,7 @@ Route::get('/finance', function(){
 });
 
 
+
 Route::get('/fetch_sub_category/{id}',[NewsController::class,'fetch_sub_category']);
 Route::get('/fetch_country/{id}',[NewsController::class,'fetch_country']);
 Route::get('/edit-news/{id}',[NewsController::class,'edit'] );

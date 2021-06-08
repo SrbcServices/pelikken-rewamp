@@ -123,7 +123,7 @@
                                 <li><a href="/">Home <i class="fal fa-angle-down"></i></a>
                                     
                                 </li>
-                                <li><a href="latest_news">Latest News <i class="fal fa-angle-down"></i></a>
+                                <li><a href="latest-news">Latest News <i class="fal fa-angle-down"></i></a>
                                     
                                 </li>
                              @if(count(quantinent())>0)

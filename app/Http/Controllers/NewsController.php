@@ -27,6 +27,7 @@ class NewsController extends Controller
         $tags = tags::all();
 
 
+
     
         return view('admin.form', ['sources' => $sources, 'category' => $category, 'quantinents' => $quantinet, 'tags' => $tags]);
     }
@@ -72,7 +73,7 @@ class NewsController extends Controller
         }
 
 
-        /////////////////////
+       
         $x = true;
         $error = "";
         try {
@@ -164,7 +165,7 @@ class NewsController extends Controller
 
 
 
-        /////////////////
+        
 
     }
 

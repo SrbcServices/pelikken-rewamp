@@ -99,4 +99,16 @@ class news extends Model
 
         return $this->hasone(newsVideo::class, 'News_id', 'id');
     }
+
+    
+    public function getcreated_at()
+        {
+
+
+        
+        return Carbon::parse($this->created_at)->format('MM/DD/YYYY');
+
+        
+
+        }
 }
