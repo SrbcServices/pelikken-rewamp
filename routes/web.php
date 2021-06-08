@@ -13,7 +13,7 @@ use App\Http\Controllers\NewsController;
 
 
 
-Route::get('/', [frontentController::class,'index']);   
+  
     
 
 Route::get('/admin', function () {
@@ -125,9 +125,7 @@ Route::get('/fetch_country/{id}',[NewsController::class,'fetch_country']);
 
 
 
-Route::get('/', function(){
-    return view('frontent.home_page');
-});
+
 
 
 Route::get('/life_style', function(){
@@ -180,6 +178,7 @@ Route::post('news/update/options/view',[NewsController::class,'update_single_all
 
 
 //frontent news showing area users
+Route::get('/', [frontentController::class,'index']); 
 Route::get('/latest-news',[frontentController::class,'latest_news']);
 
 //world loop
