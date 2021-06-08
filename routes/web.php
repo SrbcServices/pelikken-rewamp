@@ -128,27 +128,6 @@ Route::get('/fetch_country/{id}',[NewsController::class,'fetch_country']);
 
 
 
-Route::get('/life_style', function(){
-    return view('frontent.life_style');
-});
-
-Route::get('/sports', function(){
-    return view('frontent.sports');
-});
-
-Route::get('/exclusive', function(){
-    return view('frontent.exclusive');
-});
-
-Route::get('/business', function(){
-    return view('frontent.business');
-});
-
-Route::get('/finance', function(){
-    return view('frontent.finance');
-});
-
-
 
 Route::get('/fetch_sub_category/{id}',[NewsController::class,'fetch_sub_category']);
 Route::get('/fetch_country/{id}',[NewsController::class,'fetch_country']);
@@ -180,6 +159,7 @@ Route::post('news/update/options/view',[NewsController::class,'update_single_all
 //frontent news showing area users
 Route::get('/', [frontentController::class,'index']); 
 Route::get('/latest-news',[frontentController::class,'latest_news']);
+Route::get('/news/{category}/{sub_category?}',[frontentController::class,'category_wise']);
 
 //world loop
 

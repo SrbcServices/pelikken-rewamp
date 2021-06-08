@@ -49,31 +49,41 @@
             </div>
         </div>
 
+        
+        
+       
         <div class="col-md-4 col-lg-4">
             <div class="widget_tab md-mt-30">
                 <ul class="nav nav-tabs">
-                    <li><a class="active" data-toggle="tab" href="#post1">LATEST NEWS</a>
+                    <li><a class="active" data-toggle="tab" href="#post1">FEATURED</a>
                     </li>
                     <li><a data-toggle="tab" href="#post2" class="">HIGHLIGHTS</a>
                     </li>
                 </ul>
 
+                
+
                 <div class="tab-content">
+
+                    @if (count($global_feature_featured)>0)
+                    @foreach ($global_feature_featured as $featured)
+
                     <div id="post1" class="tab-pane fade in active show">
                         <div class="widget tab_widgets mb30">
+
                             <div class="single_post widgets_small">
                                 <div class="post_img">
                                     <div class="img_wrap">
                                         <a href="#">
-                                            <img src="{{asset('/img/Headerfrontend/sider-top.jpg')}}" alt="">
+                                            <img src="{{asset('/uploads/news/' .$featured->ThumbImage)}}" alt="">
                                         </a>
                                     </div>
                                 </div>
                                 <div class="single_post_text">
-                                    <div class="meta2 meta_separator1">	<a href="#">TECHNOLOGY</a>
+                                    <div class="meta2 meta_separator1">	<a href="#">{{$featured->category->category_name}}</a>
                                         <a href="#">March 26, 2020</a>
                                     </div>
-                                    <h4><a href="post1.html">Copa America: Luis Suarez from devastated US</a></h4>
+                                    <h4><a href="post1.html">{{$featured->NewsHeading}}</a></h4>
                                 </div>
                             </div>
                             <div class="space-15"></div>
@@ -82,21 +92,33 @@
                             
                         </div>
                     </div>
+
+                    @endforeach
+                    @endif
+
+                    
+                        
+                    @if (count($global_news_highlights)>0)
+                    @foreach ($global_news_highlights as $highlights)
+
                     <div id="post2" class="tab-pane fade">
+
+                    
+
                         <div class="widget tab_widgets mb30">
                             <div class="single_post widgets_small">
                                 <div class="post_img">
                                     <div class="img_wrap">
                                         <a href="#">
-                                            <img src="{{asset('/img/Headerfrontend/sider-top.jpg')}}" alt="">
+                                            <img src="{{asset('/uploads/news/' .$highlights->ThumbImage)}}" alt="">
                                         </a>
                                     </div>
                                 </div>
                                 <div class="single_post_text">
-                                    <div class="meta2 meta_separator1">	<a href="#">TECHNOLOGY</a>
+                                    <div class="meta2 meta_separator1">	<a href="#">{{$highlights->category->category_name}}</a>
                                         <a href="#">March 26, 2020</a>
                                     </div>
-                                    <h4><a href="post1.html">Copa America: Luis Suarez from devastated US</a></h4>
+                                    <h4><a href="post1.html">{{$highlights->NewsHeading}}</a></h4>
                                 </div>
                             </div>
                             <div class="space-15"></div>
@@ -104,7 +126,11 @@
                             <div class="space-15"></div>
                             
                         </div>
+                
                     </div>
+                    @endforeach
+                        
+                    @endif
                 </div>
             </div>
 
@@ -115,6 +141,11 @@
             
             <!--:::::: POST TYPE 4 START :::::::-->
         </div>
+
+             
+        
+            
+        
 
 
     </div>

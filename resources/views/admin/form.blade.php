@@ -286,13 +286,13 @@
             enableExif: true,
             enableOrientation: true,
             viewport: { // Default { width: 100, height: 100, type: 'square' } 
-                width: 300,
-                height: 200,
+                width: 400,
+                height: 225,
                 type: 'square' //square
             },
             boundary: {
-                width: 300,
-                height: 300
+                width: 400,
+                height: 225
             }
         });
         $('#image-for-th').on('change', function() {

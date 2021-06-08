@@ -19,7 +19,7 @@
                         
                   
 
-                    <div class="col-12">
+                    <div class="col-12 ">
                         <div class="single_post post_type3 post_type12 mb30">
                             <div class="post_img">
                                 <div class="img_wrap">
@@ -39,7 +39,6 @@
                             </div>
                         </div>
                     </div>
- 
                         @endforeach
                         
                         @endif
