@@ -126,72 +126,41 @@
                                 <li><a href="latest_news">Latest News <i class="fal fa-angle-down"></i></a>
                                     
                                 </li>
+                             @if(count(quantinent())>0)
                                 <li><a href="world">World <i class="fal fa-angle-down"></i></a>
+                             
+                                 
                                     <ul>
-                                        <li><a href="#">General Posts <i class="fal fa-angle-right"></i></a>
-                                            <ul>
-                                                <li><a href="post1.html">Post 1</a>
-                                                </li>
-                                                <li><a href="post2.html">Post 2</a>
-                                                </li>
-                                                <li><a href="post3.html">Post 3</a>
-                                                </li>
-                                            </ul>
+                                        @foreach (quantinent() as $condinent)
+                                        <li><a href="/{{$condinent->slug}}">{{$condinent->Condinent_Name}}<i class="fal fa-angle-right"></i></a>
+                                            @if(count($condinent->country)>0)
+                                              <ul>
+                                                @foreach ($condinent->country as $country)
+                                                   <li><a href="/{{$condinent->slug}}/{{$country->slug}}">{{$country->country_name}}</a>
+                                                   </li>
+                                                @endforeach
+                                               </ul>
+                                            @endif
                                         </li>
-                                        <li><a href="#">Video Posts <i class="fal fa-angle-right"></i></a>
-                                            <ul>
-                                                <li><a href="video_post1.html">Video Style 1</a>
-                                                </li>
-                                                <li><a href="video_post2.html">Video Style 2</a>
-                                                </li>
-                                                <li><a href="video_post3.html">Video Style 3</a>
-                                                </li>
-                                            </ul>
-
-                                        </li>
-
-                                        <li><a href="#">Audio Posts <i class="fal fa-angle-right"></i></a>
-                                            <ul>
-                                                <li><a href="audio_post1.html">Audio Style 1</a>
-                                                </li>
-                                                <li><a href="audio_post2.html">Audio Style 2</a>
-                                                </li>
-                                                <li><a href="audio_post3.html">Audio Style 3</a>
-                                                </li>
-                                            </ul>
-
-                                        </li>
-                                        <li><a href="#">Sidebars <i class="fal fa-angle-right"></i></a>
-                                            <ul>
-                                                <li><a href="post1.html">Right Sidebar</a>
-                                                </li>
-                                                <li><a href="left_post2.html">Left Sidebar</a>
-                                                </li>
-                                                <li><a href="post2.html">No Sidebar <i
-                                                            class="fal fa-angle-right"></i></a>
-                                                    <ul>
-                                                        <li><a href="#">Simple menu</a></li>
-                                                    </ul>
-
-                                                </li>
-                                            </ul>
-                                        </li>
+                                        
+                                        @endforeach
+                                       
                                     </ul>
-                                </li>
-                                <li><a href="#">India <i class="fal fa-angle-down"></i></a>
-
-                                  
+                           
 
                                 </li>
+                                @endif
+                              
+                               
 
                                 @if(count(menu_helper())>0)
                                 @foreach (menu_helper() as $category)
-                                <li><a href="sports">{{$category->category_name}}<i class="fal fa-angle-down"></i></a>
+                                <li><a href="/{{$category->slug}}">{{$category->category_name}}<i class="fal fa-angle-down"></i></a>
                                     @if(count($category->get_subcategories)>0)
                                     <ul>
                                         
                                             @foreach ($category->get_subcategories as $item)
-                                            <li><a href="post1.html">{{$item->sub_category_name}}</a>
+                                            <li><a href="/{{$category->slug}}/{{$item->slug}}">{{$item->sub_category_name}}</a>
                                             </li>
                                             @endforeach
                                         
@@ -211,17 +180,8 @@
                                 
 
 
-                                <li><a href="exclusive">Exclusive</a>
-
-                                <li><a href="business">Business<i class="fal fa-angle-down"></i></a>
-
-                                    <ul>
-                                        <li><a href="finance">Finance</a>
-                                        </li>
-                                      
-                                    </ul>
-
-                                </li>
+                          
+                                
 
                             </ul>
                         </div>
@@ -238,22 +198,7 @@
                                     </li> --}}
                                 </ul>
                             </div>
-                            {{-- <div class="lang d-none d-xl-block">
-                                <ul>
-                                    <li><a href="#">English <i class="far fa-angle-down"></i></a>
-                                        <ul>
-                                            <li><a href="#">Spanish</a>
-                                            </li>
-                                            <li><a href="#">China</a>
-                                            </li>
-                                            <li><a href="#">Hindi</a>
-                                            </li>
-                                            <li><a href="#">Corian</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </div> --}}
+                            
                             <div class="temp d-none d-lg-block">
                                 <div class="temp_wap">
                                     <div class="temp_icon">

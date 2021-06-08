@@ -1,1 +1,0 @@
-@extends('headerfrontent.header-frontent');

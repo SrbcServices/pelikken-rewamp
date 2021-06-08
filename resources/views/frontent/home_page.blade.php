@@ -1,23 +1,29 @@
 @extends('layouts.header-frontent')
 @section('content')
+
+@if(count($highlights)>0)
 <div class="post_gallary_area fifth_bg mb40">
     <div class="container">
         <div class="row">
+            @foreach ($highlights as $index => $news)
+                
+           
+@if($index == 0)
             <div class="col-lg-6">
                 <div class="row">
                     <div class="col-xl-12">
                         <div class="slider_demo2">
                             <div class="single_post post_type6 xs-mb30">
                                 <div class="post_img gradient1">
-                                    <img src="{{asset('/img/Headerfrontend/sider-top.jpg')}}" alt="">
+                                    <img src="{{asset('/uploads/news/'.$news->ThumbImage.'')}}" alt="" style="width: 100%">
                                 </div>
-                                <div class="single_post_text">
-                                     <div class="meta meta_separator1">{{--	<a href="#">TECHNOLOGY</a>
-                                        <a href="#">March 26, 2020</a> --}}
+                                <div class="single_post_text" style="padding: 18px 20px">
+                                     <div class="meta meta_separator1">	<a href="#">{{$news->category->category_name}}</a>
+                                        <a href="#">March 26, 2020</a>
                                     </div>
-                                    <h4><a class="play_btn" href="video_post1.html">Japan’s virus success has puzzled the world. Is its luck running out?</a></h4>
+                                    <h4><a class="play_btn" href="">{{substr($news->NewsHeading,0,60)}}</a></h4>
                                     <div class="space-10"></div>
-                                    {{-- <p class="post-p">The property, complete with 30-seat screening from room, a 100-seat amphitheater and a swimming pond with sandy shower…</p> --}}
+                                   <p class="post-p">{{substr($news->SubHeading,0,140)}}..</p> 
                                 </div>
                             </div>
                         </div>
@@ -25,95 +31,43 @@
                 </div>
             </div>
  {{-- slides --}}
-
-
+@endif
+@endforeach
 <div class="col-lg-6">
 
     <div class="row">
+        @foreach ($highlights as $index => $news)
+      @if($index != 0)
+
         <div class="col-lg-6">
             <div class="slider_demo2">
                 <div class="single_post post_type6 xs-mb30">
                     <div class="post_img gradient1">
-                        <img src="{{asset('/img/Headerfrontend/sider-top.jpg')}}" alt="">
+                        <img src="{{asset('/uploads/news/'.$news->ThumbImage.'')}}" alt="" style="width: 100%">
                     </div>
-                    <div class="single_post_text">
-                         <div class="meta meta_separator1">{{--	<a href="#">TECHNOLOGY</a>
-                            <a href="#">March 26, 2020</a> --}}
+                    <div class="single_post_text" style="padding: 18px 12px">
+                         <div class="meta meta_separator1">	<a href="#">{{$news->category->category_name}}</a>
+                            <a href="#">March 26, 2020</a>
                         </div>
-                        {{-- <h6><a class="play_btn" href="#">Japan’s virus success has puzzled the world. Is its luck running out?</a></h6> --}}
+                        <h6 ><a  href="" class="small" style="font-size: 18px;line-height:20px;">{{substr($news->NewsHeading,0,60)}}</a></h6>
                         
                     </div>
                 </div>
             </div>
         </div>
-
-        <div class="col-lg-6">
-            <div class="slider_demo2">
-                <div class="single_post post_type6 xs-mb30">
-                    <div class="post_img gradient1">
-                        <img src="{{asset('/img/Headerfrontend/sider-top.jpg')}}" alt="">
-                    </div>
-                    <div class="single_post_text">
-                         <div class="meta meta_separator1">{{--	<a href="#">TECHNOLOGY</a>
-                            <a href="#">March 26, 2020</a> --}}
-                        </div>
-                        {{-- <h4><a class="play_btn" href="video_post1.html">Japan’s virus success has puzzled the world. Is its luck running out?</a></h4>
-                        <div class="space-10"></div> --}}
-                        {{-- <p class="post-p">The property, complete with 30-seat screening from room, a 100-seat amphitheater and a swimming pond with sandy shower…</p> --}}
-                    </div>
-                </div>
-            </div>
-        </div>
-
+        @endif
+        @endforeach
+      
+        
 
 
     </div>
 
     {{-- second row --}}
-    <div class="row">
-        <div class="col-lg-6" style="margin-top: 30px">
-            <div class="slider_demo2">
-                <div class="single_post post_type6 xs-mb30">
-                    <div class="post_img gradient1">
-                        <img src="{{asset('/img/Headerfrontend/sider-top.jpg')}}" alt="">
-                    </div>
-                    <div class="single_post_text">
-                         <div class="meta meta_separator1">{{--	<a href="#">TECHNOLOGY</a>
-                            <a href="#">March 26, 2020</a> --}}
-                        </div>
-                        {{-- <h6><a class="play_btn" href="#">Japan’s virus success has puzzled the world. Is its luck running out?</a></h6> --}}
-                        
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-lg-6" style="margin-top: 30px">
-            <div class="slider_demo2">
-                <div class="single_post post_type6 xs-mb30">
-                    <div class="post_img gradient1">
-                        <img src="{{asset('/img/Headerfrontend/sider-top.jpg')}}" alt="">
-                    </div>
-                    <div class="single_post_text">
-                         <div class="meta meta_separator1">{{--	<a href="#">TECHNOLOGY</a>
-                            <a href="#">March 26, 2020</a> --}}
-                        </div>
-                        {{-- <h4><a class="play_btn" href="video_post1.html">Japan’s virus success has puzzled the world. Is its luck running out?</a></h4>
-                        <div class="space-10"></div> --}}
-                        {{-- <p class="post-p">The property, complete with 30-seat screening from room, a 100-seat amphitheater and a swimming pond with sandy shower…</p> --}}
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-
-    </div>
-
-
-    {{-- second row end --}}
-          
+  
+  
 </div>
+
 
     
 
@@ -125,7 +79,7 @@
         </div>
     </div>
 </div>
-
+@endif
 {{-- Scetion end --}}
 
 <div class="container">
@@ -134,263 +88,98 @@
             <h2 class="widget-title">Trending News</h2>
             <div class="carousel_post2_type3 nav_style1 owl-carousel">
                 <!--CAROUSEL START-->
+                @if(count($trending)>0)
+                @foreach ($trending as $index =>$news)
+                  @if($index < 10)  
                 <div class="single_post post_type3">
                     <div class="post_img">
                         <div class="img_wrap">
-                            <img src="{{asset('/img/Headerfrontend/sider-top.jpg')}}" alt="">
+                            <img src="{{asset('uploads/news/'.$news->ThumbImage.'')}}" alt="">
                         </div>
                     </div>
                     <div class="single_post_text">
-                        <div class="meta3">	<a href="#">TECHNOLOGY</a>
+                        <div class="meta3">	<a href="#">{{$news->category->category_name}}</a>
                             <a href="#">March 26, 2020</a>
                         </div>
-                        <h4><a href="post1.html">There may be no consoles in the future ea exec says</a></h4>
+                        <h4><a href="post1.html">{{$news->NewsHeading}}</a></h4>
                         <div class="space-10"></div>
-                        <p class="post-p">The property, complete with 30-seat screening from room, a 100-seat amphitheater and a swimming pond with sandy shower…</p>
+                        <p class="post-p">{{substr($news->SubHeading,0,150)}}</p>
                     </div>
                 </div>
-                <div class="single_post post_type3">
-                    <div class="post_img">
-                        <div class="img_wrap">
-                            <img src="{{asset('/img/Headerfrontend/sider-top.jpg')}}" alt="">
-                        </div>
-                    </div>
-                    <div class="single_post_text">
-                        <div class="meta3">	<a href="#">TECHNOLOGY</a>
-                            <a href="#">March 26, 2020</a>
-                        </div>
-                        <h4><a href="post1.html">Japan’s virus success has puzzled the world. Is its luck running out?</a></h4>
-                        <div class="space-10"></div>
-                        <p class="post-p">The property, complete with 30-seat screening from room, a 100-seat amphitheater and a swimming pond with sandy shower…</p>
-                    </div>
-                </div>
-                <div class="single_post post_type3">
-                    <div class="post_img">
-                        <div class="img_wrap">
-                            <img src="{{asset('/img/Headerfrontend/sider-top.jpg')}}" alt="">
-                        </div>
-                    </div>
-                    <div class="single_post_text">
-                        <div class="meta3">	<a href="#">TECHNOLOGY</a>
-                            <a href="#">March 26, 2020</a>
-                        </div>
-                        <h4><a href="post1.html">Copa America: Luis Suarez from devastated US</a></h4>
-                        <div class="space-10"></div>
-                        <p class="post-p">The property, complete with 30-seat screening from room, a 100-seat amphitheater and a swimming pond with sandy shower…</p>
-                    </div>
-                </div>
+                @endif
+                @endforeach
+               @endif
+                
             </div>
         </div>
 
     {{-- latest view --}}
-
+@if(count($latest_news)>0)
         <div class="col-lg-4">
             <div class="widget tab_widgets mb30">
                 <h2 class="widget-title">Latest News</h2>
                 <div class="post_type2_carousel owl-carousel nav_style1">
                     <!--CAROUSEL START-->
                     <div class="single_post2_carousel">
+                        @foreach ($latest_news as $index => $news)
+                           @if($index <=6) 
+                       
+
                         <div class="single_post widgets_small type8">
                             <div class="post_img">
                                 <div class="img_wrap">
-                                    <img src="{{asset('/img/Headerfrontend/sider-top.jpg')}}" alt="">
+                                    <img src="{{asset('uploads/news/'.$news->ThumbImage.'')}}" alt="">
                                 </div>
                             </div>
                             <div class="single_post_text">
-                                <div class="meta2">	<a href="#">TECHNOLOGY</a>
+                                <div class="meta2">	<a href="#">{{$news->category->category_name}}</a>
                                     <a href="#">March 26, 2020</a>
                                 </div>
-                                <h4><a href="post1.html">Nancy zhang a chinese busy woman and dhaka</a></h4>
+                                <h4><a href="">{{substr($news->NewsHeading,0,60)}}</a></h4>
                             </div>
                             
                         </div>
                         <div class="space-15"></div>
                         <div class="border_black"></div>
                         <div class="space-15"></div>
-                        <div class="single_post widgets_small type8">
-                            <div class="post_img">
-                                <div class="img_wrap">
-                                    <img src="{{asset('/img/Headerfrontend/sider-top.jpg')}}" alt="">
-                                </div>
-                            </div>
-                            <div class="single_post_text">
-                                <div class="meta2">	<a href="#">TECHNOLOGY</a>
-                                    <a href="#">March 26, 2020</a>
-                                </div>
-                                <h4><a href="post1.html">The billionaire Philan thropist read to learn</a></h4>
-                            </div>
-                            
-                        </div>
-                        <div class="space-15"></div>
-                        <div class="border_black"></div>
-                        <div class="space-15"></div>
-                        <div class="single_post widgets_small type8">
-                            <div class="post_img">
-                                <div class="img_wrap">
-                                    <img src="{{asset('/img/Headerfrontend/sider-top.jpg')}}" alt="">
-                                </div>
-                            </div>
-                            <div class="single_post_text">
-                                <div class="meta2">	<a href="#">TECHNOLOGY</a>
-                                    <a href="#">March 26, 2020</a>
-                                </div>
-                                <h4><a href="post1.html">Cheap smartphone sensor could help you</a></h4>
-                            </div>
-                            
-                        </div>
-                        <div class="space-15"></div>
-                        <div class="border_black"></div>
-                        <div class="space-15"></div>
-                        <div class="single_post widgets_small type8">
-                            <div class="post_img">
-                                <div class="img_wrap">
-                                    <img src="{{asset('/img/Headerfrontend/sider-top.jpg')}}" alt="">
-                                </div>
-                            </div>
-                            <div class="single_post_text">
-                                <div class="meta2">	<a href="#">TECHNOLOGY</a>
-                                    <a href="#">March 26, 2020</a>
-                                </div>
-                                <h4><a href="post1.html">Class property employ ancho red multi</a></h4>
-                            </div>
-                            
-                        </div>
-                        <div class="space-15"></div>
-                        <div class="border_black"></div>
-                        <div class="space-15"></div>
-                        <div class="single_post widgets_small type8">
-                            <div class="post_img">
-                                <div class="img_wrap">
-                                    <img src="{{asset('/img/Headerfrontend/sider-top.jpg')}}" alt="">
-                                </div>
-                            </div>
-                            <div class="single_post_text">
-                                <div class="meta2">	<a href="#">TECHNOLOGY</a>
-                                    <a href="#">March 26, 2020</a>
-                                </div>
-                                <h4><a href="post1.html">Best garden wing supplies for the horticu</a></h4>
-                            </div>
-                            
-                        </div>
-                        <div class="space-15 ldnane"></div>
-                        <div class="border_black ldnane"></div>
-                        <div class="space-15 ldnane"></div>
-                        <div class="single_post widgets_small type8 ldnane">
-                            <div class="post_img">
-                                <div class="img_wrap">
-                                    <img src="{{asset('/img/Headerfrontend/sider-top.jpg')}}" alt="">
-                                </div>
-                            </div>
-                            <div class="single_post_text">
-                                <div class="meta2">	<a href="#">TECHNOLOGY</a>
-                                    <a href="#">March 26, 2020</a>
-                                </div>
-                                <h4><a href="post1.html">Ratiffe to be Director of nation talent Trump</a></h4>
-                            </div>
-                            
-                        </div>
+                        
+                        @endif
+                        @endforeach
+                        
+                        
+                        
                     </div>
-{{-- Slide next column --}}
+                        {{-- Slide next column --}}
 
                     <div class="single_post2_carousel">
+                        @foreach ($latest_news as $index => $news)
+                           @if($index >=7 ) 
+                       
+
                         <div class="single_post widgets_small type8">
                             <div class="post_img">
                                 <div class="img_wrap">
-                                    <img src="{{asset('/img/Headerfrontend/sider-top.jpg')}}" alt="">
+                                    <img src="{{asset('uploads/news/'.$news->ThumbImage.'')}}" alt="">
                                 </div>
                             </div>
                             <div class="single_post_text">
-                                <div class="meta2">	<a href="#">TECHNOLOGY</a>
+                                <div class="meta2">	<a href="#">{{$news->category->category_name}}</a>
                                     <a href="#">March 26, 2020</a>
                                 </div>
-                                <h4><a href="post1.html">Nancy zhang a chinese busy woman and dhaka</a></h4>
+                                <h4><a href="">{{substr($news->NewsHeading,0,60)}}</a></h4>
                             </div>
                             
                         </div>
                         <div class="space-15"></div>
                         <div class="border_black"></div>
                         <div class="space-15"></div>
-                        <div class="single_post widgets_small type8">
-                            <div class="post_img">
-                                <div class="img_wrap">
-                                    <img src="{{asset('/img/Headerfrontend/sider-top.jpg')}}" alt="">
-                                </div>
-                            </div>
-                            <div class="single_post_text">
-                                <div class="meta2">	<a href="#">TECHNOLOGY</a>
-                                    <a href="#">March 26, 2020</a>
-                                </div>
-                                <h4><a href="post1.html">The billionaire Philan thropist read to learn</a></h4>
-                            </div>
-                        </div>
-                        <div class="space-15"></div>
-                        <div class="border_black"></div>
-                        <div class="space-15"></div>
-                        <div class="single_post widgets_small type8">
-                            <div class="post_img">
-                                <div class="img_wrap">
-                                    <img src="{{asset('/img/Headerfrontend/sider-top.jpg')}}" alt="">
-                                </div>
-                            </div>
-                            <div class="single_post_text">
-                                <div class="meta2">	<a href="#">TECHNOLOGY</a>
-                                    <a href="#">March 26, 2020</a>
-                                </div>
-                                <h4><a href="post1.html">Cheap smartphone sensor could help you</a></h4>
-                            </div>
-                            
-                        </div>
-                        <div class="space-15"></div>
-                        <div class="border_black"></div>
-                        <div class="space-15"></div>
-                        <div class="single_post widgets_small type8">
-                            <div class="post_img">
-                                <div class="img_wrap">
-                                    <img src="{{asset('/img/Headerfrontend/sider-top.jpg')}}" alt="">
-                                </div>
-                            </div>
-                            <div class="single_post_text">
-                                <div class="meta2">	<a href="#">TECHNOLOGY</a>
-                                    <a href="#">March 26, 2020</a>
-                                </div>
-                                <h4><a href="post1.html">Class property employ ancho red multi</a></h4>
-                            </div>
-                            
-                        </div>
-                        <div class="space-15"></div>
-                        <div class="border_black"></div>
-                        <div class="space-15"></div>
-                        <div class="single_post widgets_small type8">
-                            <div class="post_img">
-                                <div class="img_wrap">
-                                    <img src="{{asset('/img/Headerfrontend/sider-top.jpg')}}" alt="">
-                                </div>
-                            </div>
-                            <div class="single_post_text">
-                                <div class="meta2">	<a href="#">TECHNOLOGY</a>
-                                    <a href="#">March 26, 2020</a>
-                                </div>
-                                <h4><a href="post1.html">Best garden wing supplies for the horticu</a></h4>
-                            </div>
-                            
-                        </div>
-                        <div class="space-15 ldnane"></div>
-                        <div class="border_black ldnane"></div>
-                        <div class="space-15 ldnane"></div>
-                        <div class="single_post widgets_small type8 ldnane">
-                            <div class="post_img">
-                                <div class="img_wrap">
-                                    <img src="{{asset('/img/Headerfrontend/sider-top.jpg')}}" alt="">
-                                </div>
-                            </div>
-                            <div class="single_post_text">
-                                <div class="meta2">	<a href="#">TECHNOLOGY</a>
-                                    <a href="#">March 26, 2020</a>
-                                </div>
-                                <h4><a href="post1.html">Ratiffe to be Director of nation talent Trump</a></h4>
-                            </div>
                         
-                        </div>
+                        @endif
+                        @endforeach
+                        
+                        
+                        
+                        
                     </div>
                 </div>
                 <!--CAROUSEL END-->
@@ -398,7 +187,7 @@
 
 
         </div>
-
+@endif
 
     {{-- latest view end --}}
 
@@ -410,30 +199,33 @@
 {{-- under latest view section start --}}
 
 <div class="container">
+  
+    
     <div class="row">
 
         <div class="col-lg-8">
+            @if(count($trending)>0)
             
             <div class="row">
-
+@foreach ($trending as $index => $news)
+    
+@if($index >=10)
                 <div class="col-lg-6">
                     <div class="single_post widgets_small">
                         <div class="post_img">
                             <div class="img_wrap">
                                 <a href="#">
-                                    <img src="{{asset('/img/Headerfrontend/sider-top.jpg')}}" alt="">
+                                    <img src="{{asset('uploads/news/'.$news->ThumbImage.'')}}" alt="">
                                 </a>
-                            </div>	<span class="tranding">
-                                <i class="fas fa-bolt"></i>
-                            </span>
+                            </div>
                         </div>
                         <div class="single_post_text">
-                            <div class="meta2">	<a href="#">TECHNOLOGY</a>
+                            <div class="meta2">	<a href="#">{{$news->category->category_name}}</a>
                                 <a href="#">March 26, 2020</a>
                             </div>
                             <h4>
                                 
-                            <a href="post1.html">Copa America: Luis Suarez from devastated US</a>
+                            <a > <h4><a href="">{{substr($news->NewsHeading,0,60)}}</a></h4></a>
 
                             </h4>	
                         </div>
@@ -445,71 +237,17 @@
 
 
                 </div>
+                @endif
+                @endforeach
 
 
-                <div class="col-lg-6">
-                    <div class="single_post widgets_small">
-                        <div class="post_img">
-                            <div class="img_wrap">
-                                <a href="#">
-                                    <img src="{{asset('/img/Headerfrontend/sider-top.jpg')}}" alt="">
-                                </a>
-                            </div>	<span class="tranding">
-                                <i class="fas fa-bolt"></i>
-                            </span>
-                        </div>
-                        <div class="single_post_text">
-                            <div class="meta2">	<a href="#">TECHNOLOGY</a>
-                                <a href="#">March 26, 2020</a>
-                            </div>
-                            <h4>
-                                
-                            <a href="post1.html">Copa America: Luis Suarez from devastated US</a>
+                
 
-                            </h4>	
-                        </div>
-                    </div>
-                    <div class="space-15"></div>
-                    <div class="border_black"></div>
-                    <div class="space-15"></div>
-
-
-
-                </div>
-
-                <div class="col-lg-6">
-                    <div class="single_post widgets_small">
-                        <div class="post_img">
-                            <div class="img_wrap">
-                                <a href="#">
-                                    <img src="{{asset('/img/Headerfrontend/sider-top.jpg')}}" alt="">
-                                </a>
-                            </div>	<span class="tranding">
-                                <i class="fas fa-bolt"></i>
-                            </span>
-                        </div>
-                        <div class="single_post_text">
-                            <div class="meta2">	<a href="#">TECHNOLOGY</a>
-                                <a href="#">March 26, 2020</a>
-                            </div>
-                            <h4>
-                                
-                            <a href="post1.html">Copa America: Luis Suarez from devastated US</a>
-
-                            </h4>	
-                        </div>
-                    </div>
-                    <div class="space-15"></div>
-                    <div class="border_black"></div>
-                    <div class="space-15"></div>
-
-
-
-                </div>
-
+                
 
 
             </div>
+            @endif
 
 
         </div>

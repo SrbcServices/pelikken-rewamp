@@ -31,7 +31,7 @@ class CreateNewsTable extends Migration
             $table->foreign('Condinent')->references('id')->on('condinents')->onDelete('cascade');
             $table->foreign('Country')->references('id')->on('countries')->onDelete('cascade');
             $table->foreign('Category')->references('id')->on('categories')->onDelete('cascade');
-            $table->foreign('SubCategory')->references('id')->on('sub_categories')->onDelete('cascade');
+            $table->foreign('SubCategory')->references('id')->on('sub_categories')->onDelete('cascade')->nullable();
             $table->softDeletes('deleted_at');
             $table->timestamps();
         });

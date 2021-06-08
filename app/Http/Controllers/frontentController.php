@@ -8,8 +8,10 @@ use App\Models\news;
 class frontentController extends Controller
 {
     public function index(){
-       
-        return view('layouts.header-frontent');
+       $highlights = news::where('Highlight','!=',null)->orderBy('id','desc')->limit(5)->get();
+       $trending = news::where('trending','!=' ,null)->orderBy('id','desc')->limit(20)->get();
+       $latest_news = news::orderBy('id','desc')->limit(12)->get();
+    return view('frontent.home_page',['highlights'=>$highlights,'trending'=>$trending,'latest_news'=>$latest_news]);
 
     }
     //latest news
