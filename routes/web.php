@@ -159,6 +159,10 @@ Route::get('/news/{category}/{sub_category?}',[frontentController::class,'catego
 
 Route::get('/world',[frontentController::class,'world']);
 
+// Route::get('/world',[frontentController::class,'country']);
+
+Route::get('/world/{condinent}/{country?}',[frontentController::class,'country_wise']);
+
 
 
 
