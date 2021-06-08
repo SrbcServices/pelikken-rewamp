@@ -122,13 +122,6 @@ Route::get('/fetch_sub_category/{id}',[NewsController::class,'fetch_sub_category
 Route::get('/fetch_country/{id}',[NewsController::class,'fetch_country']);
 
 //header
-
-
-
-
-
-
-
 Route::get('/fetch_sub_category/{id}',[NewsController::class,'fetch_sub_category']);
 Route::get('/fetch_country/{id}',[NewsController::class,'fetch_country']);
 Route::get('/edit-news/{id}',[NewsController::class,'edit'] );
@@ -156,7 +149,8 @@ Route::post('news/update/options/view',[NewsController::class,'update_single_all
 
 
 
-//frontent news showing area users
+//frontent news showing area users****************************************************************************
+//************************************************************************************************************
 Route::get('/', [frontentController::class,'index']); 
 Route::get('/latest-news',[frontentController::class,'latest_news']);
 Route::get('/news/{category}/{sub_category?}',[frontentController::class,'category_wise']);
