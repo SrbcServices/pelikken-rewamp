@@ -33,4 +33,42 @@ class frontentController extends Controller
         
         return view('frontent.world',['world'=>$world]);
     }
+
+
+   public function country_wise($condinent,$country = null){
+
+    $query = news::query();
+
+    $query->when($condinent, function ($q) use ($condinent){
+
+        return $q->whereHas('condinent', function ($q) use ($condinent){
+
+            $q->where('slug', $condinent);
+        });
+
+    });
+
+    $query->when($country, function ($q) use ($country){
+
+        return $q->whereHas('country', function ($q) use ($country){
+
+            $q->where('slug', $country);
+        });
+
+    });
+
+
+
+    $news = $query->get();
+
+    
+
+    return view('frontent.finance',['news'=>$news, 'main'=>$condinent, 'sub'=>$country]);
+
+
+
+   }
+
+
+
 }

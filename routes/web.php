@@ -185,6 +185,10 @@ Route::get('/latest-news',[frontentController::class,'latest_news']);
 
 Route::get('/world',[frontentController::class,'world']);
 
+// Route::get('/world',[frontentController::class,'country']);
+
+Route::get('/world/{condinent}/{country?}',[frontentController::class,'country_wise']);
+
 
 
 

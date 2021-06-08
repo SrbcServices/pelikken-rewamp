@@ -38,12 +38,13 @@
                                 <div class="space-20"></div> <a href="#" class="readmore">Read more</a>
                             </div>
                         </div>
-
+                    </div>
+ 
                         @endforeach
                         
                         @endif
 
-                    </div>
+                    
                 </div>
             </div>
         </div>
