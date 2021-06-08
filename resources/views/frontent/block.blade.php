@@ -5,7 +5,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <div class="bridcrumb">	<a href="#">Home</a> / Business</div>
+                <div class="bridcrumb">	<a href="#">Home</a>/ {{$main ? ucfirst($main):''}}  / {{$sub ? ucfirst($sub) : ''}}</div>
             </div>
         </div>
     </div>
@@ -16,84 +16,51 @@
 <div class="archives padding-top-30">
     <div class="container">
         <div class="row">
-            <div class="col-md-6 col-lg-8">
+        <div class="col-md-6 col-lg-8">
+              @if(count($news)>0)
             <div class="row">
                     <div class="col-12 align-self-center">
+                       
                         <div class="categories_title">
-                            <h5>Category: <a href="#">Business</a></h5>
+                            <h5>Category: <a href="#">@if($main){{ucfirst($main)}} @endif</a></h5>
                         </div>
                     </div>
                 </div>
                 <div class="row justify-content-center">
+
+                @if(count($news)>0)
+                    @foreach ($news as $item)
+    
+
+
                     <div class="col-lg-6">
                         <div class="single_post post_type3 mb30">
                             <div class="post_img">
                                 <div class="img_wrap">
-                                    <img src="{{asset('/img/Headerfrontend/sider-top.jpg')}}" alt="">
+                                    <img src="{{asset('uploads/news/'.$item->ThumbImage.'')}}" alt="">
                                 </div>
                             </div>
                             <div class="single_post_text">
-                                <div class="meta3">	<a href="#">TECHNOLOGY</a>
+                                <div class="meta3">	<a href="#">{{$item->category->category_name}}</a>
                                     <a href="#">March 26, 2020</a>
                                 </div>
-                                <h4><a href="post1.html">Japan’s virus success has puzzled the world. Is its luck running out?</a></h4>
+                                <h4><a href="post1.html">{{substr($item->NewsHeading,0,100)}}</a></h4>
                                 <div class="space-10"></div>
-                                <p class="post-p">The property, complete with 30-seat screening from room, a 100-seat amphitheater and a swimming pond with sandy shower…</p>
+                                <p class="post-p">{{$item->SubHeading}}</p>
                             </div>
                         </div>
                     </div>
-                    
-                    <div class="col-lg-6 d-md-none d-lg-block">
-                        <div class="single_post post_type3 mb30">
-                            <div class="post_img">
-                                <div class="img_wrap">
-                                    <img src="{{asset('/img/Headerfrontend/sider-top.jpg')}}" alt="">
-                                </div>
-                            </div>
-                            <div class="single_post_text">
-                                <div class="meta3">	<a href="#">TECHNOLOGY</a>
-                                    <a href="#">March 26, 2020</a>
-                                </div>
-                                <h4><a href="post1.html">Japan’s virus success has puzzled the world. Is its luck running out?</a></h4>
-                                <div class="space-10"></div>
-                                <p class="post-p">The property, complete with 30-seat screening from room, a 100-seat amphitheater and a swimming pond with sandy shower…</p>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach                  
+                @endif                    
+                   
                     
 
                 </div>
-                <div class="row">
-                    <div class="col-12">
-        
-                           
-                        
-                        <ul class="pagination">
-                            {{-- <li class="page-item">
-                                <a class="page-link" href="#" aria-label="Previous"> <span aria-hidden="true"><i class="fas fa-caret-left"></i></span>
-                                </a>
-                            </li>
-                            <li class="page-item"><a class="" href="#">1</a>
-                            </li>
-                            <li class="page-item"><a class="page-link" href="#">2</a>
-                            </li>
-                            <li class="page-item"><a class="page-link" href="#">3</a>
-                            </li>
-                            <li class="page-item">
-                                <a class="page-link" href="#" aria-label="Next"> <span aria-hidden="true"><i class="fas fa-caret-right"></i></span>
-                                </a>
-                            </li> --}}
-
-                                <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-                                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                <li class="page-item"><a class="page-link" href="#">Next</a></li>
-
-                        </ul>
-                    </div> 
-                </div>
+                @endif
+               
             </div>
+            
+
             <div class="col-md-6 col-lg-4">
                 <div class="widget_tab md-mt-30">
                     <ul class="nav nav-tabs">
@@ -106,48 +73,60 @@
                     <div class="tab-content">
                         <div id="post1" class="tab-pane fade in active show">
                             <div class="widget tab_widgets mb30">
+                                @if(count($latest_global_news))
+                                @foreach ($latest_global_news as $news)
+                                    
+                            
                                 <div class="single_post widgets_small">
                                     <div class="post_img">
                                         <div class="img_wrap">
                                             <a href="#">
-                                                <img src="{{asset('/img/Headerfrontend/sider-top.jpg')}}" alt="">
+                                                <img src="{{asset('uploads/news/'.$news->ThumbImage.'')}}" alt="">
                                             </a>
                                         </div>
                                     </div>
                                     <div class="single_post_text">
-                                        <div class="meta2 meta_separator1">	<a href="#">TECHNOLOGY</a>
+                                        <div class="meta2 meta_separator1">	<a href="#">{{$news->category->category_name}}</a>
                                             <a href="#">March 26, 2020</a>
                                         </div>
-                                        <h4><a href="post1.html">Copa America: Luis Suarez from devastated US</a></h4>
+                                        <h4><a href="">{{substr($news->NewsHeading,0,50)}}</a></h4>
                                     </div>
                                 </div>
                                 <div class="space-15"></div>
                                 <div class="border_black"></div>
                                 <div class="space-15"></div>
+                                @endforeach
+                                @endif
+                                
                                 
                             </div>
                         </div>
                         <div id="post2" class="tab-pane fade">
                             <div class="widget tab_widgets mb30">
+                                @if(count($global_news_highlights)>0)
+                                @foreach ($global_news_highlights as $news)
+                                    
+                                @endforeach
+
                                 <div class="single_post widgets_small">
                                     <div class="post_img">
                                         <div class="img_wrap">
                                             <a href="#">
-                                                <img src="{{asset('/img/Headerfrontend/sider-top.jpg')}}" alt="">
+                                                <img src="{{asset('uploads/news/'.$news->ThumbImage.'')}}" alt="">
                                             </a>
                                         </div>
                                     </div>
                                     <div class="single_post_text">
-                                        <div class="meta2 meta_separator1">	<a href="#">TECHNOLOGY</a>
+                                        <div class="meta2 meta_separator1">	<a href="#">{{$news->category->category_name}}</a>
                                             <a href="#">March 26, 2020</a>
                                         </div>
-                                        <h4><a href="post1.html">Copa America: Luis Suarez from devastated US</a></h4>
+                                        <h4><a href="">{{substr($news->NewsHeading,0,50)}}</a></h4>
                                     </div>
                                 </div>
                                 <div class="space-15"></div>
                                 <div class="border_black"></div>
                                 <div class="space-15"></div>
-                            
+                            @endif
                             </div>
                         </div>
                     </div>
