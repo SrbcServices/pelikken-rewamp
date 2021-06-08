@@ -129,9 +129,6 @@ Route::get('/', function(){
     return view('frontent.home_page');
 });
 
-Route::get('/world', function(){
-    return view('frontent.world');
-});
 
 Route::get('/life_style', function(){
     return view('frontent.life_style');
@@ -184,6 +181,11 @@ Route::post('news/update/options/view',[NewsController::class,'update_single_all
 
 //frontent news showing area users
 Route::get('/latest-news',[frontentController::class,'latest_news']);
+
+//world loop
+
+Route::get('/world',[frontentController::class,'world']);
+
 
 
 

@@ -23,4 +23,12 @@ class frontentController extends Controller
         return view('frontent.latest_news',['latest_news'=>$latest_news]);
        
     }
+
+    public function world(){
+
+        $world = news::whereNotNull('condinent')->get();
+
+        
+        return view('frontent.world',['world'=>$world]);
+    }
 }
