@@ -73,7 +73,7 @@ class NewsController extends Controller
         }
 
 
-        /////////////////////
+       
         $x = true;
         $error = "";
         try {
