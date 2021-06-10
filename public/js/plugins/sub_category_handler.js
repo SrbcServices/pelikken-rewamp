@@ -28,7 +28,7 @@ $(document).ready(function () {
             console.log(response)
 
             if (response.status == 'error'){
-               $('.error').html('Sub Category Name  field is required')
+               $('.error').html('Error Occured')
             } else if (response.status == 'Success') {
                 $('#exampleModal').modal('hide')
                 $('#unit_table').load(document.URL + ' #unit_table');

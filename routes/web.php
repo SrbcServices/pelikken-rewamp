@@ -16,32 +16,6 @@ Route::get('/admin', function () {
     return view('layouts.admin_layout');
 });
 
-Route::get('/sub_category', function () {
-    return view('admin.sub-category');
-});
-Route::get('/tags', function () {
-    return view('admin.tags');
-});
-Route::get('/condinent', function () {
-    return view('admin.condinent');
-});
-Route::get('/country', function () {
-    return view('admin.country');
-});
-Route::get('/source', function () {
-    return view('admin.source');
-});
-Route::get('/ads', function () {
-    return view('admin.ads');
-});
-Route::get('/news_video', function () {
-    return view('admin.news_video');
-});
-
-Route::get('/comments', function () {
-    return view('admin.comments');
-});
-
 
 //category
 
@@ -153,6 +127,7 @@ Route::post('/delete-section',[NewsArrangmentController::class,'delete']);
 //************************************************************************************************************
 Route::get('/', [frontentController::class,'index']); 
 Route::get('/latest-news',[frontentController::class,'latest_news']);
+
 Route::get('/news/{category}/{sub_category?}',[frontentController::class,'category_wise']);
 
 //world loop
