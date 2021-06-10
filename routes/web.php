@@ -10,11 +10,7 @@ use App\Http\Controllers\SourceController;
 use App\Http\Controllers\AdsController;
 use App\Http\Controllers\frontentController;
 use App\Http\Controllers\NewsController;
-
-
-
-  
-    
+use App\Http\Controllers\NewsArrangmentController;
 
 Route::get('/admin', function () {
     return view('layouts.admin_layout');
@@ -146,6 +142,10 @@ Route::get('/add-news',[NewsController::class,'index'] );
 Route::post('/add-news',[NewsController::class,'store']);
 Route::post('/news/delete',[NewsController::class,'delete_news']);
 Route::post('news/update/options/view',[NewsController::class,'update_single_all']);
+
+Route::get('/arrange-news',[NewsArrangmentController::class,'index']);
+Route::post('/arrange-news',[NewsArrangmentController::class,'store']);
+Route::post('/delete-section',[NewsArrangmentController::class,'delete']);
 
 
 

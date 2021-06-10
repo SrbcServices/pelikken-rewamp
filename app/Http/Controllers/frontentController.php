@@ -5,15 +5,16 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\condinent;
 use App\Models\news;
+use App\Models\NewsArrangment;
 
 class frontentController extends Controller
 {
     public function __construct(Request $request)
     {
-        $latest_global_news = news::select('id','NewsHeading','created_at','ThumbImage','Category')->orderBy('id','desc')->limit(10)->get();
-        $global_news_highlights = news::select('id','NewsHeading','created_at','ThumbImage','Category')->where('Highlight','!=',null)->orderBy('id','desc')->limit(10)->get();
-        $global_feature_featured = news::select('id','NewsHeading','created_at','ThumbImage','Category')->where('featured','!=',null)->orderBy('id','desc')->limit(10)->get();
-        $global_trending_featured = news::select('id','NewsHeading','created_at','ThumbImage','Category')->where('trending','!=',null)->orderBy('id','desc')->limit(10)->get();
+        $latest_global_news = news::select('id','NewsHeading','created_at','ThumbImage','Category','slug')->orderBy('id','desc')->limit(10)->get();
+        $global_news_highlights = news::select('id','NewsHeading','created_at','ThumbImage','Category','slug')->where('Highlight','!=',null)->orderBy('id','desc')->limit(10)->get();
+        $global_feature_featured = news::select('id','NewsHeading','created_at','ThumbImage','Category','slug')->where('featured','!=',null)->orderBy('id','desc')->limit(10)->get();
+        $global_trending_featured = news::select('id','NewsHeading','SubHeading','created_at','ThumbImage','Category','slug')->where('trending','!=',null)->orderBy('id','desc')->limit(10)->get();
         
         \View::share('latest_global_news', $latest_global_news);
         
@@ -29,8 +30,13 @@ class frontentController extends Controller
         $highlights = news::where('Highlight', '!=', null)->orderBy('id', 'desc')->limit(5)->get();
         $trending = news::where('trending', '!=', null)->orderBy('id', 'desc')->limit(20)->get();
         $latest_news = news::orderBy('id', 'desc')->limit(12)->get();
-        $entertinment_news = news::orderBy('id','desc')->where('category','')
-        return view('frontent.home_page', ['highlights' => $highlights, 'trending' => $trending, 'latest_news' => $latest_news]);
+
+        //section news
+        $section_news_main =  NewsArrangment::where('type',1)->with('get_category.get_news')->orderBy('order','asc')->limit(10)->get();
+        $section_news_sidebar =  NewsArrangment::where('type',2)->with('get_category.get_news')->orderBy('order','asc')->limit(10)->get();
+      // return  $section_news_sidebar;
+      
+        return view('frontent.home_page', ['highlights' => $highlights, 'trending' => $trending, 'latest_news' => $latest_news,'section_news_main'=>$section_news_main,'section_news_sidebar'=> $section_news_sidebar]);
     }
 
     //latest news
@@ -103,7 +109,7 @@ class frontentController extends Controller
 
     
 
-    return view('frontent.finance',['news'=>$news, 'main'=>$condinent, 'sub'=>$country]);
+    return view('frontent.dual',['news'=>$news, 'main'=>$condinent, 'sub'=>$country]);
 
 
 

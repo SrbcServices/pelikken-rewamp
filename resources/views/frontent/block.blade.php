@@ -41,10 +41,10 @@
                                 </div>
                             </div>
                             <div class="single_post_text">
-                                <div class="meta3">	<a href="#">{{$item->category->category_name}}</a>
+                                <div class="meta3">	<a href="/news/{{$item->category->slug}}">{{$item->category->category_name}}</a>
                                     <a href="#">March 26, 2020</a>
                                 </div>
-                                <h4><a href="post1.html">{{substr($item->NewsHeading,0,100)}}</a></h4>
+                                <h4><a href="/pelikken/news/{{$item->slug}}">{{substr($item->NewsHeading,0,100)}}</a></h4>
                                 <div class="space-10"></div>
                                 <p class="post-p">{{$item->SubHeading}}</p>
                             </div>
@@ -56,7 +56,12 @@
                     
 
                 </div>
-                @endif
+                     
+                @else
+                <div class="not-found">
+                    <img src="{{asset('images/not-found.png')}}"/>
+                </div>
+@endif
                
             </div>
             
@@ -80,16 +85,16 @@
                                 <div class="single_post widgets_small">
                                     <div class="post_img">
                                         <div class="img_wrap">
-                                            <a href="#">
+                                            <a href="/pelikken/news/{{$news->slug}}">
                                                 <img src="{{asset('uploads/news/'.$news->ThumbImage.'')}}" alt="">
                                             </a>
                                         </div>
                                     </div>
                                     <div class="single_post_text">
-                                        <div class="meta2 meta_separator1">	<a href="#">{{$news->category->category_name}}</a>
+                                        <div class="meta2 meta_separator1">	<a href="/news/{{$news->category->slug}}">{{$news->category->category_name}}</a>
                                             <a href="#">March 26, 2020</a>
                                         </div>
-                                        <h4><a href="">{{substr($news->NewsHeading,0,50)}}</a></h4>
+                                        <h4><a href="/pelikken/news/{{$news->slug}}">{{substr($news->NewsHeading,0,50)}}</a></h4>
                                     </div>
                                 </div>
                                 <div class="space-15"></div>
@@ -106,26 +111,27 @@
                                 @if(count($global_news_highlights)>0)
                                 @foreach ($global_news_highlights as $news)
                                     
-                                @endforeach
+                               
 
                                 <div class="single_post widgets_small">
                                     <div class="post_img">
                                         <div class="img_wrap">
-                                            <a href="#">
+                                            <a href="/pelikken/news/{{$news->slug}}">
                                                 <img src="{{asset('uploads/news/'.$news->ThumbImage.'')}}" alt="">
                                             </a>
                                         </div>
                                     </div>
                                     <div class="single_post_text">
-                                        <div class="meta2 meta_separator1">	<a href="#">{{$news->category->category_name}}</a>
+                                        <div class="meta2 meta_separator1">	<a href="/news/{{$news->category->slug}}">{{$news->category->category_name}}</a>
                                             <a href="#">March 26, 2020</a>
                                         </div>
-                                        <h4><a href="">{{substr($news->NewsHeading,0,50)}}</a></h4>
+                                        <h4><a href="/pelikken/news/{{$news->slug}}">{{substr($news->NewsHeading,0,50)}}</a></h4>
                                     </div>
                                 </div>
                                 <div class="space-15"></div>
                                 <div class="border_black"></div>
                                 <div class="space-15"></div>
+                                @endforeach
                             @endif
                             </div>
                         </div>

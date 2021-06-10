@@ -287,6 +287,12 @@
                                         <p>Add News</p>
                                     </a>
                                 </li>
+                                <li class="nav-item">
+                                    <a href="/arrange-news" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Arrange news</p>
+                                    </a>
+                                </li>
                                
 
                             </ul>
