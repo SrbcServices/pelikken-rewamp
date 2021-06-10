@@ -131,11 +131,20 @@ Route::get('/settings',[settingsController::class,'settings']);
 
 Route::post('/settings',[settingsController::class,'store']);
 
+//about page
+
 Route::get('/about',[aboutController::class,'about']);
 
 Route::post('/about',[aboutController::class,'store']); 
 
+//news
+
 Route::get('/news',[frontentController::class,'newses']);
+
+//Terms and condition
+
+Route::get('/terms',[aboutController::class,'terms']);
+
 
 
 
