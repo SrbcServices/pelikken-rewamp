@@ -40,6 +40,15 @@ class frontentController extends Controller
 
         return view('frontent.latest_news', ['latest_news' => $latest_news]);
     }
+
+    //NEWSES
+
+    public function newses(){
+
+        return view('frontent.newspost');
+    }
+
+
     //all news in world
     public function world()
     {

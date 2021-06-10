@@ -10,6 +10,8 @@ use App\Http\Controllers\SourceController;
 use App\Http\Controllers\AdsController;
 use App\Http\Controllers\frontentController;
 use App\Http\Controllers\NewsController;
+use App\Http\Controllers\settingsController;
+use App\Http\Controllers\aboutController;
 
 
 
@@ -123,9 +125,17 @@ Route::get('/fetch_country/{id}',[NewsController::class,'fetch_country']);
 
 //header
 
+//settings
 
+Route::get('/settings',[settingsController::class,'settings']);
 
+Route::post('/settings',[settingsController::class,'store']);
 
+Route::get('/about',[aboutController::class,'about']);
+
+Route::post('/about',[aboutController::class,'store']); 
+
+Route::get('/news',[frontentController::class,'newses']);
 
 
 
@@ -159,6 +169,7 @@ Route::post('news/update/options/view',[NewsController::class,'update_single_all
 //frontent news showing area users
 Route::get('/', [frontentController::class,'index']); 
 Route::get('/latest-news',[frontentController::class,'latest_news']);
+
 Route::get('/news/{category}/{sub_category?}',[frontentController::class,'category_wise']);
 
 //world loop
