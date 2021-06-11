@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\source;
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 
@@ -86,7 +87,7 @@ class news extends Model
     //get product tags only
     public function newstags()
     {
-        return $this->hasMany(newstags::class);
+        return $this->hasMany(newstags::class,'News_id','id');
     }
 
     public function newsImages()
@@ -100,15 +101,17 @@ class news extends Model
         return $this->hasone(newsVideo::class, 'News_id', 'id');
     }
 
-    
-    public function getcreated_at()
-        {
+    protected $appends = ['local','updated'];
+    public function getlocalAttribute()
+    {
+            return date('d-m-Y', strtotime($this->created_at));
+    }
+    public function getupdatedAttribute(){
+        return Carbon::parse($this->updated_at)->diffForHumans();
+    }
 
-
-        
-        return Carbon::parse($this->created_at)->format('MM/DD/YYYY');
-
-        
-
-        }
+    //get previous news
+    public function get_previous_news(){
+        return news::where([['Category','=',$this->Category],['id','<',$this->id]])->limit(3)->get(); 
+    }
 }

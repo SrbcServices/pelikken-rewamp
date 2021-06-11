@@ -7,21 +7,22 @@ use App\Models\condinent;
 use App\Models\news;
 use App\Models\NewsArrangment;
 
+
 class frontentController extends Controller
 {
     public function __construct(Request $request)
     {
-        $latest_global_news = news::select('id','NewsHeading','created_at','ThumbImage','Category','slug')->orderBy('id','desc')->limit(10)->get();
-        $global_news_highlights = news::select('id','NewsHeading','created_at','ThumbImage','Category','slug')->where('Highlight','!=',null)->orderBy('id','desc')->limit(10)->get();
-        $global_feature_featured = news::select('id','NewsHeading','created_at','ThumbImage','Category','slug')->where('featured','!=',null)->orderBy('id','desc')->limit(10)->get();
-        $global_trending_featured = news::select('id','NewsHeading','SubHeading','created_at','ThumbImage','Category','slug')->where('trending','!=',null)->orderBy('id','desc')->limit(10)->get();
-        
+        $latest_global_news = news::select('id', 'NewsHeading', 'created_at', 'ThumbImage', 'Category', 'slug')->orderBy('id', 'desc')->limit(10)->get();
+        $global_news_highlights = news::select('id', 'NewsHeading', 'created_at', 'ThumbImage', 'Category', 'slug')->where('Highlight', '!=', null)->orderBy('id', 'desc')->limit(10)->get();
+        $global_feature_featured = news::select('id', 'NewsHeading', 'created_at', 'ThumbImage', 'Category', 'slug')->where('featured', '!=', null)->orderBy('id', 'desc')->limit(10)->get();
+        $global_trending_featured = news::select('id', 'NewsHeading', 'SubHeading', 'created_at', 'ThumbImage', 'Category', 'slug')->where('trending', '!=', null)->orderBy('id', 'desc')->limit(10)->get();
+
         \View::share('latest_global_news', $latest_global_news);
-        
+
         \View::share('global_news_highlights', $global_news_highlights);
-        
+
         \View::share('global_feature_featured', $global_feature_featured);
-        
+
         \View::share('global_trending_featured', $global_trending_featured);
     }
 
@@ -32,11 +33,11 @@ class frontentController extends Controller
         $latest_news = news::orderBy('id', 'desc')->limit(12)->get();
 
         //section news
-        $section_news_main =  NewsArrangment::where('type',1)->with('get_category.get_news')->orderBy('order','asc')->limit(10)->get();
-        $section_news_sidebar =  NewsArrangment::where('type',2)->with('get_category.get_news')->orderBy('order','asc')->limit(10)->get();
-      // return  $section_news_sidebar;
-      
-        return view('frontent.home_page', ['highlights' => $highlights, 'trending' => $trending, 'latest_news' => $latest_news,'section_news_main'=>$section_news_main,'section_news_sidebar'=> $section_news_sidebar]);
+        $section_news_main =  NewsArrangment::where('type', 1)->with('get_category.get_news')->orderBy('order', 'asc')->limit(10)->get();
+        $section_news_sidebar =  NewsArrangment::where('type', 2)->with('get_category.get_news')->orderBy('order', 'asc')->limit(10)->get();
+        // return  $section_news_sidebar;
+
+        return view('frontent.home_page', ['highlights' => $highlights, 'trending' => $trending, 'latest_news' => $latest_news, 'section_news_main' => $section_news_main, 'section_news_sidebar' => $section_news_sidebar]);
     }
 
     //latest news
@@ -48,11 +49,13 @@ class frontentController extends Controller
         return view('frontent.latest_news', ['latest_news' => $latest_news]);
     }
 
-    //NEWSES
+    //single news
 
-    public function newses(){
-
-        return view('frontent.newspost');
+    public function newses($slug)
+    {
+        $news = news::with('newsImages','newsVideo','tags')->where('slug',$slug)->first();
+     
+        return view('frontent.single_news',['news'=>$news]);
     }
 
 
@@ -83,47 +86,60 @@ class frontentController extends Controller
             });
         });
         $news = $query->get();
-      
 
-       
-        return view('frontent.block', ['news' => $news,'main'=>$category,'sub'=>$sub_category]);
+
+
+        return view('frontent.block', ['news' => $news, 'main' => $category, 'sub' => $sub_category]);
     }
 
 
-   public function country_wise($condinent,$country = null){
+    public function country_wise($condinent, $country = null)
+    {
 
-    $query = news::query();
+        $query = news::query();
 
-    $query->when($condinent, function ($q) use ($condinent){
+        $query->when($condinent, function ($q) use ($condinent) {
 
-        return $q->whereHas('condinent', function ($q) use ($condinent){
+            return $q->whereHas('condinent', function ($q) use ($condinent) {
 
-            $q->where('slug', $condinent);
+                $q->where('slug', $condinent);
+            });
         });
 
-    });
+        $query->when($country, function ($q) use ($country) {
 
-    $query->when($country, function ($q) use ($country){
+            return $q->whereHas('country', function ($q) use ($country) {
 
-        return $q->whereHas('country', function ($q) use ($country){
-
-            $q->where('slug', $country);
+                $q->where('slug', $country);
+            });
         });
 
-    });
+
+
+        $news = $query->get();
 
 
 
-    $news = $query->get();
+        return view('frontent.dual', ['news' => $news, 'main' => $condinent, 'sub' => $country]);
+    }
+    //tagwise news
+    public function tag(Request $request){
+        $query = news::query();
+        $query->wherehas('tags',function($q) use ($request){
+            $q->where('slug',$request->tag_name);
+        });
 
-    
+        $news = $query->get();
 
-    return view('frontent.dual',['news'=>$news, 'main'=>$condinent, 'sub'=>$country]);
+        return view('frontent.block',['news' => $news, 'main' => 'tags', 'sub' => $request->tag_name]);
+        
+    }
 
+    //seaech functionalilty
+    public function search(Request $request){
+        $result = news::where('NewsHeading', 'LIKE', '%' . $request->query_param .'%')->get();
 
-
-   }
-
-
-
+        return view('frontent.block',['news' => $result, 'main' => 'search', 'sub' => '']);
+        
+    }
 }

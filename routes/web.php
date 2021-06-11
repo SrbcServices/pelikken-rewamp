@@ -10,11 +10,18 @@ use App\Http\Controllers\SourceController;
 use App\Http\Controllers\AdsController;
 use App\Http\Controllers\frontentController;
 use App\Http\Controllers\NewsController;
-use App\Http\Controllers\NewsArrangmentController;
+use App\Http\Controllers\settingsController;
+use App\Http\Controllers\aboutController;
+
+
+
+  
+    
 
 Route::get('/admin', function () {
     return view('layouts.admin_layout');
 });
+
 
 
 //category
@@ -92,6 +99,20 @@ Route::get('/fetch_sub_category/{id}',[NewsController::class,'fetch_sub_category
 Route::get('/fetch_country/{id}',[NewsController::class,'fetch_country']);
 
 //header
+
+//settings
+
+Route::get('/settings',[settingsController::class,'settings']);
+
+Route::post('/settings',[settingsController::class,'store']);
+
+Route::get('/about',[aboutController::class,'about']);
+
+Route::post('/about',[aboutController::class,'store']); 
+
+
+
+
 Route::get('/fetch_sub_category/{id}',[NewsController::class,'fetch_sub_category']);
 Route::get('/fetch_country/{id}',[NewsController::class,'fetch_country']);
 Route::get('/edit-news/{id}',[NewsController::class,'edit'] );
@@ -137,7 +158,10 @@ Route::get('/world',[frontentController::class,'world']);
 // Route::get('/world',[frontentController::class,'country']);
 
 Route::get('/world/{condinent}/{country?}',[frontentController::class,'country_wise']);
+Route::get('/pelikken/news/{news}',[frontentController::class,'newses']);
+Route::get('/pelikken/news/topics/related/tag',[frontentController::class,'tag']);
 
+//search routes
 
-
+Route::get('/search',[frontentController::class,'search']);
 
