@@ -92,6 +92,7 @@ class NewsController extends Controller
                 $news = new news();
                 $news->NewsHeading = $request->news_heading;
                 $news->SubHeading = $request->news_sub_heading;
+                $news->slug = str_replace(' ','_',$request->news_heading);
                 $news->Source = $request->source;
                 $news->Condinent = $request->Condinent;
                 $news->Country = $request->Country;
@@ -204,6 +205,7 @@ class NewsController extends Controller
         $news = news::find($id);
         $news->NewsHeading = $request->News_Heading;
         $news->SubHeading = $request->Sub_Heading;
+        $news->slug = str_replace(' ','_',$request->News_Heading);
         $news->Source = $request->source;
         $news->Condinent = $request->condinent;
         $news->Country = $request->condinent;

@@ -10,42 +10,15 @@ use App\Http\Controllers\SourceController;
 use App\Http\Controllers\AdsController;
 use App\Http\Controllers\frontentController;
 use App\Http\Controllers\NewsController;
+use App\Http\Controllers\NewsArrangmentController;
 use App\Http\Controllers\settingsController;
 use App\Http\Controllers\aboutController;
-
-
-
-  
-    
+use App\Http\Controllers\termsController;
+use App\Http\Controllers\privacyController;
+use App\Http\Controllers\contactController;
 
 Route::get('/admin', function () {
     return view('layouts.admin_layout');
-});
-
-Route::get('/sub_category', function () {
-    return view('admin.sub-category');
-});
-Route::get('/tags', function () {
-    return view('admin.tags');
-});
-Route::get('/condinent', function () {
-    return view('admin.condinent');
-});
-Route::get('/country', function () {
-    return view('admin.country');
-});
-Route::get('/source', function () {
-    return view('admin.source');
-});
-Route::get('/ads', function () {
-    return view('admin.ads');
-});
-Route::get('/news_video', function () {
-    return view('admin.news_video');
-});
-
-Route::get('/comments', function () {
-    return view('admin.comments');
 });
 
 
@@ -143,9 +116,24 @@ Route::get('/news',[frontentController::class,'newses']);
 
 //Terms and condition
 
-Route::get('/terms',[aboutController::class,'terms']);
+Route::get('/terms',[termsController::class,'terms']);
+Route::post('/terms',[termsController::class,'terms_store']);
 
+//privacy Policy
 
+Route::get('/privacy',[privacyController::class,'privacy']);
+
+Route::post('/privacy',[privacyController::class,'privacy_store']);
+
+//contact as
+
+Route::get('/contact',[contactController::class,'contact']);
+
+Route::post('/contact',[contactController::class,'store']);
+
+//user blade
+
+Route::get('/user',[contactController::class,'users']);
 
 
 Route::get('/fetch_sub_category/{id}',[NewsController::class,'fetch_sub_category']);
@@ -173,9 +161,14 @@ Route::post('/add-news',[NewsController::class,'store']);
 Route::post('/news/delete',[NewsController::class,'delete_news']);
 Route::post('news/update/options/view',[NewsController::class,'update_single_all']);
 
+Route::get('/arrange-news',[NewsArrangmentController::class,'index']);
+Route::post('/arrange-news',[NewsArrangmentController::class,'store']);
+Route::post('/delete-section',[NewsArrangmentController::class,'delete']);
 
 
-//frontent news showing area users
+
+//frontent news showing area users****************************************************************************
+//************************************************************************************************************
 Route::get('/', [frontentController::class,'index']); 
 Route::get('/latest-news',[frontentController::class,'latest_news']);
 

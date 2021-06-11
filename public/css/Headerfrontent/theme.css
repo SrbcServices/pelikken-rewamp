@@ -15805,3 +15805,13 @@ textarea::placeholder {
   margin: 0;
   padding: 0;
 }
+.not-found{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  }
+  .not-found img{
+    width: 40%;
+    height: auto;
+  }

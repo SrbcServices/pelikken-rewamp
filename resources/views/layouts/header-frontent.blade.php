@@ -123,20 +123,20 @@
                                 <li><a href="/">Home <i class="fal fa-angle-down"></i></a>
                                     
                                 </li>
-                                <li><a href="latest-news">Latest News <i class="fal fa-angle-down"></i></a>
+                                <li><a href="/latest-news">Latest News <i class="fal fa-angle-down"></i></a>
                                     
                                 </li>
                              @if(count(quantinent())>0)
-                                <li><a href="world">World <i class="fal fa-angle-down"></i></a>
+                                <li><a href="/world">World <i class="fal fa-angle-down"></i></a>
                              
                                  
                                     <ul>
                                         @foreach (quantinent() as $condinent)
-                                        <li><a href="/{{$condinent->slug}}">{{$condinent->Condinent_Name}}<i class="fal fa-angle-right"></i></a>
+                                        <li><a href="/world/{{$condinent->slug}}">{{$condinent->Condinent_Name}}<i class="fal fa-angle-right"></i></a>
                                             @if(count($condinent->country)>0)
                                               <ul>
                                                 @foreach ($condinent->country as $country)
-                                                   <li><a href="/{{$condinent->slug}}/{{$country->slug}}">{{$country->country_name}}</a>
+                                                   <li><a href="/world/{{$condinent->slug}}/{{$country->slug}}">{{$country->country_name}}</a>
                                                    </li>
                                                 @endforeach
                                                </ul>
@@ -156,12 +156,12 @@
 
                                 @if(count(menu_helper())>0)
                                 @foreach (menu_helper() as $category)
-                                <li><a href="/{{$category->slug}}">{{$category->category_name}}<i class="fal fa-angle-down"></i></a>
+                                <li><a href="/news/{{$category->slug}}">{{$category->category_name}}<i class="fal fa-angle-down"></i></a>
                                     @if(count($category->get_subcategories)>0)
                                     <ul>
                                         
                                             @foreach ($category->get_subcategories as $item)
-                                            <li><a href="/{{$category->slug}}/{{$item->slug}}">{{$item->sub_category_name}}</a>
+                                            <li><a href="/news/{{$category->slug}}/{{$item->slug}}">{{$item->sub_category_name}}</a>
                                             </li>
                                             @endforeach
                                         

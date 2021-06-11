@@ -100,13 +100,13 @@
 
                                 <tr>
                                     <td>{{$sub_category->id}}</td>
-                                    <td>{{$sub_category->category_name}}</td>
+                                    <td>{{$sub_category->category->category_name}}</td>
                                     <td>{{$sub_category->sub_category_name}}</td>
                                     <td>{{$sub_category->slug}}</td>
                                     <td>
                                     <button type="button" id="edit_category" class="btn btn-secondary" data-id="{{$sub_category->id}}"><i class="fas fa-edit"></i></button>
                                     <button type="button" id="delete_category" class="btn btn-secondary" data-id="{{$sub_category->id}}"><i class="fas fa-trash-alt"></i></button>
-                                    </td>
+                                    </td>   
                                 </tr>
                                 
                              @endforeach

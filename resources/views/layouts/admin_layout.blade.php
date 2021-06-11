@@ -96,7 +96,7 @@
                         <a href="#" class="dropdown-item">
                             <!-- Message Start -->
                             <div class="media">
-                                <img src="{{ asset('images/user1.jpg') }}" alt="User Avatar"
+                                <img src="{{ asset('/images/user1.jpg') }}" alt="User Avatar"
                                     class="img-size-50 mr-3 img-circle">
                                 <div class="media-body">
                                     <h3 class="dropdown-item-title">
@@ -287,6 +287,12 @@
                                         <p>Add News</p>
                                     </a>
                                 </li>
+                                <li class="nav-item">
+                                    <a href="/arrange-news" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Arrange news</p>
+                                    </a>
+                                </li>
                                
 
                             </ul>
@@ -303,7 +309,7 @@
                         <!--COMMENTS END-->
                         <!--messages Start-->
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="/messages" class="nav-link">
                                 <i class="fa fa-comment" aria-hidden="true"></i> &nbsp; <p>
                                     Messages
                                 </p>
@@ -312,7 +318,7 @@
                         <!--MESSAGES END-->
                         <!--ADS START-->
                         <li class="nav-item">
-                            <a href="ads" class="nav-link">
+                            <a href="/ads" class="nav-link">
                                 <i class="fas fa-ad"></i>&nbsp;
                                 <p>
                                     Ads
@@ -330,31 +336,31 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="./settings" class="nav-link">
+                                    <a href="/settings/general" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>General Settings</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="./about" class="nav-link">
+                                    <a href="/settiings/about" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>About Page</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="./layout/top-nav.html" class="nav-link">
+                                    <a href="./terms" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Terms & conditions</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="./layout/top-nav.html" class="nav-link">
+                                    <a href="./privacy" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Privacy and Policy</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="./layout/top-nav.html" class="nav-link">
+                                    <a href="./contact" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Contact Us</p>
                                     </a>

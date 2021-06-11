@@ -25,7 +25,7 @@
                         <div class="single_post post_type3 post_type12 mb30">
                             <div class="post_img">
                                 <div class="img_wrap">
-                                    <a href="#">
+                                    <a href="/pelikken/news/{{$latest->slug}}">
 
                                         <img src={{ asset('uploads/news/' . $latest->ThumbImage . '')}} style="width:100%, object-fit:cover;">
                                         
@@ -33,20 +33,24 @@
                                 </div>   
                             </div>
                             <div class="single_post_text">
-                                <div class="meta3"> <a href="#">{{$latest->category->category_name}}</a>
-                                    <a href="#"></a>
+                                <div class="meta3"> <a href="/news/{{$latest->category->slug}}">{{$latest->category->category_name}}</a>
+                                    <a href=href="/pelikken/news/{{$latest->slug}}"></a>
                                 </div>
-                                <h4><a href="post1.html">{{$latest->NewsHeading}}</a></h4>
+                                <h4><a href="/pelikken/news/{{$latest->slug}}">{{$latest->NewsHeading}}</a></h4>
                                 <div class="space-10"></div>
                                 <p class="post-p"> {{$latest->SubHeading}} </p>
-                                <div class="space-20"></div> <a href="#" class="readmore">Read more</a>
+                                <div class="space-20"></div> <a href="/pelikken/news/{{$latest->slug}}" class="readmore">Read more</a>
                             </div>
                         </div>
 
                         @endforeach
 
-                        @endif
-                        
+                            
+                    @else
+                    <div class="not-found">
+                        <img src="{{asset('images/not-found.png')}}"/>
+                    </div>
+@endif
                     </div>
                 </div>
             </div>

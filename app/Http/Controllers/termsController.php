@@ -3,22 +3,22 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\about;
+use App\Models\terms;
 
-class aboutController extends Controller
+class termsController extends Controller
 {
-    public function about(){
+    public function terms(){
 
-      $about = about::first();
-      
-    return view('admin.about',['about'=>$about]);
+        $terms = terms::first();
+
+        return view('admin.termscondition', ['terms'=>$terms]);
     }
 
+    public function terms_store(Request $request){
 
-    public function store(Request $request){
 
         $validated = \Validator::make($request->all(),[
-            'about_discription' => 'required',
+            'terms_condition' => 'required',
 
             ]);
 
@@ -30,12 +30,12 @@ class aboutController extends Controller
                 ]);
             }
 
-            $available = about::get();
+            $available = terms::get();
 
              if(count($available)>0){
-                $about = about::first();
-                $about->AboutDiscription = $request->about_discription;
-                $saved = $about->save();
+                $terms = terms::first();
+                $terms->TermsCondition = $request->terms_condition;
+                $saved = $terms->save();
 
                 if($saved){
                     return response()->json([
@@ -46,9 +46,9 @@ class aboutController extends Controller
 
              }
              else{
-                $about = new about();
-                $about->AboutDiscription = $request->about_discription;
-                $saved = $about->save();
+                $terms = new terms();
+                $terms->TermsCondition = $request->terms_condition;
+                $saved = $terms->save();
              }
 
              if(!$saved){
@@ -66,6 +66,6 @@ class aboutController extends Controller
                 
             ]);
 
-    }
 
+    }
 }

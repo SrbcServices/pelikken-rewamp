@@ -25,5 +25,8 @@ class category extends Model
         return $this->hasOne(subCategory::class,'id','news_id');
         
      }
-}
 
+     public function get_news(){
+        return $this->hasMany(news::class,'Category','id');
+     }
+    }
