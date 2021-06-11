@@ -6,16 +6,21 @@
     <div class="container">
         <div class="row">
             <div class="col-12 col-md-10 col-lg-8 m-auto">
-                <div class="bridcrumb"> <a href="#">Home</a> / Archive / post 1</div>
+                <div class="bridcrumb"> <a href="#">Home</a> / news /{{$news->category->category_name}}</div>
             </div>
         </div>
         <div class="space-30"></div>
         <div class="row">
             <div class="col-12 col-md-10 col-lg-8 m-auto">
-                <img src="{{asset('img/news/single_post1.jpg')}}" alt="">
+               @if($news->newsImages)
+               <img src="{{asset('uploads/news_banners/'.$news->newsImages->ImageName.'')}}" alt="">
+               @else
+               <img src="{{asset('uploads/news/'.$news->ThumbImage.'')}}" alt="">
+               @endif 
+              
                 <div class="space-20"></div>
                 <div class="single_post_heading">
-                    <h1>Japan’s virus success has puzzled the world. Is its luck running out?</h1>
+                    <h1>{{$news->NewsHeading}}</h1>
                 </div>
                 <div class="space-20"></div>
                 <div class="row">
@@ -25,24 +30,26 @@
                                 <div class="author_img_wrap">
                                     <img src="{{asset('img/news/single_post1.jpg')}}" alt="">
                                 </div>
-                            </div> <a href="#">Shuvas Chandra</a>
+                            </div> <a href="#">{{$news->source->source_name}}</a>
                             <ul>
-                                <li><a href="#">March 26, 2020</a>
+                                <li><a href="#">{{$news->local}}</a>
                                 </li>
-                                <li>Updated 1:58 p.m. ET</li>
+                                <li>Updated {{$news->updated}}</li>
                             </ul>
                         </div>
                     </div>
                     <div class="col-md-6 align-self-center">
                         <div class="author_social inline text-right">
                             <ul>
-                                <li><a href="#"><i class="fab fa-instagram"></i></a>
+                                
+                                <li><a href="https://www.facebook.com/sharer/sharer.php?u={{url()->current()}}&title={{$news->NewsHeading}}" target="_blank" ><i class="fab fa-facebook-f"></i></a>
                                 </li>
-                                <li><a href="#"><i class="fab fa-facebook-f"></i></a>
+                                <li><a href="https://www.linkedin.com/shareArticle?url={{url()->current()}}&title={{$news->NewsHeading}}"
+
+                                     target="_blank" ><i class="fab fa-linkedin"></i></a>
                                 </li>
-                                <li><a href="#"><i class="fab fa-youtube"></i></a>
-                                </li>
-                                <li><a href="#"><i class="fab fa-instagram"></i></a>
+                                
+                                <li><a href="https://twitter.com/intent/tweet?url={{url()->current()}}&title={{$news->NewsHeading}}"><i class="fab fa-twitter"></i></a>
                                 </li>
                             </ul>
                         </div>
@@ -53,7 +60,7 @@
                     <div class="col-12">
                         <div class="page_comments">
                             <ul class="inline">
-                                <li class="page_category">HEALTH</li>
+                                <li class="page_category">{{$news->sub_category ? $news->sub_category->sub_category_name : '' }}</li>
                                 <li><i class="fas fa-comment"></i>563</li>
                                 <li><i class="fas fa-fire"></i>536</li>
                             </ul>
@@ -62,103 +69,65 @@
                 </div>
                 <div class="space-20"></div>
                 <div>
-                    <p>Entilators will be taken from certain New York hospitals and redistributed to the worst-hit parts
-                        of the state under an order to be signed by Governor Andrew Cuomo.
-                        <br>
-                        <br>New York saw its highest single-day increase in deaths, up by 562 to 2,935 - nearly half of
-                        all virus-related US deaths recorded yesterday. The White House may advise those in virus
-                        hotspots to wear face coverings in public to help stem the spread.\
-                        <br>
-                        <br>The US now has 245,658 Covid-19 cases.
-                        <br>
-                        <br>A shortage of several hundred ventilators in New York City, the epicentre of the outbreak in
-                        the US, prompted Mr Cuomo to say that he will order the machines be taken from various parts of
-                        the state and give them to harder-hit areas.
-                        <br>
-                        <br>Amid a deepening crisis, top health official <span class="bold"> Dr Anthony Fauci</span> has
-                        said he believes all states should issue stay-at-home orders.
-                        <br>
-                        <br>“I don’t understand why that’s not happening,” Dr Fauci told CNN on Thursday. “If you look
-                        at what’s going on in this country, I just don’t understand why we’re not do ingthat.”
-                        <br>
-                        <br>“You’ve got to put your foot on the accelerator to bring that number down,” he added,
-                        referring to infection and death rates.
-                    </p>
+                    {!!$news->NewsDiscription!!}
                 </div>
-
+                <div class="space-20"></div>
+                <div class="tags">
+                    <ul class="inline">
+                        <li class="tag_list"><i class="fas fa-tag"></i> tags</li>
+                        @if(count($news->tags)>0)
+                        @foreach ($news->tags as $tag)
+                        <li><a href="/pelikken/news/topics/related/tag?tag_name={{$tag->slug}}">{{$tag->tag_name}}</a>
+                        </li> 
+                        @endforeach
+                        
+                        @else
+                        No Tags Found
+                        @endif
+                    </ul>
+                </div>
+                <div class="space-20"></div>
             </div>
         </div>
     </div>
     {{-- latest News --}}
-
+@if(count($news->get_previous_news())>0)
     <div class="fourth_bg padding6030">
         <div class="container">
             <div class="row">
                 <div class="col-12">
                     <div class="heading">
-                        <h2 class="widget-title">Our Latest Blog</h2>
+                        <h2 class="widget-title">Previous News</h2>
                     </div>
                 </div>
             </div>
-            <div class="row justify-content-center">
+            <div class="row justify-content-left">
+                @foreach ($news->get_previous_news() as $item)
+                    
+               
                 <div class="col-md-6 col-lg-4">
                     <div class="single_post post_type3 mb30">
                         <div class="post_img">
-                            <a href="#">
-                                <img src="{{asset('img/news/single_post1.jpg')}}" alt="">
-                            </a>
+                            {{-- <a href="#">
+                                <img src="{{asset('uploads/news/'.$item->ThumbImage.'')}}" alt="">
+                            </a> --}}
                         </div>
                         <div class="single_post_text">
-                            <div class="meta3"> <a href="#">TECHNOLOGY</a>
-                                <a href="#">March 26, 2020</a>
+                            <div class="meta3"> <a href="/news/{{$item->category->category_name}}">{{$item->category->category_name}}</a>
+                                <a href="#">{{$news->local}}</a>
                             </div>
-                            <h4><a href="post1.html">There may be no consoles in the future ea exec says</a></h4>
+                            <h4><a href="/pelikken/news/{{$item->slug}}">{{$item->NewsHeading}}</a></h4>
                             <div class="space-10"></div>
-                            <p class="post-p">The property, complete with 30-seat screening from room, a 100-seat
-                                amphitheater and a swimming pond with sandy shower…</p>
+                            <p class="post-p">{{$item->SubHeading}}</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="single_post post_type3 mb30">
-                        <div class="post_img">
-                            <a href="#">
-                                <img src="{{asset('img/news/single_post1.jpg')}}" alt="">
-                            </a>
-                        </div>
-                        <div class="single_post_text">
-                            <div class="meta3"> <a href="#">TECHNOLOGY</a>
-                                <a href="#">March 26, 2020</a>
-                            </div>
-                            <h4><a href="post1.html">There may be no consoles in the future ea exec says</a></h4>
-                            <div class="space-10"></div>
-                            <p class="post-p">The property, complete with 30-seat screening from room, a 100-seat
-                                amphitheater and a swimming pond with sandy shower…</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="single_post post_type3 mb30">
-                        <div class="post_img">
-                            <a href="#">
-                                <img src="{{asset('img/news/single_post1.jpg')}}" alt="">
-                            </a>
-                        </div>
-                        <div class="single_post_text">
-                            <div class="meta3"> <a href="#">TECHNOLOGY</a>
-                                <a href="#">March 26, 2020</a>
-                            </div>
-                            <h4><a href="post1.html">There may be no consoles in the future ea exec says</a></h4>
-                            <div class="space-10"></div>
-                            <p class="post-p">The property, complete with 30-seat screening from room, a 100-seat
-                                amphitheater and a swimming pond with sandy shower…</p>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
+                
             </div>
         </div>
     </div>
-
+@endif
 
     {{-- Latest News End --}}
 
@@ -257,4 +226,12 @@
 		</div>
 <!--:::::  COMMENT FORM AREA end :::::::-->
         
+@endsection
+
+@section('scripts')
+    <script>
+    function share_social(platform){
+        
+    }
+    </script>
 @endsection

@@ -28,8 +28,8 @@
             <div class="row">
                 <div class="col-8 text-center m-auto">
                     <div class="v1search_form">
-                        <form action="#">
-                            <input type="search" placeholder="Search Here...">
+                        <form action="/search?q=" method="get">
+                            <input type="search" placeholder="Search Here..." name="query_param">
                             <button type="submit" class="cbtn1">Search</button>
                         </form>
                     </div>
@@ -512,6 +512,7 @@
 	<script src="{{asset('/js/frontent/stellarnav.js')}}"></script>
 	<script src="{{asset('/js/frontent/wow.min.js')}}"></script>
 	<script src="{{asset('/js/frontent/main.js')}}"></script>
+    @yield('scripts')
 </body>
 
 </html>

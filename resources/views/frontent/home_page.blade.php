@@ -21,7 +21,7 @@
                                      <div class="meta meta_separator1">	<a href="/news/{{$news->category->slug}}">{{$news->category->category_name}}</a>
                                         <a href="#">March 26, 2020</a>
                                     </div>
-                                    <h4><a class="play_btn" href="/pelikken/news/{{$news->slug}}">{{substr($news->NewsHeading,0,60)}}</a></h4>
+                                    <h4><a class="" href="/pelikken/news/{{$news->slug}}">{{substr($news->NewsHeading,0,60)}}</a></h4>
                                     <div class="space-10"></div>
                                    <p class="post-p">{{substr($news->SubHeading,0,140)}}..</p> 
                                 </div>

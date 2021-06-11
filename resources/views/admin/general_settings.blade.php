@@ -13,23 +13,27 @@
         @csrf
         <div class="form-group" style="margin-right: 20px; margin-top:0;">
             <label style="color: grey; padding-top: 30px;">Instagram Link</label>
-            <input type="social" value="{{$settings? $settings->Instagram? $settings->Instagram:'':''}}" class="form-control" name="instagram" id="social_media" placeholder="Copy Links">
+            <input type="social" value="{{$settings? $settings->Instagram ? $settings->Instagram : '' :'' }}" class="form-control" name="instagram" id="social_media" placeholder="Copy Links">
+    
         </div>
 
         <div class="form-group" style="margin-right: 20px">
             <label style="color: grey">Facebook Link</label>
-            <input type="social" value="{{$settings? $settings->Facebook? $settings->Facebook:'':''}}" class="form-control" name="facebook" id="social_media" placeholder="Copy Links">
+            <input type="social" value="{{$settings? $settings->Facebook ? $settings->Facebook : '' :'' }}" class="form-control" name="facebook" id="social_media" placeholder="Copy Links">
+          
         </div>
 
 
         <div class="form-group" style="margin-right: 20px">
             <label style="color: grey">Youtube Link</label>
-            <input type="social" value="{{$settings? $settings->Youtube? $settings->Youtube:'':''}}" class="form-control" name="youtube" id="social_media" placeholder="Copy Links">
+            <input type="social" value="{{$settings? $settings->Youtube ? $settings->Youtube : '' :'' }}" class="form-control" name="youtube" id="social_media" placeholder="Copy Links">
+
         </div>
 
         <div class="form-group" style="margin-right: 20px">
             <label style="color: grey">Twitter Link</label>
-            <input type="social" value="{{$settings? $settings->Twitter? $settings->Twitter:'':''}}" class="form-control" name="twitter" id="social_media" placeholder="Copy Links">
+            <input type="social" value="{{$settings? $settings->Twitter ? $settings->Twitter : '' :'' }}" class="form-control" name="twitter" id="social_media" placeholder="Copy Links">
+          
         </div>
 
 

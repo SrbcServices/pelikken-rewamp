@@ -22,6 +22,7 @@ Route::get('/admin', function () {
 });
 
 
+
 //category
 
 Route::post('/category',[CategoryController::class,'store']);
@@ -181,7 +182,10 @@ Route::get('/world',[frontentController::class,'world']);
 // Route::get('/world',[frontentController::class,'country']);
 
 Route::get('/world/{condinent}/{country?}',[frontentController::class,'country_wise']);
+Route::get('/pelikken/news/{news}',[frontentController::class,'newses']);
+Route::get('/pelikken/news/topics/related/tag',[frontentController::class,'tag']);
 
+//search routes
 
-
+Route::get('/search',[frontentController::class,'search']);
 
