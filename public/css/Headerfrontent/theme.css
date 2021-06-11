@@ -43,9 +43,8 @@ font weight
 .theme-input input {
   font-size: 16px;
   font-weight: 400;
-  color: #1091FF;
+  color: #2e6069;
 }
-
 .signup_form form input.cbtn, .theme-3 .signup_form form input.cbtn, a.cbtn1,
 button.cbtn1,
 input.cbtn1 {
@@ -54,7 +53,7 @@ input.cbtn1 {
   text-transform: uppercase;
   color: #FFFFFF;
   padding: 15px 30px;
-  background: #1091FF;
+  background: #2e6069;
   border: none;
 }
 
@@ -7070,7 +7069,7 @@ body.dark-theme {
   transition: all 0.3s;
 }
 .dark-theme .single_post:hover .single_post_text a {
-  color: #secondary_color;
+  color: none;
   transition: all 0.3s;
 }
 .dark-theme .topbar ul {
@@ -13843,7 +13842,7 @@ a.up_btn {
   width: 50px;
   text-align: center;
   line-height: 70px;
-  background: #FF5555;
+  background: #2e6069;
   color: #fff;
   border-radius: 50px;
   position: fixed;
