@@ -308,6 +308,7 @@
         });
         $('#submit-news').on('click', function(ev) {
             ev.preventDefault();
+            
 
             resize.croppie('result', {
                 type: 'canvas',

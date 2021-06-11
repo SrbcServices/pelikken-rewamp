@@ -3,22 +3,22 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\about;
+use App\Models\privacy;
 
-class aboutController extends Controller
+class privacyController extends Controller
 {
-    public function about(){
+    public function privacy(){
 
-      $about = about::first();
-      
-    return view('admin.about',['about'=>$about]);
+      $privacy = privacy::first();
+
+        return view('admin.privacypolicy',['privacy'=>$privacy]);
     }
 
+    public function privacy_store(Request $request){
 
-    public function store(Request $request){
 
         $validated = \Validator::make($request->all(),[
-            'about_discription' => 'required',
+            'privacy_policy' => 'required',
 
             ]);
 
@@ -30,12 +30,12 @@ class aboutController extends Controller
                 ]);
             }
 
-            $available = about::get();
+            $available = privacy::get();
 
              if(count($available)>0){
-                $about = about::first();
-                $about->AboutDiscription = $request->about_discription;
-                $saved = $about->save();
+                $privacy = privacy::first();
+                $privacy->PrivacyPolicy = $request->privacy_policy;
+                $saved = $privacy->save();
 
                 if($saved){
                     return response()->json([
@@ -46,9 +46,9 @@ class aboutController extends Controller
 
              }
              else{
-                $about = new about();
-                $about->AboutDiscription = $request->about_discription;
-                $saved = $about->save();
+                $privacy = new privacy();
+                $privacy->PrivacyPolicy = $request->privacy_policy;
+                $saved = $privacy->save();
              }
 
              if(!$saved){
@@ -66,6 +66,6 @@ class aboutController extends Controller
                 
             ]);
 
-    }
 
+    }
 }

@@ -10,13 +10,12 @@ use App\Http\Controllers\SourceController;
 use App\Http\Controllers\AdsController;
 use App\Http\Controllers\frontentController;
 use App\Http\Controllers\NewsController;
+use App\Http\Controllers\NewsArrangmentController;
 use App\Http\Controllers\settingsController;
 use App\Http\Controllers\aboutController;
-
-
-
-  
-    
+use App\Http\Controllers\termsController;
+use App\Http\Controllers\privacyController;
+use App\Http\Controllers\contactController;
 
 Route::get('/admin', function () {
     return view('layouts.admin_layout');
@@ -106,11 +105,36 @@ Route::get('/settings',[settingsController::class,'settings']);
 
 Route::post('/settings',[settingsController::class,'store']);
 
+//about page
+
 Route::get('/about',[aboutController::class,'about']);
 
 Route::post('/about',[aboutController::class,'store']); 
 
+//news
 
+Route::get('/news',[frontentController::class,'newses']);
+
+//Terms and condition
+
+Route::get('/terms',[termsController::class,'terms']);
+Route::post('/terms',[termsController::class,'terms_store']);
+
+//privacy Policy
+
+Route::get('/privacy',[privacyController::class,'privacy']);
+
+Route::post('/privacy',[privacyController::class,'privacy_store']);
+
+//contact as
+
+Route::get('/contact',[contactController::class,'contact']);
+
+Route::post('/contact',[contactController::class,'store']);
+
+//user blade
+
+Route::get('/user',[contactController::class,'users']);
 
 
 Route::get('/fetch_sub_category/{id}',[NewsController::class,'fetch_sub_category']);

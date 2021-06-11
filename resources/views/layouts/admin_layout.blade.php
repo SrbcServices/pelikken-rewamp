@@ -96,7 +96,7 @@
                         <a href="#" class="dropdown-item">
                             <!-- Message Start -->
                             <div class="media">
-                                <img src="{{ asset('images/user1.jpg') }}" alt="User Avatar"
+                                <img src="{{ asset('/images/user1.jpg') }}" alt="User Avatar"
                                     class="img-size-50 mr-3 img-circle">
                                 <div class="media-body">
                                     <h3 class="dropdown-item-title">
@@ -348,19 +348,19 @@
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="./layout/top-nav.html" class="nav-link">
+                                    <a href="./terms" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Terms & conditions</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="./layout/top-nav.html" class="nav-link">
+                                    <a href="./privacy" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Privacy and Policy</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="./layout/top-nav.html" class="nav-link">
+                                    <a href="./contact" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Contact Us</p>
                                     </a>

@@ -23,7 +23,7 @@
                             <div class="post_img">
                                 <div class="img_wrap">
                                     <a href="/pelikken/news/{{$newses->slug}}">
-                                        <img src="{{asset('/uploads/news/' .$newses->ThumbImage)}}" alt="">
+                                        <img src="{{asset('/uploads/news/' .$newses->ThumbImage )}}" alt="">
                                     </a>
                                 </div>
                             </div>
