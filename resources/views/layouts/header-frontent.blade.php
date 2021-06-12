@@ -48,18 +48,18 @@
                     <div class="trancarousel_area">
                         <p class="trand">Trending</p>
                         <div class="trancarousel owl-carousel nav_style1">
-                            <div class="trancarousel_item">
-                                <p><a href="#">Top 10 Best Movies of 2018 So Far: Great Movies</a>
+
+                            @if (count($global_trending_featured)>0)
+                            @foreach ($global_trending_featured as $trending)
+                            <div class="trancarousel_item"> 
+                            
+                                <p><a href="/pelikken/news/{{$trending->slug}}">{{$trending->NewsHeading}}</a>
                                 </p>
+
                             </div>
-                            <div class="trancarousel_item">
-                                <p><a href="#">Top 10 Best Movies of 2018 So Far: Great Movies</a>
-                                </p>
-                            </div>
-                            <div class="trancarousel_item">
-                                <p><a href="#">Top 10 Best Movies of 2018 So Far: Great Movies</a>
-                                </p>
-                            </div>
+                            @endforeach
+                            @endif
+                           
                         </div>
                     </div>
                 </div>

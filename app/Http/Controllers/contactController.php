@@ -13,7 +13,7 @@ class contactController extends Controller
 
         return view('admin.contact',['contact'=>$contact]);
     }
-
+   
     public function users(){
 
         return view('admin.users');

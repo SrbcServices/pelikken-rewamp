@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\condinent;
 use App\Models\news;
 use App\Models\NewsArrangment;
+use App\Models\contact;
 
 
 class frontentController extends Controller
@@ -24,6 +25,13 @@ class frontentController extends Controller
         \View::share('global_feature_featured', $global_feature_featured);
 
         \View::share('global_trending_featured', $global_trending_featured);
+    }
+    public function contacts(){
+
+        $contacts = contact::first();
+       
+
+        return view('frontent.contact',['contacts'=>$contacts]);
     }
 
     public function index()

@@ -132,6 +132,8 @@ Route::get('/contact',[contactController::class,'contact']);
 
 Route::post('/contact',[contactController::class,'store']);
 
+Route::get('/contacts',[frontentController::class,'contacts']);
+
 //user blade
 
 Route::get('/user',[contactController::class,'users']);

@@ -14123,7 +14123,7 @@ a.social_medium {
   transition: all 0.3s;
 }
 .single_post .single_post_text a:hover {
-  color: #1091FF;
+  color: #307773;
   transition: all 0.3s;
 }
 
@@ -14134,9 +14134,9 @@ a.social_medium {
 .gradient1:after {
   position: absolute;
   content: "";
-  height: 90%;
+  height: 60%;
   width: 100%;
-  background: linear-gradient(0deg, rgba(0, 0.4, 0.7, 1), transparent);
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.7), transparent);
   left: 0;
   bottom: 0;
 }
@@ -14201,7 +14201,7 @@ a.social_medium {
   margin-left: 14px;
 }
 .nav_style1 .owl-nav div:hover {
-  background: #1091FF;
+  background: #307773;
   border-color: #1091FF;
   color: #FFFFFF;
   transition: all 0.3s;
