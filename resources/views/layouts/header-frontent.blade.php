@@ -70,14 +70,16 @@
                         </div>
                         <div class="social1">
                             <ul class="inline">
-                                <li><a href="#"><i class="fab fa-twitter"></i></a>
+                                @if(generalDetails())
+                                <li><a href="{{generalDetails()->Twitter}}"><i class="fab fa-twitter"></i></a>
                                 </li>
-                                <li><a href="#"><i class="fab fa-facebook-f"></i></a>
+                                <li><a href="{{generalDetails()->Facebook}}"><i class="fab fa-facebook-f"></i></a>
                                 </li>
-                                <li><a href="#"><i class="fab fa-youtube"></i></a>
+                                <li><a href="{{generalDetails()->Youtube}}"><i class="fab fa-youtube"></i></a>
                                 </li>
-                                <li><a href="#"><i class="fab fa-instagram"></i></a>
+                                <li><a href="{{generalDetails()->Instagram}}"><i class="fab fa-instagram"></i></a>
                                 </li>
+                                @endif
                             </ul>
                         </div>
                     </div>
@@ -93,8 +95,10 @@
             <div class="row">
                 <div class="col-lg-4 align-self-center">
                     <div class="logo">
-                        <a href="index.html">
-                            <img src="{{asset('/img/Headerfrontend/pellikkenlogo.png')}}">
+                        <a href="/">
+                            @if(generalDetails())
+                            <img src="{{asset('/uploads/logo/'.generalDetails()->LogoImageName.'')}}">
+                            @endif
                         </a>
                     </div>
                 </div>
@@ -233,20 +237,24 @@
                     <div class="col-md-6 align-self-center">
                         <div class="footer_logo logo">
                             <a href="index.html">
-                                <img src="{{asset('/img/Headerfrontend/pellikkenlogo.png')}}">
+                                @if(generalDetails())
+                                <img src="{{asset('uploads/logo/'.generalDetails()->LogoImageName.'')}}">
+                                @endif
                             </a>
                         </div>
                         <div class="social2">
+                            @if(generalDetails())
                             <ul class="inline">
-                                <li><a href="#"><i class="fab fa-instagram"></i></a>
+                                <li><a href="{{generalDetails()->Twitter}}"><i class="fab fa-twitter"></i></a>
                                 </li>
-                                <li><a href="#"><i class="fab fa-facebook-f"></i></a>
+                                <li><a href="{{generalDetails()->Facebook}}"><i class="fab fa-facebook-f"></i></a>
                                 </li>
-                                <li><a href="#"><i class="fab fa-youtube"></i></a>
+                                <li><a href="{{generalDetails()->Youtube}}"><i class="fab fa-youtube"></i></a>
                                 </li>
-                                <li><a href="#"><i class="fab fa-instagram"></i></a>
+                                <li><a href="{{generalDetails()->Instagram}}"><i class="fab fa-instagram"></i></a>
                                 </li>
                             </ul>
+                            @endif
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-4 offset-lg-2 align-self-center">

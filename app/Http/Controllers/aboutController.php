@@ -19,6 +19,8 @@ class aboutController extends Controller
 
         $validated = \Validator::make($request->all(),[
             'about_discription' => 'required',
+            'heading'=>'required',
+            'slogen'=>'required'
 
             ]);
 
@@ -35,6 +37,8 @@ class aboutController extends Controller
              if(count($available)>0){
                 $about = about::first();
                 $about->AboutDiscription = $request->about_discription;
+                $about->heading = $request->heading;
+                $about->slogan = $request->slogen;
                 $saved = $about->save();
 
                 if($saved){
@@ -48,6 +52,8 @@ class aboutController extends Controller
              else{
                 $about = new about();
                 $about->AboutDiscription = $request->about_discription;
+                $about->heading = $request->heading;
+                $about->slogan = $request->slogen;
                 $saved = $about->save();
              }
 

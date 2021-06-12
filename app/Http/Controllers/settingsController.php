@@ -23,6 +23,7 @@ class settingsController extends Controller
             'facebook' => 'required',
             'youtube' => 'required',
             'twitter' => 'required',
+           
      ]);
              if($validated->fails()){
                  return response()->json([
@@ -31,25 +32,42 @@ class settingsController extends Controller
                  ]);
              }
                  // LOGO
-        if ($request->hasFile('newlogo')) {
-            $file = $request->file('newlogo');
-            $filename = $file->getClientOriginalName();
-            $banner_name = time() . str_replace(' ', '_', $filename);
-            //move file to the folder
-            $file->move(public_path('uploads/logo'), $banner_name);
-        }
+       
 
 
              $available = settings::get();
 
              if(count($available)>0){
+                 //save to folder
+                 if ($request->hasFile('newlogo')) {
+                   
+                    $file = $request->file('newlogo');
+                    $filename = $file->getClientOriginalName();
+                    $banner_name = time().str_replace(' ', '_', $filename);
+                    //move file to the folder
+                    $file->move(public_path('uploads/logo'), $banner_name);
+
+                    //check already have a logo
+                    $current_name = $available[0]->LogoImageName;
+                    if($current_name){
+                        $path = public_path('/uploads/logo/'.$current_name.'');
+                        unlink($path);
+                    }
+                }
+        
+
                 $settings = settings::first();
                 $settings->Instagram =$request->instagram;
                 $settings->Facebook = $request->facebook;
                 $settings->Youtube =$request->youtube;
                 $settings->Twitter=$request->twitter;
-                $settings->LogoImageName=$banner_name;
+                if($request->hasFile('newlogo')){
+                    $settings->LogoImageName=$banner_name;
+                }
+                
                 $saved = $settings->save();
+
+               
 
                 if($saved){
                     return response()->json([
@@ -61,13 +79,24 @@ class settingsController extends Controller
              }
 
              else{
+                 //save to folder
+                 if ($request->hasFile('newlogo')) {
+                    
+                    $file = $request->file('newlogo');
+                    $filename = $file->getClientOriginalName();
+                    $banner_name = time() . str_replace(' ', '_', $filename);
+                    //move file to the folder
+                    $file->move(public_path('uploads/logo'), $banner_name);
+                }
 
                 $settings = new settings();
                 $settings->Instagram =$request->instagram;
                 $settings->Facebook = $request->facebook;
                 $settings->Youtube =$request->youtube;
                 $settings->Twitter=$request->twitter;
-                $settings->LogoImageName=$banner_name;
+                if($request->hasFile('newlogo')){
+                    $settings->LogoImageName=$banner_name;
+                }
                 $saved = $settings->save();
 
              }

@@ -9,9 +9,31 @@
 <form>
 @csrf
 <div style="padding-top: 2%; margin: 0 2%">
-    <h5 style="color: grey margin-bottom: 1%;">About Discription</h5>
+    <div class="form-group">
+        <label>
+            <h4 class="text-gray" style="font-size: 18px">Heading</h4>
+        </label>
+
+        <input type="text" name="heading" placeholder=" Enter the Heading" class="form-control" value="{{$about? $about->heading ? $about->heading:'':''}}">
+    </div>
+    <div class="form-group">
+        <label>
+            <h4 class="text-gray" style="font-size: 18px">Slogen</h4>
+        </label>
+
+        <input type="text" name="slogen" placeholder=" Enter the Slogen" class="form-control" value="{{$about? $about->slogan ? $about->slogan:'':''}}">
+    </div>
+    <div class="form-group">
+        <label>
+            <h4 class="text-gray" style="font-size: 18px">Discription</h4>
+        </label>
+    
     <textarea  name="about_discription" id="editor" rows="5" cols="33" required>{{$about? $about->AboutDiscription ? $about->AboutDiscription:'':''}}</textarea>
 
+    </div>
+   
+   
+    
     <button type="submit" id="submit-about" class="btn btn-secondary mt-5" data-sub="submit"
                             style="float: right;margin-bottom:20px;">submit</button>
 
@@ -54,10 +76,12 @@ $(document).on("click", "#submit-about", function(e){
        form.append("_token", "{{csrf_token()}}");
 
        form.append('about_discription',about_discription)
+       form.append('heading',$(`input[name="heading"]`).val())
+       form.append('slogen',$(`input[name="slogen"]`).val())
 
        $.ajax({
 
-        url: "/about",
+        url: "/admin/about",
         type: "post",
         contentType: false,
         processData: false,
