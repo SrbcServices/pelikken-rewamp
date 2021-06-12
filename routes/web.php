@@ -107,9 +107,9 @@ Route::post('/settings',[settingsController::class,'store']);
 
 //about page
 
-Route::get('/about',[aboutController::class,'about']);
+Route::get('admin/about',[aboutController::class,'about']);
 
-Route::post('/about',[aboutController::class,'store']); 
+Route::post('admin/about',[aboutController::class,'store']); 
 
 //news
 
@@ -122,9 +122,9 @@ Route::post('/terms',[termsController::class,'terms_store']);
 
 //privacy Policy
 
-Route::get('/privacy',[privacyController::class,'privacy']);
+Route::get('/admin/privacy',[privacyController::class,'privacy']);
 
-Route::post('/privacy',[privacyController::class,'privacy_store']);
+Route::post('/admin/privacy',[privacyController::class,'privacy_store']);
 
 //contact as
 
@@ -188,4 +188,6 @@ Route::get('/pelikken/news/topics/related/tag',[frontentController::class,'tag']
 //search routes
 
 Route::get('/search',[frontentController::class,'search']);
+Route::get('/about',[frontentController::class,'about']);
+Route::get('/privacy&policy',[frontentController::class,'privacy']);
 

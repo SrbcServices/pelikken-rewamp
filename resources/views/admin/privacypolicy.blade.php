@@ -49,7 +49,7 @@ $(document).on("click", "#submit-privacy", function(e){
 
        $.ajax({
 
-        url: "/privacy",
+        url: "/admin/privacy",
         type: "post",
         contentType: false,
         processData: false,

@@ -4997,9 +4997,9 @@ a.cbtn3:hover {
   max-width: 100%;
 }
 
-.author_about img {
+/* .author_about img {
   border-radius: 50%;
-}
+} */
 
 .contacts.v4 .contact_title:before {
   background: linear-gradient(90deg, #FF5555, #AB50EF);

@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\about;
 use Illuminate\Http\Request;
 use App\Models\condinent;
 use App\Models\news;
 use App\Models\NewsArrangment;
-
+use App\Models\privacy;
 
 class frontentController extends Controller
 {
@@ -142,4 +143,17 @@ class frontentController extends Controller
         return view('frontent.block',['news' => $result, 'main' => 'search', 'sub' => '']);
         
     }
+    //about frontent
+    public function about(){
+        $about = about::first();
+        return view('frontent.about',['about'=>$about]);
+    }
+    //privacy and policy
+    public function privacy(){
+
+        $privacy = privacy::first();
+
+          return view('frontent.privacy',['privacy'=>$privacy]);
+      }
+  
 }
