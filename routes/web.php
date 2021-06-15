@@ -13,6 +13,7 @@ use App\Http\Controllers\NewsController;
 use App\Http\Controllers\NewsArrangmentController;
 use App\Http\Controllers\settingsController;
 use App\Http\Controllers\aboutController;
+use App\Http\Controllers\CommendsController;
 use App\Http\Controllers\termsController;
 use App\Http\Controllers\privacyController;
 use App\Http\Controllers\contactController;
@@ -119,6 +120,7 @@ Route::get('/news',[frontentController::class,'newses']);
 
 Route::get('/terms',[termsController::class,'terms']);
 Route::post('/terms',[termsController::class,'terms_store']);
+Route::get('/terms&condition',[termsController::class,'terms_condition']);
 
 //privacy Policy
 
@@ -191,3 +193,5 @@ Route::get('/search',[frontentController::class,'search']);
 Route::get('/about',[frontentController::class,'about']);
 Route::get('/privacy&policy',[frontentController::class,'privacy']);
 
+//comment routes
+Route::post('/comment',[CommendsController::class,'store']);

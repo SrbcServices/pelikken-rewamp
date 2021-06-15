@@ -821,7 +821,7 @@ ul#newsprk_menu {
     z-index: 2;
 }
 .theme-4 .newsprk_nav li a:hover{
-    color: #FF5555;
+    color: #307773;
 }
 
 .theme-4 .newsprk_nav li ul{
@@ -846,7 +846,7 @@ ul#newsprk_menu {
     width: 100%;
     left: 0;
     top: 0;
-    background: #2E3D4A;
+    background: #307773;
     z-index: -1;
     transition: all .4s;
 }
@@ -867,7 +867,7 @@ ul#newsprk_menu {
     width: 0;
     left: 0;
     bottom: 0;
-    background: #1091FF;
+    background: #307773;
     z-index: -1;
     transition: all .4s;
 }
@@ -892,12 +892,12 @@ ul#newsprk_menu {
 
 
 .newsprk_nav li a:hover{
-    color: #1091FF;
+    color: #307773;
 }
 
 .dark-theme .newsprk_nav li ul{
 
-    background: #29333C;
+    background: #088cff;
 }
 
 
