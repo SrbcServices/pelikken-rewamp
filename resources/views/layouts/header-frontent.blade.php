@@ -207,10 +207,10 @@
                             <div class="temp d-none d-lg-block">
                                 <div class="temp_wap">
                                     <div class="temp_icon">
-                                        <img src="{{asset('/img/Headerfrontend/temp.png')}}">
+                                        <img id="img_loc" src="">
                                     </div>
-                                    <h3 class="temp_count">13</h3>
-                                    <p>San Francisco</p>
+                                    <h3 id="temp"></h3>
+                                    <p id="location"></p>
                                 </div>
                             </div>
                         </div>
@@ -521,6 +521,7 @@
 	<script src="{{asset('/js/frontent/wow.min.js')}}"></script>
 	<script src="{{asset('/js/frontent/main.js')}}"></script>
 	<script src="{{asset('/js/main.js')}}"></script>
+    <script src="https://pelikken.com/js/whether.js"></script>
     @yield('scripts')
 </body>
 
