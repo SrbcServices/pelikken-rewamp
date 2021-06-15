@@ -66,7 +66,7 @@
                 <div class="col-md-6 col-lg-4 align-self-center">
                     <div class="top_date_social text-right">
                         <div class="paper_date">
-                            <p>Thursday, March 26, 2020</p>
+                            <p id="date"></p>
                         </div>
                         <div class="social1">
                             <ul class="inline">
@@ -520,6 +520,7 @@
 	<script src="{{asset('/js/frontent/stellarnav.js')}}"></script>
 	<script src="{{asset('/js/frontent/wow.min.js')}}"></script>
 	<script src="{{asset('/js/frontent/main.js')}}"></script>
+	<script src="{{asset('/js/main.js')}}"></script>
     @yield('scripts')
 </body>
 
