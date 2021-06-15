@@ -55,7 +55,7 @@ class frontentController extends Controller
     public function newses($slug)
     {
         $news = news::with('newsImages','newsVideo','tags')->where('slug',$slug)->first();
-     
+    // return $news;
         return view('frontent.single_news',['news'=>$news]);
     }
 

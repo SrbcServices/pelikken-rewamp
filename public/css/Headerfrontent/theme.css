@@ -4462,7 +4462,7 @@ input.readmore {
 a.readmore:hover,
 button.readmore:hover,
 input.readmore:hover {
-  background: #1091FF;
+  background: #307773;
   color: #FFFFFF !important;
   border-color: transparent;
 }
@@ -13393,7 +13393,7 @@ input.cbtn1, .theme-3 .signup_form form input.cbtn {
   text-transform: uppercase;
   color: #FFFFFF;
   padding: 15px 30px;
-  background: #1091FF;
+  background: #307773;
   border: none;
 }
 
@@ -13938,7 +13938,7 @@ a.up_btn {
   right: 32px;
   height: 40px;
   width: 40px;
-  background: #1091FF;
+  background: #307773;
   text-align: center;
   line-height: 40px;
   font-size: 20px;
