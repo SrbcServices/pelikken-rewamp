@@ -16,6 +16,7 @@ use App\Http\Controllers\aboutController;
 use App\Http\Controllers\termsController;
 use App\Http\Controllers\privacyController;
 use App\Http\Controllers\contactController;
+use App\Http\Controllers\SubscriberController;
 
 Route::get('/admin', function () {
     return view('layouts.admin_layout');
@@ -190,4 +191,11 @@ Route::get('/pelikken/news/topics/related/tag',[frontentController::class,'tag']
 Route::get('/search',[frontentController::class,'search']);
 Route::get('/about',[frontentController::class,'about']);
 Route::get('/privacy&policy',[frontentController::class,'privacy']);
+
+Route::post('/subscribe',[SubscriberController::class,'store']);
+Route::get('/admin/subsciber_update/{id}/{status}',[SubscriberController::class,'update']);
+
+//admin
+Route::get('/admin/subscriber',[subscriberController::class,'index']);
+
 
