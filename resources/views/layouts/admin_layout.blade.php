@@ -308,7 +308,7 @@
                         <!--COMMENTS END-->
                         <!--messages Start-->
                         <li class="nav-item">
-                            <a href="/messages" class="nav-link">
+                            <a href="/admin/message" class="nav-link">
                                 <i class="fa fa-comment" aria-hidden="true"></i> &nbsp; <p>
                                     Messages
                                 </p>

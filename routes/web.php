@@ -16,6 +16,7 @@ use App\Http\Controllers\aboutController;
 use App\Http\Controllers\termsController;
 use App\Http\Controllers\privacyController;
 use App\Http\Controllers\contactController;
+use App\Http\Controllers\FrontentcontactController;
 
 Route::get('/admin', function () {
     return view('layouts.admin_layout');
@@ -193,3 +194,10 @@ Route::get('/search',[frontentController::class,'search']);
 Route::get('/about',[frontentController::class,'about']);
 Route::get('/privacy&policy',[frontentController::class,'privacy']);
 
+//Contact Form
+
+Route::post('/contacts',[FrontentcontactController::class,'store']);
+
+Route::get('/admin/message',[contactController::class,'message']);
+
+Route::get('/admin/message/{id}',[frontentcontactController::class,'update']);

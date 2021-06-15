@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\contact;
+use App\Models\frontentcontact;
 
 class contactController extends Controller
 {
@@ -16,9 +17,16 @@ class contactController extends Controller
    
     public function users(){
 
+       
+
         return view('admin.users');
     }
 
+    public function message(){
+        $message = frontentcontact::get();
+
+        return view('admin.message',['message'=>$message]);
+    }
 
     //store
 
