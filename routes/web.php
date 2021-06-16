@@ -17,6 +17,8 @@ use App\Http\Controllers\termsController;
 use App\Http\Controllers\privacyController;
 use App\Http\Controllers\contactController;
 use App\Http\Controllers\SubscriberController;
+use App\Http\Controllers\dashboardController;
+
 
 Route::get('/admin', function () {
     return view('layouts.admin_layout');
@@ -197,5 +199,5 @@ Route::get('/admin/subsciber_update/{id}/{status}',[SubscriberController::class,
 
 //admin
 Route::get('/admin/subscriber',[subscriberController::class,'index']);
-
+Route::get('/admin/dashboard',[dashboardController::class,'dash']);
 
