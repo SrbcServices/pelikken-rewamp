@@ -90,7 +90,7 @@ class frontentController extends Controller
 
 
 
-        return view('frontent.block', ['news' => $news, 'main' => $category, 'sub' => $sub_category]);
+        return view('frontent.block', ['news' => $news, 'main' => str_replace('_',' ',$category), 'sub' => str_replace('_',' ',$sub_category)]);
     }
 
 

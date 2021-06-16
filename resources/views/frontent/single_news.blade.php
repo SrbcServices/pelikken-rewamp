@@ -151,18 +151,20 @@
 				<div class="row">
 					<div class="col-12 col-lg-10 m-auto">
 						<form id="commend-form">
+                            @csrf
 							<div class="row">
 								<div class="col-md-6">
 									<input type="text" placeholder="Full name" name="full_name">
 								</div>
 								<div class="col-md-6">
 									<input type="email" placeholder="Email address" name="email">
+									<input type="hidden" name="id" value="{{$news->id}}">
 								</div>
 								<div class="col-12">
 									<textarea name="messege" id="messege" cols="30" rows="5" placeholder="Tell us about your opinion…" ></textarea>
 								</div>
 								<div class="col-12">
-									<input type="button" value="POST OPINION" class="cbtn2">
+									<input type="button" value="POST OPINION" class="btn-send" id="du">
 								</div>
 							</div>
 						</form>
@@ -203,15 +205,21 @@
 @endsection
 
 @section('scripts')
+<script src="{{ asset('js/simply-toast.min.js') }}"></script>
     <script>
-   $('#commend-form').on('click',function(){
+   $('#du').on('click',function(){
    $.ajax({
        type: "post",
        url: "/comment",
        data: $('#commend-form').serialize(),
     
        success: function (response) {
-            console.log(response);       
+           if(response.status == 'success'){
+            $.simplyToast(response.message, 'success')
+            $('#commend-form').trigger('reset')
+           }else{
+            $.simplyToast('All fields required', 'danger')
+           }  
        }
    });
    })

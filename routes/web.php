@@ -195,3 +195,7 @@ Route::get('/privacy&policy',[frontentController::class,'privacy']);
 
 //comment routes
 Route::post('/comment',[CommendsController::class,'store']);
+
+Route::get('/admin/comment',[CommendsController::class,'comment_admin']);
+
+Route::get('/admin/comment/{id}/{status?}',[CommendsController::class,'update']);
