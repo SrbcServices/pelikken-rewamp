@@ -18,6 +18,7 @@ use App\Http\Controllers\termsController;
 use App\Http\Controllers\privacyController;
 use App\Http\Controllers\contactController;
 use App\Http\Controllers\SubscriberController;
+use App\Http\Controllers\FrontentcontactController;
 
 Route::get('/admin', function () {
     return view('layouts.admin_layout');
@@ -135,6 +136,8 @@ Route::get('/contact',[contactController::class,'contact']);
 
 Route::post('/contact',[contactController::class,'store']);
 
+Route::get('/contacts',[frontentController::class,'contacts']);
+
 //user blade
 
 Route::get('/user',[contactController::class,'users']);
@@ -209,3 +212,10 @@ Route::post('/comment',[CommendsController::class,'store']);
 Route::get('/admin/comment',[CommendsController::class,'comment_admin']);
 
 Route::get('/admin/comment/{id}/{status?}',[CommendsController::class,'update']);
+//Contact Form
+
+Route::post('/contacts',[FrontentcontactController::class,'store']);
+
+Route::get('/admin/message',[contactController::class,'message']);
+
+Route::get('/admin/message/{id}',[frontentcontactController::class,'update']);
