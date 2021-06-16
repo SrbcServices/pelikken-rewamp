@@ -393,6 +393,12 @@
                                     </a>
                                 </li>
                                 
+                                <li class="nav-item">
+                                    <a href="/admin/subscriber" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Subscribed Users</p>
+                                    </a>
+                                </li>
                             </ul>
                         </li>
 
