@@ -17,12 +17,11 @@ use App\Http\Controllers\termsController;
 use App\Http\Controllers\privacyController;
 use App\Http\Controllers\contactController;
 use App\Http\Controllers\FrontentcontactController;
+use App\Http\Controllers\authController;
 
 Route::get('/admin', function () {
     return view('layouts.admin_layout');
 });
-
-
 
 //category
 
@@ -201,3 +200,10 @@ Route::post('/contacts',[FrontentcontactController::class,'store']);
 Route::get('/admin/message',[contactController::class,'message']);
 
 Route::get('/admin/message/{id}',[frontentcontactController::class,'update']);
+
+
+//auth
+
+Route::get('/register',[authController::class,'register']);
+
+Route::get('/login',[authController::Class,'login']);
