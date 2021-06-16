@@ -204,3 +204,8 @@ Route::get('/admin/subsciber_update/{id}/{status}',[SubscriberController::class,
 Route::get('/admin/subscriber',[subscriberController::class,'index']);
 
 
+Route::post('/comment',[CommendsController::class,'store']);
+
+Route::get('/admin/comment',[CommendsController::class,'comment_admin']);
+
+Route::get('/admin/comment/{id}/{status?}',[CommendsController::class,'update']);
