@@ -546,3 +546,40 @@ jQuery(document).ready(function($) {
 
 
 }(jQuery));
+
+//date upper corner
+var months = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December"
+];
+
+var weeks = [
+  "Sunday",
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday"
+];
+d = new Date();
+var month = months[d.getMonth()];
+var day = weeks[d.getDay()];
+var date = d.getDate();
+var year = d.getFullYear();
+
+var full_date = day + "," + month + " " + date + " " + year;
+
+document.getElementById("date").innerText = full_date;
+console.log(full_date);
+//end of date

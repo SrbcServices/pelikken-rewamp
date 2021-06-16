@@ -9,7 +9,7 @@
                <div class="container-content-privacy">
                       {!!$privacy->PrivacyPolicy!!}
                </div>
-               @endif
+            @endif
     </div>
     </div>
 </div>

@@ -298,7 +298,7 @@
                         </li>
                         <!--NEWS END-->
                         <li class="nav-item">
-                            <a href="/comments" class="nav-link">
+                            <a href="/admin/comment" class="nav-link">
                                 <i class="fa fa-comments" aria-hidden="true"></i>&nbsp;
                                 <p>
                                     COMMENTS
@@ -393,6 +393,12 @@
                                     </a>
                                 </li>
                                 
+                                <li class="nav-item">
+                                    <a href="/admin/subscriber" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Subscribed Users</p>
+                                    </a>
+                                </li>
                             </ul>
                         </li>
 

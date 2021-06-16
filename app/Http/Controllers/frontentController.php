@@ -64,7 +64,7 @@ class frontentController extends Controller
     public function newses($slug)
     {
         $news = news::with('newsImages','newsVideo','tags')->where('slug',$slug)->first();
-     
+    // return $news;
         return view('frontent.single_news',['news'=>$news]);
     }
 
@@ -99,7 +99,7 @@ class frontentController extends Controller
 
 
 
-        return view('frontent.block', ['news' => $news, 'main' => $category, 'sub' => $sub_category]);
+        return view('frontent.block', ['news' => $news, 'main' => str_replace('_',' ',$category), 'sub' => str_replace('_',' ',$sub_category)]);
     }
 
 

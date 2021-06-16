@@ -151,10 +151,8 @@
             if (e.target.checked == true) {
                 var status = 'on'
             } else {
-                var status = null
+                var status = 'null'
             }
-
-
 
             $.ajax({
                 type: "post",

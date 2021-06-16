@@ -66,7 +66,7 @@
                 <div class="col-md-6 col-lg-4 align-self-center">
                     <div class="top_date_social text-right">
                         <div class="paper_date">
-                            <p>Thursday, March 26, 2020</p>
+                            <p id="date"></p>
                         </div>
                         <div class="social1">
                             <ul class="inline">
@@ -207,10 +207,10 @@
                             <div class="temp d-none d-lg-block">
                                 <div class="temp_wap">
                                     <div class="temp_icon">
-                                        <img src="{{asset('/img/Headerfrontend/temp.png')}}">
+                                        <img id="img_loc" src="">
                                     </div>
-                                    <h3 class="temp_count">13</h3>
-                                    <p>San Francisco</p>
+                                    <h3 id="temp"></h3>
+                                    <p id="location"></p>
                                 </div>
                             </div>
                         </div>
@@ -259,11 +259,13 @@
                     </div>
                     <div class="col-md-6 col-lg-4 offset-lg-2 align-self-center">
                         <div class="signup_form">
-                            <form action="index.html" method="post">
-                                <input class="signup" type="email" placeholder="Your email address">
-                                <input type="button" style="background-color: #307773" class="cbtn" value="sign up">
+                            <form id="subscribers">
+                            @csrf
+                                <input class="signup" type="email" placeholder="Your email address" name="subs" required>
+                                <input type="button" style="background-color: #307773" class="cbtn" id="sub-submit" >
                             </form>
-                            <p>We hate spam as much as you do</p>
+                            <p class="infoo"></p>
+                       
                         </div>
 
 
@@ -426,6 +428,26 @@
 	<script src="{{asset('/js/frontent/stellarnav.js')}}"></script>
 	<script src="{{asset('/js/frontent/wow.min.js')}}"></script>
 	<script src="{{asset('/js/frontent/main.js')}}"></script>
+	<script src="{{asset('/js/main.js')}}"></script>
+    <script src="https://pelikken.com/js/whether.js"></script>
+    <script>
+    
+    $('#sub-submit').on('click',function(){
+        $.ajax({
+        type:"post",
+        url:"/subscribe",
+        data:$('#subscribers').serialize(),
+        success:function(response){
+           if(response.status=='success'){
+                $('.infoo').html(response.message).css('color','green')
+           }else{
+            $('.infoo').html(response.message).css('color','red')
+           }
+        }
+    })
+    })
+    
+    </script>
     @yield('scripts')
 </body>
 

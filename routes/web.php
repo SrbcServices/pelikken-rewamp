@@ -13,9 +13,11 @@ use App\Http\Controllers\NewsController;
 use App\Http\Controllers\NewsArrangmentController;
 use App\Http\Controllers\settingsController;
 use App\Http\Controllers\aboutController;
+use App\Http\Controllers\CommendsController;
 use App\Http\Controllers\termsController;
 use App\Http\Controllers\privacyController;
 use App\Http\Controllers\contactController;
+use App\Http\Controllers\SubscriberController;
 use App\Http\Controllers\FrontentcontactController;
 use App\Http\Controllers\authController;
 
@@ -119,6 +121,7 @@ Route::get('/news',[frontentController::class,'newses']);
 
 Route::get('/terms',[termsController::class,'terms']);
 Route::post('/terms',[termsController::class,'terms_store']);
+Route::get('/terms&condition',[termsController::class,'terms_condition']);
 
 //privacy Policy
 
@@ -170,8 +173,7 @@ Route::post('/delete-section',[NewsArrangmentController::class,'delete']);
 
 
 
-//frontent news showing area users****************************************************************************
-//************************************************************************************************************
+
 Route::get('/', [frontentController::class,'index']); 
 Route::get('/latest-news',[frontentController::class,'latest_news']);
 
@@ -193,6 +195,21 @@ Route::get('/search',[frontentController::class,'search']);
 Route::get('/about',[frontentController::class,'about']);
 Route::get('/privacy&policy',[frontentController::class,'privacy']);
 
+//comment routes
+
+Route::post('/comment',[CommendsController::class,'store']);
+Route::post('/subscribe',[SubscriberController::class,'store']);
+Route::get('/admin/subsciber_update/{id}/{status}',[SubscriberController::class,'update']);
+
+//admin
+Route::get('/admin/subscriber',[subscriberController::class,'index']);
+
+
+Route::post('/comment',[CommendsController::class,'store']);
+
+Route::get('/admin/comment',[CommendsController::class,'comment_admin']);
+
+Route::get('/admin/comment/{id}/{status?}',[CommendsController::class,'update']);
 //Contact Form
 
 Route::post('/contacts',[FrontentcontactController::class,'store']);
