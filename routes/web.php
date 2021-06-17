@@ -19,6 +19,7 @@ use App\Http\Controllers\privacyController;
 use App\Http\Controllers\contactController;
 use App\Http\Controllers\SubscriberController;
 use App\Http\Controllers\FrontentcontactController;
+use App\Http\Controllers\authController;
 
 Route::get('/admin', function () {
     return view('layouts.admin_layout');
@@ -173,8 +174,7 @@ Route::post('/delete-section',[NewsArrangmentController::class,'delete']);
 
 
 
-//frontent news showing area users****************************************************************************
-//************************************************************************************************************
+
 Route::get('/', [frontentController::class,'index']); 
 Route::get('/latest-news',[frontentController::class,'latest_news']);
 
@@ -218,3 +218,10 @@ Route::post('/contacts',[FrontentcontactController::class,'store']);
 Route::get('/admin/message',[contactController::class,'message']);
 
 Route::get('/admin/message/{id}',[frontentcontactController::class,'update']);
+
+
+//auth
+
+Route::get('/register',[authController::class,'register']);
+
+Route::get('/login',[authController::Class,'login']);

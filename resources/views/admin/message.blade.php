@@ -5,7 +5,27 @@
 
 
 <div class="row">
+  <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Message</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body np">
+            <p><b>Subject:&nbsp;&nbsp;</b></p>
+            <p><b>Message:&nbsp;&nbsp;</b></p>
+          
 
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
     <div class="col-md-12 pt-5 p-2">
         <div class="card card-primary card-outline card-outline-tabs">
             <div class="card-header p-0 border-bottom-0">
@@ -43,7 +63,7 @@
                               <th>Email</th>
                               <th>Phone Number</th>
                               <th>Message</th>
-                              <th>Actions</th>
+                           
 
                             </tr>
                         </thead>
@@ -57,19 +77,22 @@
                           <td>{{$mess->FullName}}</td>
                           <td>{{$mess->Email}}</td>
                           <td>{{$mess->PhoneNumber}}</td>
+                          <td class="{{$mess->Status == 1 ? 'verified' : 'not_verified'}}">
+                            <p>{{$mess->Status == 1 ? 'verified' : 'not verified'}}</p></td>
 
+                          <td>
+                            <div class="btncustom">
+                         
+                              <button id="view" type="button" data-val="{{$mess->id}}" 
+                                 data-message = "{{$mess->Message}}" data-subject = "{{$mess->Subject}}">
+                                <i class="fas fa-eye"></i>
+                              </button>
+                            </div>
+  
+  
+                            </td>
+  
 
-                         <td>
-                          <div class="btncustom">
-                            <button id="view" type="button" data-val="{{$mess->id}}" data-toggle="modal" data-target="#exampleModal">
-                              <i class="fas fa-eye"></i>
-                            </button>
-                          </div>
-
-
-                          </td>
-
-                          <td>Delete</td>
                       </tr>
                         @endif
                         @endforeach
@@ -77,28 +100,7 @@
                         </tbody>
                     
 
-                        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                          <div class="modal-dialog" role="document">
-                            <div class="modal-content">
-                              <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Message</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                  <span aria-hidden="true">&times;</span>
-                                </button>
-                              </div>
-                              <div class="modal-body">
-
-                                <input type=""  class="form-control" id="in-bynm">
-
-
-
-                              </div>
-                              <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
+                        
                     </table>
 
 
@@ -126,7 +128,7 @@
                                 <th>Email</th>
                                 <th>Phone Number</th>
                                 <th>Message</th>
-                                <th>Actions</th>
+                              
 
                             </tr>
                         </thead>
@@ -141,11 +143,13 @@
                             <td>{{$mess->FullName}}</td>
                             <td>{{$mess->Email}}</td>
                             <td>{{$mess->PhoneNumber}}</td>
+                            <td class="{{$mess->Status == 1 ? 'verified' : 'not_verified'}}"><p>{{$mess->Status == 1 ? 'verified' : 'not verified'}}</p></td>
   
   
                            <td>
                             <div class="btncustom">
-                              <button id="" type="button" data-val="{{$mess->id}}" data-toggle="modal" data-target="#exampleModal1">
+                         
+                              <button id="view" type="button" data-val="{{$mess->id}}" data-message = "{{$mess->Message}}" data-subject = "{{$mess->Subject}}">
                                 <i class="fas fa-eye"></i>
                               </button>
                             </div>
@@ -153,7 +157,7 @@
   
                             </td>
   
-                            <td>Delete</td>
+                      
                         </tr>
                           @endif
                           @endforeach
@@ -161,26 +165,7 @@
                           </tbody>
 
                        
-                        <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                          <div class="modal-dialog" role="document">
-                            <div class="modal-content">
-                              <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Message</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                  <span aria-hidden="true">&times;</span>
-                                </button>
-                              </div>
-                              <div class="modal-body">
-
-                                <input type=""  class="form-control" id="in-bynm">
-
-                              </div>
-                              <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
+                        
                     </table>
 
 
@@ -208,13 +193,19 @@
 $(document).on('click','#view', function(ev) {
     ev.preventDefault();
 
- let id =  $(this).attr('data-val');
+$('#modal').modal('show')
 
+    let id =  $(this).attr('data-val');
+    let message = $(this).attr('data-message');
+    let subject = $(this).attr('data-subject');
 
+   $('.np p').html('<b>subject:</b>'+subject)
+   $('.np p').html('<b>mdessage:</b>'+message)
 
+let current = $(this).closest('tr').children("td:nth(4)").children('p').html();
 
-
-    $.ajax({
+if(current !='verified'){
+  $.ajax({
         type: "get",
         url: "/admin/message/"+id,
 
@@ -231,7 +222,14 @@ $(document).on('click','#view', function(ev) {
         }
 
 
+
     })
+
+
+
+}
+
+   
 
 })
 
