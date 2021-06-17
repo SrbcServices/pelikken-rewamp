@@ -86,7 +86,7 @@ form.append('newlogo',newlogo[0])
         $.ajax({
 
         type: "post",
-        url: "/settings",
+        url: "/admin/settings",
         contentType: false,
         processData: false,
 

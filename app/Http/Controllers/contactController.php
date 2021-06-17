@@ -17,12 +17,12 @@ class contactController extends Controller
    
     public function users(){
 
-       
-
+        
         return view('admin.users');
     }
 
     public function message(){
+        
         $message = frontentcontact::get();
 
         return view('admin.message',['message'=>$message]);

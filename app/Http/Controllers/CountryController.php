@@ -90,5 +90,23 @@ public function update(Request $request,$id)
             
         }
 
+        public function delete($id){
+
+            $deleted = country::find($id)->delete();
+    
+    if($deleted){
+        return response()->json([
+            'status'=>'success',
+            'message'=>'deleted'
+        ]);
+    }
+    return response()->json([
+        'status'=>'error',
+        'message'=>'error'
+    ]);
+           
+    
+}
+
 
 }

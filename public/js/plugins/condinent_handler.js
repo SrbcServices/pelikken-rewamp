@@ -20,7 +20,7 @@ $(document).ready(function () {
     $.ajax({
 
        type: "post",
-       url: "/condinent",
+       url: "/admin/condinent",
        data: $('#addform').serialize(),
 
        success: function (response) {
@@ -62,7 +62,7 @@ $(document).on("click", "#edit_category", function () {
   
   $.ajax({
       type: "post",
-      url: "/condinentupdate/"+id,
+      url: "/admin/condinentupdate/"+id,
 
       data: data,
 
@@ -82,7 +82,7 @@ $(document).on("click", "#delete_category", function () {
 
     $.ajax({
         type: "get",
-        url: "/condinentdelete/"+id,
+        url: "/admin/condinentdelete/"+id,
         
         success: function(response){
             console.log(response)

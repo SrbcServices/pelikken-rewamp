@@ -21,7 +21,7 @@ $(document).ready(function () {
     $.ajax({
 
         type: "post",
-        url: "/country",
+        url: "/admin/country",
         data:$('#addform').serialize(),
 
         success: function (response){
@@ -79,7 +79,7 @@ $(document).ready(function () {
     
     $.ajax({
         type: "post",
-        url: "/countryupdate/"+id,
+        url: "/admin/countryupdate/"+id,
   
         data: data,
   
@@ -92,6 +92,25 @@ $(document).ready(function () {
         },
   });
   });
+
+  $(document).on("click", "#delete_category", function () {
+
+    var id = $(this).attr('data-id');
+
+    $.ajax({
+        type: "get",
+        url: "/admin/countrydelete/"+id,
+        
+        success: function(response){
+            console.log(response)
+            if(response.status=='success'){
+                $('#unit_table').load(document.URL + ' #unit_table');
+            }
+        },
+    });
+});
+
+
  
 });
 

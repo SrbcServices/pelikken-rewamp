@@ -15085,8 +15085,7 @@ span.tranding {
 .signup_form form input.cbtn {
   position: absolute;
   right: 0;
-  top: -2px;
-  padding: 17px 15px;
+  padding:15px;
 }
 
 @media screen and (max-width: 1024px) {

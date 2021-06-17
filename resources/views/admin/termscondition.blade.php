@@ -51,7 +51,7 @@ $(document).on("click", "#submit-terms", function(e){
 
        $.ajax({
 
-        url: "/terms",
+        url: "/admin/terms",
         type: "post",
         contentType: false,
         processData: false,

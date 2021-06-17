@@ -24,74 +24,73 @@ Route::get('/admin', function () {
     return view('layouts.admin_layout');
 });
 
-
-
 //category
 
-Route::post('/category',[CategoryController::class,'store']);
+Route::post('/admin/category',[CategoryController::class,'store']);
 
-Route::get('/category',[CategoryController::class,'index']);
+Route::get('/admin/category',[CategoryController::class,'index']);
 
-Route::post('/categoryupdate/{id}',[CategoryController::class,'update']);
+Route::post('/admin/categoryupdate/{id}',[CategoryController::class,'update']);
 
-Route::get('/categorydelete/{id}',[CategoryController::class,'delete']);
+Route::get('/admin/categorydelete/{id}',[CategoryController::class,'delete']);
 
 
 //sub-category
 
-Route::post('/sub_category',[SubCategoryController::class,'store']);
+Route::post('/admin/sub_category',[SubCategoryController::class,'store']);
 
-Route::get('/sub_category',[SubCategoryController::class, 'index']);
+Route::get('/admin/sub_category',[SubCategoryController::class, 'index']);
 
-Route::post('/sub_categoryupdate/{id}',[SubCategoryController::class,'update']);
+Route::post('/admin/sub_categoryupdate/{id}',[SubCategoryController::class,'update']);
 
-Route::get('/sub_categorydelete/{id}',[SubCategoryController::class,'delete']);
+Route::get('/admin/sub_categorydelete/{id}',[SubCategoryController::class,'delete']);
 
 //Condinent
 
-Route::post('/condinent',[CondinentController::class,'store']);
+Route::post('/admin/condinent',[CondinentController::class,'store']);
 
-Route::get('/condinent',[CondinentController::class,'index']);
+Route::get('/admin/condinent',[CondinentController::class,'index']);
 
-Route::post('/condinentupdate/{id}',[CondinentController::class,'update']);
+Route::post('/admin/condinentupdate/{id}',[CondinentController::class,'update']);
 
-Route::get('/condinentdelete/{id}',[CondinentController::class,'delete']);
+Route::get('/admin/condinentdelete/{id}',[CondinentController::class,'delete']);
 
 //country
 
-Route::post('/country',[CountryController::class,'store']);
+Route::post('/admin/country',[CountryController::class,'store']);
 
-Route::get('/country',[CountryController::class,'index']);
+Route::get('/admin/country',[CountryController::class,'index']);
 
-Route::post('/countryupdate/{id}',[CountryController::class,'update']);
+Route::post('/admin/countryupdate/{id}',[CountryController::class,'update']);
 
+Route::get('/admin/countrydelete/{id}',[CountryController::class,'delete']);
 //tags
 
-Route::post('/tags',[TagsController::class,'store']);
+Route::post('/admin/tags',[TagsController::class,'store']);
 
-Route::get('/tags',[TagsController::class,'index']);
+Route::get('/admin/tags',[TagsController::class,'index']);
 
-Route::post('/tagsupdate/{id}',[TagsController::class,'update']);
+Route::post('/admin/tagsupdate/{id}',[TagsController::class,'update']);
 
-Route::get('/tagsdelete/{id}',[TagsController::class,'delete']);
+Route::get('/admin/tagsdelete/{id}',[TagsController::class,'delete']);
 
 //sources
 
-Route::post('/source',[SourceController::class,'store']);
+Route::post('/admin/source',[SourceController::class,'store']);
 
-Route::get('/source',[SourceController::class,'index']);
+Route::get('/admin/source',[SourceController::class,'index']);
 
-Route::post('/sourceupdate/{id}',[SourceController::class,'update']);
+Route::post('/admin/sourceupdate/{id}',[SourceController::class,'update']);
 
-Route::get('/sourcedelete/{id}',[SourceController::class,'delete']);
+Route::get('/admin/sourcedelete/{id}',[SourceController::class,'delete']);
 
 //ads
 
-Route::post('/ads',[AdsController::class,'store']);
+Route::post('/admin/ads',[AdsController::class,'store']);
 
-Route::get('/ads',[AdsController::class,'index']);
+Route::get('/admin/ads',[AdsController::class,'index']);
 
-Route::get('/adsdelete/{id}',[AdsController::class,'delete']);
+Route::get('/admin/adsdelete/{id}',[AdsController::class,'delete']);
 
 
 //news
@@ -104,9 +103,9 @@ Route::get('/fetch_country/{id}',[NewsController::class,'fetch_country']);
 
 //settings
 
-Route::get('/settings',[settingsController::class,'settings']);
+Route::get('/admin/settings',[settingsController::class,'settings']);
 
-Route::post('/settings',[settingsController::class,'store']);
+Route::post('/admin/settings',[settingsController::class,'store']);
 
 //about page
 
@@ -120,9 +119,9 @@ Route::get('/news',[frontentController::class,'newses']);
 
 //Terms and condition
 
-Route::get('/terms',[termsController::class,'terms']);
-Route::post('/terms',[termsController::class,'terms_store']);
-Route::get('/terms&condition',[termsController::class,'terms_condition']);
+Route::get('/admin/terms',[termsController::class,'terms']);
+Route::post('/admin/terms',[termsController::class,'terms_store']);
+Route::get('/terms&condition',[frontentController::class,'terms_condition']);
 
 //privacy Policy
 
@@ -132,15 +131,15 @@ Route::post('/admin/privacy',[privacyController::class,'privacy_store']);
 
 //contact as
 
-Route::get('/contact',[contactController::class,'contact']);
+Route::get('/admin/contact',[contactController::class,'contact']);
 
-Route::post('/contact',[contactController::class,'store']);
+Route::post('/admin/contact',[contactController::class,'store']);
 
 Route::get('/contacts',[frontentController::class,'contacts']);
 
 //user blade
 
-Route::get('/user',[contactController::class,'users']);
+Route::get('/admin/user',[contactController::class,'users']);
 
 
 Route::get('/fetch_sub_category/{id}',[NewsController::class,'fetch_sub_category']);

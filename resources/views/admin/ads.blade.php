@@ -157,8 +157,9 @@
                 type: 'canvas',
                 size: 'viewport'
             }).then(function(img) {
+              
                 $.ajax({
-                    url: "/ads",
+                    url: "/admin/ads",
                     type: "POST",
                     data: {
                         "image": img,

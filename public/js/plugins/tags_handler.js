@@ -20,7 +20,7 @@ $(document).ready(function () {
           $.ajax({
  
              type: "post",
-             url: "/tags",
+             url: "/admin/tags",
              data: $('#addform').serialize(),
  
              success: function (response) {
@@ -63,7 +63,7 @@ $(document).ready(function () {
 
         $.ajax({
             type: "post",
-            url: "/tagsupdate/"+id,
+            url: "/admin/tagsupdate/"+id,
 
             data: data,
 
@@ -84,7 +84,7 @@ $(document).on("click", "#delete_category", function () {
 
     $.ajax({
         type: "get",
-        url: "/tagsdelete/"+id,
+        url: "/admin/tagsdelete/"+id,
         
         success: function(response){
             console.log(response)

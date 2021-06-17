@@ -26,7 +26,7 @@ class AdsController extends Controller
         $image_name = time().'.png';
         file_put_contents(public_path('uploads/ads/').$image_name, $image);
 
-      
+
 
         $ads = new ads();
         $ads->adHeading = $request->heading;

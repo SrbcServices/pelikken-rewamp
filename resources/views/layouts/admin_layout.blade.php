@@ -226,37 +226,37 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="/category" class="nav-link">
+                                    <a href="/admin/category" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Category</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="/sub_category" class="nav-link">
+                                    <a href="/admin/sub_category" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Sub-Category</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="/tags" class="nav-link">
+                                    <a href="/admin/tags" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Tags</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="/condinent" class="nav-link">
+                                    <a href="/admin/condinent" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Condinent</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="/country" class="nav-link">
+                                    <a href="/admin/country" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Country</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="/source" class="nav-link">
+                                    <a href="/admin/source" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Source</p>
                                     </a>
@@ -317,7 +317,7 @@
                         <!--MESSAGES END-->
                         <!--ADS START-->
                         <li class="nav-item">
-                            <a href="/ads" class="nav-link">
+                            <a href="/admin/ads" class="nav-link">
                                 <i class="fas fa-ad"></i>&nbsp;
                                 <p>
                                     Ads
@@ -327,7 +327,7 @@
                         <!--ADS END-->
                         <!--SETTINGS START-->
                         <li class="nav-item has-treeview menu-open">
-                            <a href="#" class="nav-link">
+                            <a href="/admin/settings" class="nav-link">
                                 <i class="fa fa-cog" aria-hidden="true"></i>&nbsp; <p>
                                     Settings
                                     <i class="fas fa-angle-left right"></i>
@@ -335,31 +335,31 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="./settings" class="nav-link">
+                                    <a href="/admin/settings" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>General Settings</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="./about" class="nav-link">
+                                    <a href="/admin/about" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>About Page</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="./terms" class="nav-link">
+                                    <a href="/admin/terms" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Terms & conditions</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="./privacy" class="nav-link">
+                                    <a href="/admin/privacy" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Privacy and Policy</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="./contact" class="nav-link">
+                                    <a href="/admin/contact" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Contact Us</p>
                                     </a>
@@ -381,7 +381,7 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="./user" class="nav-link">
+                                    <a href="/admin/user" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Users</p>
                                     </a>

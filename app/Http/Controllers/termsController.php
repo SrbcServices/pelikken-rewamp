@@ -13,17 +13,7 @@ class termsController extends Controller
 
         return view('admin.termscondition', ['terms'=>$terms]);
     }
-    //terms Frontent start
-    
-        public function terms_condition(){
-
-            $terms = terms::first();
-
-            return view('frontent.termsfrontent',['terms'=>$terms]);
-        }
-
-     //terms Frontent End
-
+   
     public function terms_store(Request $request){
 
 

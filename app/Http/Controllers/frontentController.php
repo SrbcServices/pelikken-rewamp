@@ -8,11 +8,23 @@ use App\Models\condinent;
 use App\Models\news;
 use App\Models\NewsArrangment;
 use App\Models\contact;
+use App\Models\terms;
 
 use App\Models\privacy;
 
 class frontentController extends Controller
 {
+
+     //terms Frontent start
+    
+     public function terms_condition(){
+
+        $terms = terms::first();
+
+        return view('frontent.termsfrontent',['terms'=>$terms]);
+    }
+
+ //terms Frontent End
     public function __construct(Request $request)
     {
         $latest_global_news = news::select('id', 'NewsHeading', 'created_at', 'ThumbImage', 'Category', 'slug')->orderBy('id', 'desc')->limit(10)->get();
@@ -133,6 +145,7 @@ class frontentController extends Controller
         return view('frontent.dual', ['news' => $news, 'main' => $condinent, 'sub' => $country]);
     }
     //tagwise news
+    
     public function tag(Request $request){
         $query = news::query();
         $query->wherehas('tags',function($q) use ($request){

@@ -94,7 +94,7 @@ $('#submit-contact').on('click', function(ev) {
     $.ajax({
 
         type: "post",
-        url: "/contact",
+        url: "/admin/contact",
         contentType: false,
         processData: false,
 

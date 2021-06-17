@@ -20,7 +20,7 @@ $(document).ready(function () {
     $.ajax({
 
         type: "post",
-        url: "/sub_category",
+        url: "/admin/sub_category",
         data:$('#addform').serialize(),
 
         success: function (response){
@@ -72,7 +72,7 @@ $(document).ready(function () {
         
         $.ajax({
             type: "post",
-            url: "/sub_categoryupdate/"+id,
+            url: "/admin/sub_categoryupdate/"+id,
  
             data: data,
 
@@ -93,7 +93,7 @@ $(document).on("click", "#delete_category", function () {
 
     $.ajax({
         type: "get",
-        url: "/sub_categorydelete/"+id,
+        url: "/admin/sub_categorydelete/"+id,
         
         success: function(response){
             console.log(response)

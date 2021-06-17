@@ -258,15 +258,24 @@
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-4 offset-lg-2 align-self-center">
+                        
                         <div class="signup_form">
+                        
                             <form id="subscribers">
                             @csrf
-                                <input class="signup" type="email" placeholder="Your email address" name="subs" required>
-                                <input type="button" style="background-color: #307773" class="cbtn" id="sub-submit" >
+                            
+                                <input class="signup" type="email" placeholder="Your email Address" name="subs" required>
+                                <input type="button" value="Register"  style="background-color: #307773; text-transform: none;" class="cbtn btn-secondary" id="sub-submit">
+                               
+                        
                             </form>
+                            
+                            
+                            
                             <p class="infoo"></p>
                        
                         </div>
+                        
 
 
                     </div>
@@ -399,7 +408,7 @@
                                 <ul>
                                     <li><a href="/about">About</a>
                                     </li>
-                                    <li><a href="">Terms & Condition</a>
+                                    <li><a href="/terms&condition">Terms & Condition</a>
                                     </li>
                                     <li><a href="/privacy&policy">Privacy & Policy</a>
                                     </li>
