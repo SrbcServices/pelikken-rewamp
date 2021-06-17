@@ -71,6 +71,17 @@
                 <div>
                     {!!$news->NewsDiscription!!}
                 </div>
+                <br><br>
+                @if($news->newsVideo)
+                <div>
+                 
+                   <video width="100%" height="auto" controls>
+                    <source src="{{asset('/uploads/news_video/'.$news->newsVideo->VideoName.'')}}" type="video/mp4">
+                  </video> 
+                  
+              
+                </div>
+                @endif
                 <div class="space-20"></div>
                 <div class="tags">
                     <ul class="inline">
@@ -108,9 +119,9 @@
                 <div class="col-md-6 col-lg-4">
                     <div class="single_post post_type3 mb30">
                         <div class="post_img">
-                            {{-- <a href="#">
+                            <a href="#">
                                 <img src="{{asset('uploads/news/'.$item->ThumbImage.'')}}" alt="">
-                            </a> --}}
+                            </a>
                         </div>
                         <div class="single_post_text">
                             <div class="meta3"> <a href="/news/{{$item->category->category_name}}">{{$item->category->category_name}}</a>
@@ -139,19 +150,21 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-12 col-lg-10 m-auto">
-						<form action="#">
+						<form id="commend-form">
+                            @csrf
 							<div class="row">
 								<div class="col-md-6">
-									<input type="text" placeholder="Full name">
+									<input type="text" placeholder="Full name" name="full_name">
 								</div>
 								<div class="col-md-6">
-									<input type="text" placeholder="Email address">
+									<input type="email" placeholder="Email address" name="email">
+									<input type="hidden" name="id" value="{{$news->id}}">
 								</div>
 								<div class="col-12">
-									<textarea name="messege" id="messege" cols="30" rows="5" placeholder="Tell us about your opinion…"></textarea>
+									<textarea name="messege" id="messege" cols="30" rows="5" placeholder="Tell us about your opinion…" ></textarea>
 								</div>
 								<div class="col-12">
-									<input type="button" value="POST OPINION" class="cbtn2">
+									<input type="button" value="POST OPINION" class="btn-send" id="du">
 								</div>
 							</div>
 						</form>
@@ -169,46 +182,7 @@
 								<div class="row">
 									<div class="col-sm-6">	<a href="#">QuomodoSoft</a>
 									</div>
-									<div class="col-sm-6">
-										<div class="replay text-right">	<a href="#">replay</a>
-										</div>
-									</div>
-								</div>
-								<div class="space-5"></div>
-								<p>We’ve invested every aspect of how we serve our users over the past Pellentesque rutrum ante in nulla suscipit, vel posuere leo tristique.</p>
-							</div>
-							<div class="space-15"></div>
-							<div class="border_black"></div>
-							<div class="space-15"></div>
-							<div class="single_comment">
-								<div class="comment_img">
-									<img src="{{asset('img/news/single_post1.jpg')}}" alt="">
-								</div>
-								<div class="row">
-									<div class="col-sm-6">	<a href="#">QuomodoSoft</a>
-									</div>
-									<div class="col-sm-6">
-										<div class="replay text-right">	<a href="#">replay</a>
-										</div>
-									</div>
-								</div>
-								<div class="space-5"></div>
-								<p>We’ve invested every aspect of how we serve our users over the past Pellentesque rutrum ante in nulla suscipit, vel posuere leo tristique.</p>
-							</div>
-							<div class="space-15"></div>
-							<div class="border_black"></div>
-							<div class="space-15"></div>
-							<div class="single_comment">
-								<div class="comment_img">
-									<img src="{{asset('img/news/single_post1.jpg')}}" alt="">
-								</div>
-								<div class="row">
-									<div class="col-sm-6">	<a href="#">QuomodoSoft</a>
-									</div>
-									<div class="col-sm-6">
-										<div class="replay text-right">	<a href="#">replay</a>
-										</div>
-									</div>
+									
 								</div>
 								<div class="space-5"></div>
 								<p>We’ve invested every aspect of how we serve our users over the past Pellentesque rutrum ante in nulla suscipit, vel posuere leo tristique.</p>
@@ -217,7 +191,9 @@
 							<div class="border_black"></div>
 							<div class="space-15"></div>
 							
-							<div class="space-40"></div>	<a href="#" class="cbtn2">Load More</a>
+							
+							
+							
                             <div class="space-15"></div>
 						</div>
 					</div>
@@ -229,9 +205,23 @@
 @endsection
 
 @section('scripts')
+<script src="{{ asset('js/simply-toast.min.js') }}"></script>
     <script>
-    function share_social(platform){
-        
-    }
+   $('#du').on('click',function(){
+   $.ajax({
+       type: "post",
+       url: "/comment",
+       data: $('#commend-form').serialize(),
+    
+       success: function (response) {
+           if(response.status == 'success'){
+            $.simplyToast(response.message, 'success')
+            $('#commend-form').trigger('reset')
+           }else{
+            $.simplyToast('All fields required', 'danger')
+           }  
+       }
+   });
+   })
     </script>
 @endsection

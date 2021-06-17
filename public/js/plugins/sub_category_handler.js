@@ -70,7 +70,6 @@ $(document).ready(function () {
         var data = $('#addform').serialize()
         let id = $(`input[name='id']`).val()
         
-
         $.ajax({
             type: "post",
             url: "/sub_categoryupdate/"+id,

@@ -3,6 +3,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/croppie/2.6.2/croppie.min.css">
 @endsection
 @section('content')
+
+ 
     <div class="container">
         <div id="error-show" style="padding-top:20px;">
 
