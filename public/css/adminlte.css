@@ -646,6 +646,7 @@ pre code {
   width: 100%;
   padding-right: 7.5px;
   padding-left: 7.5px;
+  margin-top: 18px;
 }
 
 .col {
@@ -6778,7 +6779,7 @@ button.bg-secondary:focus {
 }
 
 .bg-success {
-  background-color: #f9f9f9 !important;
+  background-color: #ffffff !important;
 }
 
 a.bg-success:hover, a.bg-success:focus,
@@ -19176,6 +19177,7 @@ html.maximized-card {
 .small-box .icon > i.fa, .small-box .icon > i.fas, .small-box .icon > i.far, .small-box .icon > i.fab, .small-box .icon > i.glyphicon, .small-box .icon > i.ion {
   font-size: 70px;
   top: 20px;
+  color: #f2f2f2;
 }
 
 .small-box:hover {
@@ -28061,7 +28063,7 @@ blockquote.quote-gray-dark h6 {
 }
 
 .bg-success {
-  background-color: #F9F9F9 !important;
+  background-color: #ffffff !important;
 }
 
 .bg-success,
@@ -28081,7 +28083,7 @@ blockquote.quote-gray-dark h6 {
 }
 
 .bg-info {
-  background-color: #F9F9F9 !important;
+  background-color: #ffffff !important;
 }
 
 .bg-info,
@@ -28101,7 +28103,7 @@ blockquote.quote-gray-dark h6 {
 }
 
 .bg-warning {
-  background-color: #F9F9F9 !important;
+  background-color: #ffffff !important;
 }
 
 .bg-warning,
@@ -28121,7 +28123,7 @@ blockquote.quote-gray-dark h6 {
 }
 
 .bg-danger {
-  background-color: #F9F9F9 !important;
+  background-color: #ffffff !important;
 }
 
 .bg-danger,
@@ -28141,7 +28143,7 @@ blockquote.quote-gray-dark h6 {
 }
 
 .bg-light {
-  background-color: #f8f9fa !important;
+  background-color: #ffffff !important;
 }
 
 .bg-light,
