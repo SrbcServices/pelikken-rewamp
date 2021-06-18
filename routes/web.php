@@ -18,13 +18,9 @@ use App\Http\Controllers\termsController;
 use App\Http\Controllers\privacyController;
 use App\Http\Controllers\contactController;
 use App\Http\Controllers\SubscriberController;
-<<<<<<< HEAD
 use App\Http\Controllers\dashboardController;
-
-=======
 use App\Http\Controllers\FrontentcontactController;
 use App\Http\Controllers\authController;
->>>>>>> main
 
 Route::get('/admin', function () {
     return view('layouts.admin_layout');
@@ -229,3 +225,7 @@ Route::get('/admin/message/{id}',[frontentcontactController::class,'update']);
 Route::get('/register',[authController::class,'register']);
 
 Route::get('/login',[authController::Class,'login']);
+
+
+Route::get('/dash',[dashboardController::class,'graph']);
+

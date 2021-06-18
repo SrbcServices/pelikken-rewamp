@@ -52,9 +52,9 @@
             <!-- small box -->
             <div class="small-box bg-success" style="color:#f2f2f2">
               <div class="inner">
-                <h3>53<sup style="font-size: 20px">%</sup></h3>
+                <h3>{{$trending_news}}<sup style="font-size: 20px"></sup></h3>
 
-                <p>Latest News</p>
+                <p>Trending</p>
               </div>
               <div class="icon">
                 <i class="ion ion-stats-bars"></i>
@@ -69,7 +69,7 @@
               <div class="inner">
                 <h3>44</h3>
 
-                <p>Unique Visitors</p>
+                <p>Lorem</p>
               </div>
               <div class="icon">
                 <i class="ion ion-person-add"></i>
@@ -171,9 +171,9 @@
 
 
       <script>
-        var xValues = ["Italy", "France", "Spain", "USA", "Argentina"];
-        var yValues = [55, 49, 44, 24, 15];
-        var barColors = ["#dc3545", "#28a745", "#17a2b8", "#ffc107", "brown"];
+        var xValues = ["Italy", "France", "Spain", "USA", "Argentina", "Spain", "USA", "Argentina"];
+        var yValues = [20, 30, 40, 50, 60, 70, 80, 90];
+        var barColors = ["#dc3545", "#28a745", "#17a2b8", "#ffc107", "brown","#dc3545", "#28a745", "#17a2b8",];
 
         new Chart("myChart", {
           type: "bar",
@@ -195,9 +195,9 @@
       </script>
 
       <script>
-        var xValues = ["Italy", "France", "Spain", "USA", "Argentina"];
-        var yValues = [55, 49, 44, 24, 15];
-        var barColors = ["#dc3545", "#28a745", "#17a2b8", "#ffc107", "brown"];
+        var xValues = ["Italy", "France", "Spain", "USA", "Argentina", "Spain", "USA", "Argentina"];
+        var yValues = [20, 30, 40, 50, 60, 70, 80, 90];
+        var barColors = ["#dc3545", "#28a745", "#17a2b8", "#ffc107", "brown","#dc3545", "#28a745", "#17a2b8",];
 
         new Chart("myChart1", {
           type: "bar",
