@@ -43,9 +43,8 @@ font weight
 .theme-input input {
   font-size: 16px;
   font-weight: 400;
-  color: #1091FF;
+  color: #2e6069;
 }
-
 .signup_form form input.cbtn, .theme-3 .signup_form form input.cbtn, a.cbtn1,
 button.cbtn1,
 input.cbtn1 {
@@ -54,7 +53,7 @@ input.cbtn1 {
   text-transform: uppercase;
   color: #FFFFFF;
   padding: 15px 30px;
-  background: #1091FF;
+  background: #2e6069;
   border: none;
 }
 
@@ -4462,7 +4461,7 @@ input.readmore {
 a.readmore:hover,
 button.readmore:hover,
 input.readmore:hover {
-  background: #1091FF;
+  background: #307773;
   color: #FFFFFF !important;
   border-color: transparent;
 }
@@ -7070,7 +7069,7 @@ body.dark-theme {
   transition: all 0.3s;
 }
 .dark-theme .single_post:hover .single_post_text a {
-  color: #secondary_color;
+  color: none;
   transition: all 0.3s;
 }
 .dark-theme .topbar ul {
@@ -13393,7 +13392,7 @@ input.cbtn1, .theme-3 .signup_form form input.cbtn {
   text-transform: uppercase;
   color: #FFFFFF;
   padding: 15px 30px;
-  background: #1091FF;
+  background: #307773;
   border: none;
 }
 
@@ -13843,7 +13842,7 @@ a.up_btn {
   width: 50px;
   text-align: center;
   line-height: 70px;
-  background: #FF5555;
+  background: #2e6069;
   color: #fff;
   border-radius: 50px;
   position: fixed;
@@ -13938,7 +13937,7 @@ a.up_btn {
   right: 32px;
   height: 40px;
   width: 40px;
-  background: #1091FF;
+  background: #307773;
   text-align: center;
   line-height: 40px;
   font-size: 20px;
@@ -14124,7 +14123,7 @@ a.social_medium {
   transition: all 0.3s;
 }
 .single_post .single_post_text a:hover {
-  color: #1091FF;
+  color: #307773;
   transition: all 0.3s;
 }
 
@@ -14135,9 +14134,9 @@ a.social_medium {
 .gradient1:after {
   position: absolute;
   content: "";
-  height: 90%;
+  height: 60%;
   width: 100%;
-  background: linear-gradient(0deg, rgba(0, 0.4, 0.7, 1), transparent);
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.7), transparent);
   left: 0;
   bottom: 0;
 }
@@ -14202,7 +14201,7 @@ a.social_medium {
   margin-left: 14px;
 }
 .nav_style1 .owl-nav div:hover {
-  background: #1091FF;
+  background: #307773;
   border-color: #1091FF;
   color: #FFFFFF;
   transition: all 0.3s;
@@ -15815,8 +15814,11 @@ textarea::placeholder {
     width: 40%;
     height: auto;
   }
+<<<<<<< HEAD
+=======
 
   .infoo{
     margin-top: 10px;
     color: white;
   }
+>>>>>>> 824d7cdf11278542072f00aa5a3a693d6ffd1948

@@ -13,18 +13,22 @@ use App\Http\Controllers\NewsController;
 use App\Http\Controllers\NewsArrangmentController;
 use App\Http\Controllers\settingsController;
 use App\Http\Controllers\aboutController;
+use App\Http\Controllers\CommendsController;
 use App\Http\Controllers\termsController;
 use App\Http\Controllers\privacyController;
 use App\Http\Controllers\contactController;
 use App\Http\Controllers\SubscriberController;
+<<<<<<< HEAD
 use App\Http\Controllers\dashboardController;
 
+=======
+use App\Http\Controllers\FrontentcontactController;
+use App\Http\Controllers\authController;
+>>>>>>> main
 
 Route::get('/admin', function () {
     return view('layouts.admin_layout');
 });
-
-
 
 //category
 
@@ -122,6 +126,7 @@ Route::get('/news',[frontentController::class,'newses']);
 
 Route::get('/terms',[termsController::class,'terms']);
 Route::post('/terms',[termsController::class,'terms_store']);
+Route::get('/terms&condition',[termsController::class,'terms_condition']);
 
 //privacy Policy
 
@@ -134,6 +139,8 @@ Route::post('/admin/privacy',[privacyController::class,'privacy_store']);
 Route::get('/contact',[contactController::class,'contact']);
 
 Route::post('/contact',[contactController::class,'store']);
+
+Route::get('/contacts',[frontentController::class,'contacts']);
 
 //user blade
 
@@ -171,8 +178,7 @@ Route::post('/delete-section',[NewsArrangmentController::class,'delete']);
 
 
 
-//frontent news showing area users****************************************************************************
-//************************************************************************************************************
+
 Route::get('/', [frontentController::class,'index']); 
 Route::get('/latest-news',[frontentController::class,'latest_news']);
 
@@ -194,6 +200,9 @@ Route::get('/search',[frontentController::class,'search']);
 Route::get('/about',[frontentController::class,'about']);
 Route::get('/privacy&policy',[frontentController::class,'privacy']);
 
+//comment routes
+
+Route::post('/comment',[CommendsController::class,'store']);
 Route::post('/subscribe',[SubscriberController::class,'store']);
 Route::get('/admin/subsciber_update/{id}/{status}',[SubscriberController::class,'update']);
 
@@ -201,3 +210,22 @@ Route::get('/admin/subsciber_update/{id}/{status}',[SubscriberController::class,
 Route::get('/admin/subscriber',[subscriberController::class,'index']);
 Route::get('/admin/dashboard',[dashboardController::class,'dash']);
 
+Route::post('/comment',[CommendsController::class,'store']);
+
+Route::get('/admin/comment',[CommendsController::class,'comment_admin']);
+
+Route::get('/admin/comment/{id}/{status?}',[CommendsController::class,'update']);
+//Contact Form
+
+Route::post('/contacts',[FrontentcontactController::class,'store']);
+
+Route::get('/admin/message',[contactController::class,'message']);
+
+Route::get('/admin/message/{id}',[frontentcontactController::class,'update']);
+
+
+//auth
+
+Route::get('/register',[authController::class,'register']);
+
+Route::get('/login',[authController::Class,'login']);

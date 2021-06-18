@@ -483,7 +483,7 @@ console.log(selected);
             })
         })
 
-        //update the basic news details
+        // update the basic news details
 
         $('#basic_update').on('click', function(e) {
             e.preventDefault();

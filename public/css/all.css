@@ -4670,3 +4670,19 @@ color: red;
 #unit_table_wrapper{
   padding: 20px;
 }
+.verified p{
+  background-color: green;
+  color: white;
+  display: inline-block;
+ padding: 1px 4px;
+  border-radius: 10px;
+  font-size: 14px;
+}
+.not_verified p{
+  background-color: red;
+  color: white;
+  display: inline-block;
+ padding: 1px 4px;
+  border-radius: 10px;
+  font-size: 14px;
+}
