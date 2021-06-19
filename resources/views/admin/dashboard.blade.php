@@ -69,7 +69,7 @@
               <div class="inner">
                 <h3>44</h3>
 
-                <p>Lorem</p>
+                <p>Registered User</p>
               </div>
               <div class="icon">
                 <i class="ion ion-person-add"></i>
@@ -171,9 +171,9 @@
 
 
       <script>
-        var xValues = ["Italy", "France", "Spain", "USA", "Argentina", "Spain", "USA", "Argentina"];
-        var yValues = [20, 30, 40, 50, 60, 70, 80, 90];
-        var barColors = ["#dc3545", "#28a745", "#17a2b8", "#ffc107", "brown","#dc3545", "#28a745", "#17a2b8",];
+        var xValues = <?php echo json_encode($condinent_name); ?>;
+        var yValues = <?php echo json_encode($news_counts); ?>;
+        var barColors = ["#dc3545", "#28a745","#28a745"];
 
         new Chart("myChart", {
           type: "bar",

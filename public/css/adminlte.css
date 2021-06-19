@@ -19117,6 +19117,7 @@ html.maximized-card {
   margin: 0 0 10px 0;
   padding: 0;
   white-space: nowrap;
+  color: #666262;
 }
 
 @media (min-width: 992px) {
