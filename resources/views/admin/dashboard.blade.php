@@ -118,7 +118,6 @@
               <div class="card">
                 <div class="card-header">
                   <h3 class="card-title">
-                   User Interaction
                    
                    Category Wise News
                   </h3>
@@ -203,13 +202,6 @@
         var xValues = <?php echo json_encode($category_name) ?>;
         var yValues = <?php echo json_encode($category_wise_news_count) ?>;
 
-      <script>
-        var xValues = ["Italy", "France", "Spain", "USA", "Argentina", "Spain", "USA", "Argentina"];
-        var yValues = [20, 15, 28, 10, 60, 70, 80, 90];
-        var barColors = ["#dc3545", "#28a745", "#17a2b8", "#ffc107", "brown","#dc3545", "#28a745", "#17a2b8",];
-
-        new Chart("myChart1", {
-          type: "line",
         new Chart("category", {
           type: "bar",
           data: {

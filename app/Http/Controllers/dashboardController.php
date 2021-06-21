@@ -28,8 +28,6 @@ class dashboardController extends Controller
 //category wise news listing
 $category_wise_news = category::with('get_news')->get();
 
-<<<<<<< HEAD
-=======
 $category_name =[];
 $category_wise_news_count = [];
 
@@ -41,7 +39,6 @@ foreach ($category_wise_news as $category){
 
 }
  
->>>>>>> 3ece34e3f87bed0dd60af4aa4c174c164fb6acd5
         return view('admin.dashboard',['news_count'=>$news_count,
         'comments_count'=>$comments_count,
         'trending_news'=>$trending_news,
