@@ -21,9 +21,11 @@ use App\Http\Controllers\SubscriberController;
 use App\Http\Controllers\FrontentcontactController;
 use App\Http\Controllers\authController;
 
+use Illuminate\Http\Request;
+
 Route::get('/admin', function () {
     return view('layouts.admin_layout');
-});
+})->middleware(['auth','verified','isAdmin']);
 
 //category
 
@@ -222,7 +224,16 @@ Route::get('/admin/message/{id}',[frontentcontactController::class,'update']);
 //auth
 
 Route::get('/register',[authController::class,'register']);
+Route::get('/login',[authController::class,'login'])->name('login');
+Route::post('/register',[authController::class,'create_account']);
+Route::get('/email/verify', [authController::class,'verify_email'])->middleware(['auth','already_verified'])->name('verification.notice');
+Route::get('/email/verify/{id}/{hash}',[authController::class,'verify'] )->middleware(['auth', 'signed'])->name('verification.verify');
+Route::get('/logout',[authController::class,'logout']);
+Route::post('/login',[authController::class,'do_login']);
+//forgot password
+Route::get('/forgot-password',[authController::class,'forgot_password'])->middleware('guest')->name('password.request');
+Route::post('/forgot-password',[authController::class,'forgot'])->middleware('guest')->name('password.email');
+Route::get('/reset-password/{token}',[authController::class,'reset_password'])->middleware('guest')->name('password.reset');
 
-Route::get('/login',[authController::Class,'login']);
-
-Route::post('/register',[authController::Class,'create_account']);
+//reset password auth 
+Route::post('/reset-password', [authController::class,'post_reset_password'])->middleware('guest')->name('password.update');
