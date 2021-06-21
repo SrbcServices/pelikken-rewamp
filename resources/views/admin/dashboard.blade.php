@@ -106,7 +106,7 @@
                 <div class="tab-content p-0">
                   <!-- Morris chart - Sales -->
                   <div>
-                    <canvas id="myChart" style="max-width:700px"></canvas>
+                    <canvas id="myChart"></canvas>
                   </div>
                 </div>
               </div>
@@ -119,14 +119,14 @@
                 <div class="card-header">
                   <h3 class="card-title">
                    
-                   User Interaction
+                   Category Wise News
                   </h3>
                 </div><!-- /.card-header -->
                 <div class="card-body">
                   <div class="tab-content p-0">
                     <!-- Morris chart - Sales -->
                     <div>
-                      <canvas id="myChart1" style="max-width:700px"></canvas>
+                      <canvas id="category" ></canvas>
                     </div>
                   </div><!-- /.card-body -->
                 </div>
@@ -162,44 +162,54 @@
       <script src="plugins/chart.js/Chart.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
 
-
+      
       <script>
-console.log(JSON.parse({{$condinent_name}}))
 
-        var xValues = JSON.parse({{$condinent_name}});
-        var yValues = "{{$news_counts}}";
-        var barColors = ["#dc3545", "#28a745","#28a745"];
 
+       var xValues = <?php echo json_encode($condinent_name) ?>;
+      
+       var yValues = <?php echo json_encode($news_counts) ?>;
+      
+        
         new Chart("myChart", {
-          type: "bar",
+          type: "line",
           data: {
             labels: xValues,
             datasets: [{
-              backgroundColor: barColors,
+              backgroundColor: 'rgb(255, 99, 132,0)',
+              borderColor: 'rgb(255, 99, 132)',
               data: yValues
             }]
           },
           options: {
-            legend: { display: false },
+            legend: { display: false,
+                      title:'News'
+             },
             title: {
               display: true,
-              text: "World Wine Production 2018"
-            }
+              text: "Quantinent wise News"
+            },
+            layout: {
+            padding:{ 
+              left:30,
+              right:0,
+            },
+          
+        }
           }
         });
-      </script>
+     
+        var xValues = <?php echo json_encode($category_name) ?>;
+        var yValues = <?php echo json_encode($category_wise_news_count) ?>;
 
-      <script>
-        var xValues = ["Italy", "France", "Spain", "USA", "Argentina", "Spain", "USA", "Argentina"];
-        var yValues = [20, 30, 40, 50, 60, 70, 80, 90];
-        var barColors = ["#dc3545", "#28a745", "#17a2b8", "#ffc107", "brown","#dc3545", "#28a745", "#17a2b8",];
-
-        new Chart("myChart1", {
+        new Chart("category", {
           type: "bar",
           data: {
             labels: xValues,
             datasets: [{
-              backgroundColor: barColors,
+              backgroundColor: 'rgba(255, 99, 132, 0.2)',
+            borderColor: 'rgb(255, 99, 132)',
+              borderWidth: 1,
               data: yValues
             }]
           },
@@ -207,9 +217,16 @@ console.log(JSON.parse({{$condinent_name}}))
             legend: { display: false },
             title: {
               display: true,
-              text: "World Wine Production 2018"
+              text: "Category wise News"
+            },
+            layout: {
+            padding:{ 
+              left:30,
+              right:0,
             }
-          }
+            },
+          },
+          
         });
       </script>
 
