@@ -24,9 +24,7 @@ use App\Http\Controllers\authController;
 
 use Illuminate\Http\Request;
 
-Route::get('/admin', function () {
-    return view('layouts.admin_layout');
-})->middleware(['auth','verified','isAdmin']);
+ Route::get('/admin',[dashboardController::class,'dash'])->middleware(['auth','verified','isAdmin']);
 
 //category
 
@@ -207,7 +205,7 @@ Route::get('/admin/subsciber_update/{id}/{status}',[SubscriberController::class,
 
 //admin
 Route::get('/admin/subscriber',[subscriberController::class,'index']);
-Route::get('/admin/dashboard',[dashboardController::class,'dash']);
+
 // Route::get('/admin/dashboard',[dashboardController::class,'register']);
 
 Route::post('/comment',[CommendsController::class,'store']);
