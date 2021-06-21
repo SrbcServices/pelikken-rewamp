@@ -29,10 +29,6 @@ class dashboardController extends Controller
         array_push($news_counts,count($val->get_news));
        }
 
-
-
-          
-    
         return view('admin.dashboard',['news_count'=>$news_count,
         'comments_count'=>$comments_count,
         'trending_news'=>$trending_news,
