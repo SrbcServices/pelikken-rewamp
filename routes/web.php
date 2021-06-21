@@ -225,7 +225,7 @@ Route::get('/admin/message/{id}',[frontentcontactController::class,'update']);
 
 Route::get('/register',[authController::class,'register']);
 
-Route::get('/login',[authController::Class,'login']);
+Route::get('/login',[authController::class,'login']);
 
 
 
