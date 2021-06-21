@@ -103,14 +103,40 @@
                     </div>
                 </div>
                 <div class="col-lg-8 align-self-center">
-                    {{-- <div class="banner1">
-                        <a href="#">
-                            <img src="{{asset('/img/Headerfrontend/banner.jpg')}}">
-                        </a>
-                    </div> --}}
+                    <div class="banner1">
+
+                        <div class="col-lg-8 align-self-center" style="width: 100%">
+                            <div class="menu_right">
+                                <div class="users_area">
+                                    <ul class="inline">
+                                        <li class="search_btn"><i class="far fa-search"></i>
+                                        </li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="temp d-none d-lg-block">
+                                    <div class="temp_wap">
+                                        <div class="temp_icon">
+                                            <img id="img_loc" src="">
+                                        </div>
+                                        <h3 id="temp"></h3>
+                                        <p id="location"></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                       
+
+
+                    </div>
                 </div>
             </div>
         </div>
+        {{-- Temp Start --}}
+
+        
+
+        {{-- Temp End --}}
     </div>
     <!--::::: LOGO AREA END :::::::-->
 
@@ -121,7 +147,7 @@
             <div class="container">
                 <div class="row justify-content-between">
 
-                    <div class="col-10 col-lg-10">
+                    <div class="col-12 col-lg-12">
                         <div class="newsprk_nav stellarnav">
                             <ul id="newsprk_menu">
                                 <li><a href="/">Home <i class="fal fa-angle-down"></i></a>
@@ -192,33 +218,11 @@
                         </div>
 
                     </div>
-
-                    <div class="col-2 col-lg-2 align-self-center">
-                        <div class="menu_right">
-                            <div class="users_area">
-                                <ul class="inline">
-                                    <li class="search_btn"><i class="far fa-search"></i>
-                                    </li>
-                                    {{-- <li><i class="fal fa-user-circle"></i>
-                                    </li> --}}
-                                </ul>
-                            </div>
-                            
-                            <div class="temp d-none d-lg-block">
-                                <div class="temp_wap">
-                                    <div class="temp_icon">
-                                        <img id="img_loc" src="">
-                                    </div>
-                                    <h3 id="temp"></h3>
-                                    <p id="location"></p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
     </div>
+    <hr>
 
    
     <!--HEADER END-->

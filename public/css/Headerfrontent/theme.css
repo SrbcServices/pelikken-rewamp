@@ -2692,9 +2692,14 @@ SPACE CSS
   position: relative;
 }
 .theme-1 .main-nav {
-  background: white;
+  /* background: white;
+  min-height: 70px;
+  box-shadow: 0 72px 20px 0 #fbfbff; */
+  background: rgb(36, 35, 35);
   min-height: 70px;
   box-shadow: 0 72px 20px 0 #fbfbff;
+  border-bottom: 4px solid #307773;
+  color: #fbfbff;
 }
 .theme-1 .navbar {
   border-radius: 0;

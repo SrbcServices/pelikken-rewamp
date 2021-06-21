@@ -203,7 +203,7 @@
         var yValues = <?php echo json_encode($category_wise_news_count) ?>;
 
         new Chart("category", {
-          type: "bar",
+          type: "line",
           data: {
             labels: xValues,
             datasets: [{

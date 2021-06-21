@@ -101,9 +101,9 @@
 
 
 .stellarnav.light ul ul {
-    background: rgba(255, 255, 255, 1);
+    background: rgb(36, 35, 35);
     padding: 10px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 8px rgb(0 0 0 / 10%);
 }
 
 /* dark theme */
@@ -816,7 +816,7 @@ ul#newsprk_menu {
 .newsprk_nav li a {
     padding: 18px 20px;
     background: transparent;
-    color: #17222B;
+    color: #ffffff;
     position: relative;
     z-index: 2;
 }
