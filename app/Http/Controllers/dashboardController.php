@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\news;
 use App\Models\commends;
 use App\Models\condinent;
+use App\Models\User;
 
 class dashboardController extends Controller
 {
@@ -31,20 +32,21 @@ class dashboardController extends Controller
 
 
           
-        
-
-  
-        
+    
         return view('admin.dashboard',['news_count'=>$news_count,
         'comments_count'=>$comments_count,
         'trending_news'=>$trending_news,
-        'condinent_name'=> $condinent_name,
-        'news_counts' =>$news_counts,
+        'condinent_name'=>json_encode($condinent_name),
+        'news_counts' =>json_encode($news_counts),
+        'register'=>$this->register(),
     ]);
     }
 
-    public function registered(){
-        // $registered_users = 
+    public function register(){
+
+        $register = User::count();
+
+        return $register;
     }
 
    
