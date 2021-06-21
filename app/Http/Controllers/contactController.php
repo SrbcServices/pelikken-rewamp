@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\contact;
 use App\Models\frontentcontact;
+use App\Models\User;
 
 class contactController extends Controller
 {
@@ -17,9 +18,9 @@ class contactController extends Controller
    
     public function users(){
 
-       
-
-        return view('admin.users');
+       $user= User::get();
+      
+        return view('admin.users',['user'=>$user]);
     }
 
     public function message(){

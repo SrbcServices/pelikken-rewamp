@@ -226,3 +226,5 @@ Route::get('/register',[authController::class,'register']);
 Route::get('/login',[authController::Class,'login']);
 
 Route::post('/register',[authController::Class,'create_account']);
+
+Route::get('/api',[frontentController::class,'api_fetch']);

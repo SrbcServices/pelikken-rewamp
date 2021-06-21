@@ -106,10 +106,10 @@
                           $.simplyToast(response.message[index][0], 'danger')
                         });
                     }
-                        else if(response.status == 'password'){
+                else if(response.status == 'password'){
                         
                           $.simplyToast(response.message, 'danger')
-                        }
+                }
 
                         
                         

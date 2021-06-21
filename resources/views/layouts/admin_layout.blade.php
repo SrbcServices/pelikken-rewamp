@@ -148,7 +148,35 @@
                         <a href="/admin/comment" class="dropdown-item dropdown-footer">See All commends</a>
                     </div>
                 </li>
+
+                <li>
+                    <a class="nav-link" data-toggle="dropdown" href="#">
+                        <i class="fas fa-power-off"></i>
+                        
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+                     
+                        <div class="dropdown-divider"></div>
+                        <a href="/admin/comment" class="dropdown-item">
+                            <i class="fas fa-user"></i>&nbsp;&nbsp; Alexander Pierce
+                           
+                        </a>
+                        
+                        
+                        <div class="dropdown-divider"></div>
+                        <a href="#" class="dropdown-item">
+                            <i class="fas fa-sign-out-alt"></i>&nbsp;&nbsp;&nbsp;Log Out
+                            {{-- <span class="float-right text-muted text-sm">Latest</span> --}}
+                        </a>
+                        
+                        <div class="dropdown-divider" style="margin-bottom: 10px"></div>
+                        
+                    </div>
+
+                </li>
             </ul>
+
+            
         </nav>
         <!-- /.navbar -->
 
