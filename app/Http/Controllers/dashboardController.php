@@ -53,7 +53,6 @@ foreach ($category_wise_news as $category){
     public function register(){
 
         $register = User::count();
-
         return $register;
     }
 
