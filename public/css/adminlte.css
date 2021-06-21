@@ -646,6 +646,7 @@ pre code {
   width: 100%;
   padding-right: 7.5px;
   padding-left: 7.5px;
+  margin-top: 18px;
 }
 
 .col {
@@ -4795,6 +4796,7 @@ input[type="button"].btn-block {
   border-radius: 0.25rem;
 }
 
+
 .card > hr {
   margin-right: 0;
   margin-left: 0;
@@ -4814,6 +4816,7 @@ input[type="button"].btn-block {
   -ms-flex: 1 1 auto;
   flex: 1 1 auto;
   min-height: 1px;
+  
 }
 
 .card-title {
@@ -6776,17 +6779,17 @@ button.bg-secondary:focus {
 }
 
 .bg-success {
-  background-color: #28a745 !important;
+  background-color: #ffffff !important;
 }
 
 a.bg-success:hover, a.bg-success:focus,
 button.bg-success:hover,
 button.bg-success:focus {
-  background-color: #1e7e34 !important;
+  background-color: #141414 !important;
 }
 
 .bg-info {
-  background-color: #17a2b8 !important;
+  background-color:#307875 !important;
 }
 
 a.bg-info:hover, a.bg-info:focus,
@@ -7459,7 +7462,8 @@ button.bg-dark:focus {
   }
   .align-items-sm-center {
     -ms-flex-align: center !important;
-    align-items: center !important;
+    
+     !important;
   }
   .align-items-sm-baseline {
     -ms-flex-align: baseline !important;
@@ -19113,6 +19117,7 @@ html.maximized-card {
   margin: 0 0 10px 0;
   padding: 0;
   white-space: nowrap;
+  color: #666262;
 }
 
 @media (min-width: 992px) {
@@ -19173,6 +19178,7 @@ html.maximized-card {
 .small-box .icon > i.fa, .small-box .icon > i.fas, .small-box .icon > i.far, .small-box .icon > i.fab, .small-box .icon > i.glyphicon, .small-box .icon > i.ion {
   font-size: 70px;
   top: 20px;
+  color: #f2f2f2;
 }
 
 .small-box:hover {
@@ -28058,12 +28064,12 @@ blockquote.quote-gray-dark h6 {
 }
 
 .bg-success {
-  background-color: #28a745 !important;
+  background-color: #ffffff !important;
 }
 
 .bg-success,
 .bg-success > a {
-  color: #ffffff !important;
+  color: #141414 !important;
 }
 
 .bg-success.btn:hover {
@@ -28078,12 +28084,12 @@ blockquote.quote-gray-dark h6 {
 }
 
 .bg-info {
-  background-color: #17a2b8 !important;
+  background-color: #ffffff !important;
 }
 
 .bg-info,
 .bg-info > a {
-  color: #ffffff !important;
+  color: #141414 !important;
 }
 
 .bg-info.btn:hover {
@@ -28098,12 +28104,12 @@ blockquote.quote-gray-dark h6 {
 }
 
 .bg-warning {
-  background-color: #ffc107 !important;
+  background-color: #ffffff !important;
 }
 
 .bg-warning,
 .bg-warning > a {
-  color: #1F2D3D !important;
+  color: #141414 !important;
 }
 
 .bg-warning.btn:hover {
@@ -28118,12 +28124,12 @@ blockquote.quote-gray-dark h6 {
 }
 
 .bg-danger {
-  background-color: #dc3545 !important;
+  background-color: #ffffff !important;
 }
 
 .bg-danger,
 .bg-danger > a {
-  color: #ffffff !important;
+  color: #141414 !important;
 }
 
 .bg-danger.btn:hover {
@@ -28138,7 +28144,7 @@ blockquote.quote-gray-dark h6 {
 }
 
 .bg-light {
-  background-color: #f8f9fa !important;
+  background-color: #ffffff !important;
 }
 
 .bg-light,

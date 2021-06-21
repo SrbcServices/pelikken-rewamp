@@ -547,6 +547,8 @@ jQuery(document).ready(function($) {
 
 }(jQuery));
 
+
+
 //date upper corner
 var months = [
   "January",
@@ -572,6 +574,7 @@ var weeks = [
   "Friday",
   "Saturday"
 ];
+
 d = new Date();
 var month = months[d.getMonth()];
 var day = weeks[d.getDay()];
@@ -580,6 +583,7 @@ var year = d.getFullYear();
 
 var full_date = day + "," + month + " " + date + " " + year;
 
+document.getElementById("date_now").innerText = full_date;
 document.getElementById("date").innerText = full_date;
 console.log(full_date);
 //end of date

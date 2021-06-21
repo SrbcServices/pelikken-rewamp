@@ -19,4 +19,7 @@ class condinent extends Model
         
         return $this->hasMany(Country::class);
     }
+    public function get_news(){
+        return $this->hasmany(news::class,'Condinent','id');
+    }
 }

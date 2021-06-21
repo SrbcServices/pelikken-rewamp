@@ -208,7 +208,7 @@
                         <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
                         <li class="nav-item has-treeview">
-                            <a href="/" class="nav-link">
+                            <a href="/admin/dashboard" class="nav-link">
                                 <i class="fas fa-th-large"></i>&nbsp;
                                 <p>
                                     Dashboard
@@ -446,6 +446,7 @@
     <!-- AdminLTE App -->
     <script src="{{ asset('js/adminlte.min.js') }}"></script>
 
+<<<<<<< HEAD
 
 
 
@@ -455,6 +456,11 @@
 
 
     @yield('scripts')
+=======
+
+    
+@yield('scripts')
+>>>>>>> 9380afcda9d81726a27dd66ecc95b8cae13b9bd8
 
 
 
