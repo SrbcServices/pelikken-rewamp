@@ -4686,3 +4686,23 @@ color: red;
   border-radius: 10px;
   font-size: 14px;
 }
+.email_error{
+ top: -15px;
+  position: relative;
+  color: red;
+  font-size: 12px;
+}
+.alert-own{
+  background: #fc2525da;
+  color: white;
+  font-weight: 300;
+  padding: 5px 10px;
+  margin-bottom: 10px;
+}
+.succ-own{
+  background: #3dc938da;
+  color: white;
+  font-weight: 300;
+  padding: 5px 10px;
+  margin-bottom: 10px;
+}
