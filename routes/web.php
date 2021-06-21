@@ -18,6 +18,7 @@ use App\Http\Controllers\termsController;
 use App\Http\Controllers\privacyController;
 use App\Http\Controllers\contactController;
 use App\Http\Controllers\SubscriberController;
+use App\Http\Controllers\dashboardController;
 use App\Http\Controllers\FrontentcontactController;
 use App\Http\Controllers\authController;
 
@@ -203,7 +204,8 @@ Route::get('/admin/subsciber_update/{id}/{status}',[SubscriberController::class,
 
 //admin
 Route::get('/admin/subscriber',[subscriberController::class,'index']);
-
+Route::get('/admin/dashboard',[dashboardController::class,'dash']);
+// Route::get('/admin/dashboard',[dashboardController::class,'register']);
 
 Route::post('/comment',[CommendsController::class,'store']);
 
@@ -224,3 +226,9 @@ Route::get('/admin/message/{id}',[frontentcontactController::class,'update']);
 Route::get('/register',[authController::class,'register']);
 
 Route::get('/login',[authController::Class,'login']);
+
+
+
+
+Route::get('/dash',[dashboardController::class,'graph']);
+
