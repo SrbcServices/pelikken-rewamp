@@ -220,7 +220,8 @@ Route::post('/contacts',[FrontentcontactController::class,'store']);
 Route::get('/admin/message',[contactController::class,'message']);
 
 Route::get('/admin/message/{id}',[frontentcontactController::class,'update']);
-
+//create new admin profil from admin
+Route::post('/admin/create_admin_user',[contactController::class,'create_admin_user']);
 
 //auth
 
@@ -237,3 +238,4 @@ Route::post('/forgot-password',[authController::class,'forgot'])->middleware('gu
 Route::get('/reset-password/{token}',[authController::class,'reset_password'])->middleware('guest')->name('password.reset');
 //reset password auth 
 Route::post('/reset-password', [authController::class,'post_reset_password'])->middleware('guest')->name('password.update');
+

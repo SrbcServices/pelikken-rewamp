@@ -59,7 +59,8 @@ public function store(Request $request)
         {
              //foreach($request->select_category as $select){
             $sub_category = subCategory::find($request->id);
-            // $sub_category->category_id = $select;
+            
+            $sub_category->category_id = $request->select_category;
             $sub_category->Sub_Category_name = $request->sub_category_name;
             $sub_category->slug=str_replace (' ','_',$request->sub_category_name);
 

@@ -1,9 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use App\Models\about;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
 use App\Models\condinent;
 use App\Models\news;
 use App\Models\NewsArrangment;
@@ -59,7 +59,13 @@ class frontentController extends Controller
         $section_news_sidebar =  NewsArrangment::where('type', 2)->with('get_category.get_news')->orderBy('order', 'asc')->limit(10)->get();
         // return  $section_news_sidebar;
 
-        return view('frontent.home_page', ['highlights' => $highlights, 'trending' => $trending, 'latest_news' => $latest_news, 'section_news_main' => $section_news_main, 'section_news_sidebar' => $section_news_sidebar]);
+        return view('frontent.home_page', ['highlights' => $highlights, 
+        'trending' => $trending, 
+        'latest_news' => $latest_news,
+         'section_news_main' => $section_news_main, 
+         'section_news_sidebar' => $section_news_sidebar,
+        'api'=>$this->api_fetch()
+        ]);
     }
 
     //latest news
@@ -165,8 +171,10 @@ class frontentController extends Controller
         return view('frontent.block',['news' => $result, 'main' => 'search', 'sub' => '']);
         
     }
+
     //about frontent
     public function about(){
+        
         $about = about::first();
         return view('frontent.about',['about'=>$about]);
     }
@@ -177,5 +185,21 @@ class frontentController extends Controller
 
           return view('frontent.privacy',['privacy'=>$privacy]);
       }
+
+    //api calling
+
+    public function api_fetch(){
+
+    
+
+        $response = Http::withHeaders([
+            'X-Client' => 'pelikkencomapi',   
+        ])->withToken('eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjQzNTcwNTIsImlhdCI6MTYyNDM0NjI1Miwic3ViIjoicGVsaWtrZW5jb21hcGkiLCJmZWVkIjoiQ05XfFBSTl9BU0lBfFBSTl9JTkRJQXxQUk4tVUstRElTQ0xPU0V8UFJORXxQUk5VUyJ9.AOmhT_-urs5CksdeOY-Od_eZNsuOQhkZnhwlM051ONg')
+        ->get('https://contentapi.cision.com/api/v1.0/releases?mod_startdate=20200801T102000-0000&language=en&industry=FIN&mm_type=any')->collect();
+        $data = collect($response);
+        return $data['data'];
+
+    }
+
   
 }

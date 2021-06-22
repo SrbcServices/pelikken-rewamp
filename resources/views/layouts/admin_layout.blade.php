@@ -64,11 +64,9 @@
                     <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
                 </li>
                 <li class="nav-item d-none d-sm-inline-block">
-                    <a href="./index3.html" class="nav-link">Home</a>
+                    <a href="/" class="nav-link">Home</a>
                 </li>
-                <li class="nav-item d-none d-sm-inline-block">
-                    <a href="#" class="nav-link">Contact</a>
-                </li>
+               
             </ul>
 
             <!-- SEARCH FORM -->
@@ -148,7 +146,35 @@
                         <a href="/admin/comment" class="dropdown-item dropdown-footer">See All commends</a>
                     </div>
                 </li>
+
+                <li>
+                    <a class="nav-link" data-toggle="dropdown" href="#">
+                        <i class="fas fa-power-off"></i>
+                        
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+                     
+                        <div class="dropdown-divider"></div>
+                        <a href="/admin" class="dropdown-item">
+                            <i class="fas fa-user"></i>&nbsp;&nbsp; {{Auth::user()->name}}
+                           
+                        </a>
+                        
+                        
+                        <div class="dropdown-divider"></div>
+                        <a href="/logout" class="dropdown-item">
+                            <i class="fas fa-sign-out-alt"></i>&nbsp;&nbsp;&nbsp;Log Out
+                            {{-- <span class="float-right text-muted text-sm">Latest</span> --}}
+                        </a>
+                        
+                        <div class="dropdown-divider" style="margin-bottom: 10px"></div>
+                        
+                    </div>
+
+                </li>
             </ul>
+
+            
         </nav>
         <!-- /.navbar -->
 
@@ -417,6 +443,11 @@
     <script src="{{ asset('js/jquery.bootstrap-duallistbox.min.js') }}"></script>
     <!-- AdminLTE App -->
     <script src="{{ asset('js/adminlte.min.js') }}"></script>
+
+
+
+    
+
 
 
     

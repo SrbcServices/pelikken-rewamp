@@ -1,6 +1,30 @@
 @extends('layouts.header-frontent')
 @section('content')
 
+
+
+
+
+ 
+
+@foreach ($api as $item)
+
+@endforeach
+{{$item['company'][0]}}
+{{$item['title']}}
+{{date('d-m-Y', strtotime($item['date']))}}
+{{$item['release_id']}}
+
+
+
+
+
+
+
+
+
+
+
 @if(count($highlights)>0)
 <div class="post_gallary_area fifth_bg mb40">
     <div class="container">
@@ -19,7 +43,7 @@
                                 </div>
                                 <div class="single_post_text" style="padding: 18px 20px">
                                      <div class="meta meta_separator1">	<a href="/news/{{$news->category->slug}}">{{$news->category->category_name}}</a>
-                                        <a href="#">March 26, 2020</a>
+                                        <a href="#">{{$news->local}}</a>
                                     </div>
                                     <h4><a class="" href="/pelikken/news/{{$news->slug}}">{{substr($news->NewsHeading,0,60)}}</a></h4>
                                     <div class="space-10"></div>
@@ -47,7 +71,7 @@
                     </div>
                     <div class="single_post_text" style="padding: 18px 12px">
                          <div class="meta meta_separator1">	<a href="news/{{$news->category->slug}}">{{$news->category->category_name}}</a>
-                            <a href="#">March 26, 2020</a>
+                            <a href="#">{{$news->local}}</a>
                         </div>
                         <h6 ><a  href="/pelikken/news/{{$news->slug}}" class="small" style="font-size: 18px;line-height:20px;">{{substr($news->NewsHeading,0,60)}}</a></h6>
                         
@@ -99,7 +123,7 @@
                     </div>
                     <div class="single_post_text">
                         <div class="meta3">	<a href="news/{{$news->category->category_name}}">{{$news->category->category_name}}</a>
-                            <a href="#">March 26, 2020</a>
+                            <a href="#">{{$news->local}}</a>
                         </div>
                         <h4><a href="/pelikken/news/{{$news->slug}}">{{$news->NewsHeading}}</a></h4>
                         <div class="space-10"></div>
