@@ -18,8 +18,6 @@
                             </thead>
                             <tbody>
 
-                    
-
                                 <tr>
                                     <td>01</td>
                                     <td>456</td>
