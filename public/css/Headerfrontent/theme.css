@@ -2692,9 +2692,14 @@ SPACE CSS
   position: relative;
 }
 .theme-1 .main-nav {
-  background: white;
+  /* background: white;
+  min-height: 70px;
+  box-shadow: 0 72px 20px 0 #fbfbff; */
+  background: rgb(36, 35, 35);
   min-height: 70px;
   box-shadow: 0 72px 20px 0 #fbfbff;
+  border-bottom: 4px solid #307773;
+  color: #fbfbff;
 }
 .theme-1 .navbar {
   border-radius: 0;
@@ -2847,7 +2852,7 @@ SPACE CSS
 .theme-1 .dropdown-menu > li > a:hover,
 .theme-1 .dropdown-menu > li > a:focus {
   background: #1091FF;
-  color: #fff;
+  /* color: #fff; */
 }
 @media (min-width: 767px) {
   .theme-1 ul.nav li.dropdown .dropdown-menu li.dropdown-submenu .dropdown-menu {
@@ -15814,11 +15819,8 @@ textarea::placeholder {
     width: 40%;
     height: auto;
   }
-<<<<<<< HEAD
-=======
 
   .infoo{
     margin-top: 10px;
     color: white;
   }
->>>>>>> 824d7cdf11278542072f00aa5a3a693d6ffd1948

@@ -40,6 +40,10 @@
                         </div>
                     </div>
                         @endforeach
+
+                        <div class="d-flex" style="margin-top: 30px; Margin-bottom: 30px">
+                            {{ $world->links('pagination::bootstrap-4') }}
+                        </div>
                         
                              
                     @else

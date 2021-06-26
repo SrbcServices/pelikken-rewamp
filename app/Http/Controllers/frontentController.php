@@ -11,6 +11,8 @@ use App\Models\contact;
 
 use App\Models\privacy;
 
+use App\Models\Commends;
+
 class frontentController extends Controller
 {
     public function __construct(Request $request)
@@ -63,8 +65,13 @@ class frontentController extends Controller
 
     public function newses($slug)
     {
-        $news = news::with('newsImages','newsVideo','tags')->where('slug',$slug)->first();
+        $news = news::with('newsImages','newsVideo','tags','commends')->where('slug',$slug)->first();
+        
+
+  
+        
     // return $news;
+
         return view('frontent.single_news',['news'=>$news]);
     }
 
@@ -73,7 +80,7 @@ class frontentController extends Controller
     public function world()
     {
 
-        $world = news::whereNotNull('condinent')->get();
+        $world = news::whereNotNull('condinent')->paginate(2);
 
 
         return view('frontent.world', ['world' => $world]);
@@ -95,7 +102,7 @@ class frontentController extends Controller
                 $q->where('slug', $sub_category);
             });
         });
-        $news = $query->get();
+        $news = $query->paginate(50);
 
 
 
@@ -126,7 +133,7 @@ class frontentController extends Controller
 
 
 
-        $news = $query->get();
+        $news = $query->paginate(50);
 
 
 

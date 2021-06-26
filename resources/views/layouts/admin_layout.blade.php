@@ -369,6 +369,7 @@
 
 
 
+
                             </ul>
                         </li>
 
@@ -446,7 +447,7 @@
     <!-- AdminLTE App -->
     <script src="{{ asset('js/adminlte.min.js') }}"></script>
 
-<<<<<<< HEAD
+
 
 
 
@@ -456,11 +457,10 @@
 
 
     @yield('scripts')
-=======
+
 
     
-@yield('scripts')
->>>>>>> 9380afcda9d81726a27dd66ecc95b8cae13b9bd8
+
 
 
 
