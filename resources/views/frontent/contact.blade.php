@@ -55,7 +55,7 @@
                             </div>
                             <div class="col-12">
                                 <div class="space-20"></div>
-                                <input class="cbtn1" type="button" id="sent" value="Sent Messege">
+                                <button class="cbtn1"  id="sent" >Send Message</button>
                             </div>
 
                         </div>
@@ -88,18 +88,21 @@
 
 
                 data: $("#contact_form").serializeArray(),
+                beforeSend:function(){
+                    $('#sent').html('<i class="fa fa-spinner" aria-hidden="true"></i>')
+                },
 
                 success: function (response) {
-                    console.log(response)
+                   
                     if (response.status == 'error') {
 
                         $.simplyToast(response.message, 'danger')
-                        console.log('error')
+                        $('#sent').html('Send Image')
 
                     } else {
-                        // $('#addform').load(document.URL + ' #addform');
+                       $('#contact_form').trigger('reset');
                         $.simplyToast(response.message, 'success')
-                        console.log('Success')
+                        $('#sent').html('Send Image')
                     }
                 },
 
