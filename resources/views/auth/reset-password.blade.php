@@ -3,9 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>AdminLTE 3 | Recover Password</title>
+  <title>Pelikken | Recover Password</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="{{asset('img/title_logo/favicon.jpg')}}">
 
   <link rel="stylesheet" href="{{ asset('/css/all.min.css') }}">
   <link rel="stylesheet" href="{{ asset('/css/all.css') }}">

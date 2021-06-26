@@ -4,10 +4,10 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Pelikken Admin</title>
+    <title>Pelikken | Login</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <link rel="icon" href="{{asset('img/title_logo/favicon.jpg')}}">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="{{ asset('/css/all.min.css') }}">
     <link rel="stylesheet" href="{{ asset('/css/all.css') }}">
@@ -71,7 +71,7 @@
                 <!-- /.social-auth-links -->
 
                 <p class="mb-1">
-                    <a href="#">I forgot my password</a>
+                    <a href="/forgot-password">I forgot my password</a>
                 </p>
                 <p class="mb-0">
                     <a href="/register" class="text-center">Register a new membership</a>
