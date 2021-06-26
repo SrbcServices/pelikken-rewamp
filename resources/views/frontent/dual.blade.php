@@ -41,6 +41,10 @@
                     </div>
 
                     @endforeach
+
+                    <div class="d-flex" style="margin-top: 30px; Margin-bottom: 30px">
+                        {{ $news->links('pagination::bootstrap-4') }}
+                    </div>
                         
                     @else
                     <div class="not-found">

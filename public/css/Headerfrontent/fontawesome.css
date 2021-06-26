@@ -23,8 +23,8 @@
   .page-item.active .page-link {
     z-index: 3;
     color: #fff;
-    background-color: #007bff;
-    border-color: #007bff;
+    background-color: #307773;
+    border-color: #307773;
 };
 .page-link {
   position: relative;

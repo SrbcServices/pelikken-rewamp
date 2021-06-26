@@ -45,6 +45,14 @@
 
                         @endforeach
 
+
+                        {{-- //paginate --}}
+
+                        <div class="d-flex" style="margin-top: 30px; Margin-bottom: 30px">
+                         {{ $latest_news->links('pagination::bootstrap-4') }}
+                        </div>
+
+                        {{-- //paginate end --}}
                             
                     @else
                     <div class="not-found">

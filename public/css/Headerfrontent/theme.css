@@ -2854,7 +2854,7 @@ SPACE CSS
 .theme-1 .dropdown-menu > li > a:hover,
 .theme-1 .dropdown-menu > li > a:focus {
   background: #1091FF;
-  color: #fff;
+  /* color: #fff; */
 }
 @media (min-width: 767px) {
   .theme-1 ul.nav li.dropdown .dropdown-menu li.dropdown-submenu .dropdown-menu {

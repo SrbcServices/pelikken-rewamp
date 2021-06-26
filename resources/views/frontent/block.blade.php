@@ -50,13 +50,22 @@
                             </div>
                         </div>
                     </div>
-                    @endforeach                  
+                    @endforeach 
+                    
+                
+
+
                 @endif                    
                    
                     
 
                 </div>
-                     
+                
+                <div class="d-flex" style="margin-top: 30px; Margin-bottom: 30px">
+                    {{ $news->links('pagination::bootstrap-4') }}
+                </div>
+
+
                 @else
                 <div class="not-found">
                     <img src="{{asset('images/not-found.png')}}"/>
@@ -133,6 +142,8 @@
                                 <div class="space-15"></div>
                                 @endforeach
                             @endif
+
+
                             </div>
                         </div>
                     </div>

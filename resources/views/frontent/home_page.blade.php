@@ -28,6 +28,7 @@
 <div class="post_gallary_area fifth_bg mb40">
     <div class="container">
         <div class="row">
+           
             @foreach ($highlights as $index => $news)
 
 

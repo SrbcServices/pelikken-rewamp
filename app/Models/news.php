@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\source;
+use App\Models\commends;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
@@ -114,4 +115,12 @@ class news extends Model
     public function get_previous_news(){
         return news::where([['Category','=',$this->Category],['id','<',$this->id]])->limit(3)->get(); 
     }
+
+    //comments
+
+    public function commends()
+    {
+        return $this->hasmany(commends::class, 'news_id', 'id')->where('status',1);
+    }
+
 }

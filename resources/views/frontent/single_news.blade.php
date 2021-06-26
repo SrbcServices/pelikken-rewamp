@@ -1,7 +1,6 @@
 @extends('layouts.header-frontent')
 @section('content')
 
-
 <div class="archives post post1 padding-top-30">
     <div class="container">
         <div class="row">
@@ -174,23 +173,30 @@
 				<div class="comment_list">
 					<div class="row">
 						<div class="col-12 col-lg-10 m-auto">
-							<h3>Our Comments</h3>
+							
+                            @if(count($news->commends)>0)
+                            <h3> Comments</h3>
+                            <br>
+                            @foreach ($news->commends as $item)
+                                
+                      
 							<div class="single_comment">
 								<div class="comment_img">
 									<img src="{{asset('img/news/single_post1.jpg')}}" alt="">
 								</div>
 								<div class="row">
-									<div class="col-sm-6">	<a href="#">QuomodoSoft</a>
+									<div class="col-sm-6">	<a href="#">{{$item->name}}</a>
 									</div>
 									
 								</div>
 								<div class="space-5"></div>
-								<p>We’ve invested every aspect of how we serve our users over the past Pellentesque rutrum ante in nulla suscipit, vel posuere leo tristique.</p>
+								<p>{{$item->message}}</p>
 							</div>
 							<div class="space-15"></div>
 							<div class="border_black"></div>
 							<div class="space-15"></div>
-							
+                            @endforeach
+							@endif
 							
 							
 							

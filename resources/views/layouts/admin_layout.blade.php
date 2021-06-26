@@ -368,6 +368,10 @@
 
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 44fd306b7e5cffcc7c62e0284515c3474a3a9c54
                             </ul>
                         </li>
 
@@ -445,14 +449,30 @@
     <!-- AdminLTE App -->
     <script src="{{ asset('js/adminlte.min.js') }}"></script>
 
+<<<<<<< HEAD
+=======
+
+
+
+
+
+>>>>>>> 44fd306b7e5cffcc7c62e0284515c3474a3a9c54
 
 
     
 
 
+<<<<<<< HEAD
 
     
 @yield('scripts')
+=======
+    @yield('scripts')
+
+
+    
+
+>>>>>>> 44fd306b7e5cffcc7c62e0284515c3474a3a9c54
 
 
 
