@@ -7,7 +7,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!--::::: FABICON ICON :::::::-->
-    <link rel="icon" href="{{asset('/img/Headerfrontend/fabicon.png')}}">
+    <link rel="icon" href="{{asset('img/title_logo/favicon.jpg')}}">
     <!--::::: ALL CSS FILES :::::::-->
     
     <link rel="stylesheet" href="{{asset('/css/Headerfrontent/bootstrap.min.css')}}">
@@ -36,8 +36,7 @@
                 </div>
             </div>
         </div>
-        <div class="close_btn"> <i class="fal fa-times"></i>
-        </div>
+        
     </div>
     <!--:::::SEARCH FORM END :::::::-->
     <!--::::: TOP BAR START :::::::-->
@@ -97,7 +96,7 @@
                     <div class="logo">
                         <a href="/">
                             @if(generalDetails())
-                            <img src="{{asset('/uploads/logo/'.generalDetails()->LogoImageName.'')}}">
+                            <img src="{{asset('/uploads/logo/'.generalDetails()->LogoImageName.'')}}" class="nm-logo">
                             @endif
                         </a>
                     </div>
@@ -132,23 +131,19 @@
                 </div>
             </div>
         </div>
-        {{-- Temp Start --}}
-
-        
-
-        {{-- Temp End --}}
     </div>
     <!--::::: LOGO AREA END :::::::-->
 
     <!--::::: MENU AREA START  :::::::-->
-    <div class="main-menu" id="header"> <a href="#top" class="up_btn up_btn1"><i
-                class="far fa-chevron-double-up"></i></a>
-        <div class="main-nav clearfix is-ts-sticky">
+
+    <div class="main-menu" id="header"> <a href="#top" class="up_btn up_btn1"><i class="far fa-chevron-double-up"></i></a>
+        <div class="main-nav clearfix is-ts-sticky" >
             <div class="container">
                 <div class="row justify-content-between">
 
                     <div class="col-12 col-lg-12">
-                        <div class="newsprk_nav stellarnav">
+                        <div class="newsprk_nav stellarnav ">
+
                             <ul id="newsprk_menu">
                                 <li><a href="/">Home <i class="fal fa-angle-down"></i></a>
                                     
@@ -201,18 +196,8 @@
                                     @endif
                                 </li>
                                 @endforeach
-                                
-                                
-                                
-
-                               
+   
                                 @endif
-
-                                
-
-
-                          
-                                
 
                             </ul>
                         </div>
@@ -432,13 +417,12 @@
 	<script src="{{asset('/js/frontent/jquery.2.1.0.min.js')}}"></script>
 	<script src="{{asset('/js/frontent/bootstrap.min.js')}}"></script>
 	<script src="{{asset('/js/frontent/jquery.nav.js')}}"></script>
-	<script src="{{asset('/js/frontent/jquery.waypoints.min.js')}}"></script>
-	<script src="{{asset('/js/frontent/jquery-modal-video.min.js')}}"></script>
+
 	<script src="{{asset('/js/frontent/owl.carousel.js')}}"></script>
-	<script src="{{asset('/js/frontent/popper.min.js')}}"></script>
-	<script src="{{asset('/js/frontent/circle-progress.js')}}"></script>
+
+    <script src="{{asset('/js/frontent/stellarnav.js')}}"></script>
 	<script src="{{asset('/js/frontent/slick.min.js')}}"></script>
-	<script src="{{asset('/js/frontent/stellarnav.js')}}"></script>
+
 	<script src="{{asset('/js/frontent/wow.min.js')}}"></script>
 	<script src="{{asset('/js/frontent/main.js')}}"></script>
 	<script src="{{asset('/js/main.js')}}"></script>
@@ -459,6 +443,13 @@
         }
     })
     })
+
+    //menu hide
+ 
+	jQuery(document).ready(function($) {
+		jQuery('.stellarnav').stellarNav();
+	});
+
     
     </script>
     @yield('scripts')

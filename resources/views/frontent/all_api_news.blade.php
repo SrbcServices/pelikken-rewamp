@@ -5,7 +5,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <div class="bridcrumb">	<a href="#">Home</a>/ {{$main ? ucfirst($main):''}}  / {{$sub ? ucfirst($sub) : ''}}</div>
+                <div class="bridcrumb">	<a href="#">Home</a>/prnewswire</div>
             </div>
         </div>
     </div>
@@ -17,51 +17,38 @@
     <div class="container">
         <div class="row">
         <div class="col-md-6 col-lg-8">
-              @if(count($news)>0)
+            
             <div class="row">
-                    <div class="col-12 align-self-center">
-                       
-                        <div class="categories_title">
-                            <h5>Category: <a href="#">@if($main){{ucfirst($main)}} @endif</a></h5>
-                        </div>
-                    </div>
+                    
                 </div>
                 <div class="row justify-content-center">
 
-                @if(count($news)>0)
-                    @foreach ($news as $item)
+              
+                    @foreach ($api as $item)
     
 
 
                     <div class="col-lg-6">
                         <div class="single_post post_type3 mb30">
-                            <div class="post_img">
-                                <div class="img_wrap">
-                                    <img src="{{asset('uploads/news/'.$item->ThumbImage.'')}}" alt="">
-                                </div>
-                            </div>
+                            
                             <div class="single_post_text">
-                                <div class="meta3">	<a href="/news/{{$item->category->slug}}">{{$item->category->category_name}}</a>
-                                    <a href="#">{{ $item->local }}</a>
+                                <div class="meta3">	<a href="">{{$item['company'][0]}}</a>
+                                    <a href="#">{{ date('d-m-Y', strtotime($item['date'])) }}</a>
                                 </div>
-                                <h4><a href="/pelikken/news/{{$item->slug}}">{{substr($item->NewsHeading,0,100)}}</a></h4>
+                                <h4><a href="/api/news_wire/{{$item['release_id']}}">{{$item['title']}}</a></h4>
                                 <div class="space-10"></div>
-                                <p class="post-p">{{$item->SubHeading}}</p>
+                               
                             </div>
                         </div>
                     </div>
                     @endforeach                  
-                @endif                    
+                          
                    
                     
 
                 </div>
                      
-                @else
-                <div class="not-found">
-                    <img src="{{asset('images/not-found.png')}}"/>
-                </div>
-@endif
+             
                
             </div>
             

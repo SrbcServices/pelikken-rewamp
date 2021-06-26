@@ -173,7 +173,7 @@ class NewsController extends Controller
     //get all news
     public function get_all_news()
     {
-        $news = news::select('id', 'NewsHeading', 'Featured', 'Trending', 'Highlight', 'ThumbImage')->get();
+        $news = news::select('id', 'NewsHeading', 'Featured', 'Trending', 'Highlight', 'ThumbImage','slug')->orderBY('id','desc')->get();
         return view('admin.all-news', ['news' => $news]);
     }
     //edit news page enter here
@@ -208,7 +208,7 @@ class NewsController extends Controller
         $news->slug = str_replace(' ','_',$request->News_Heading);
         $news->Source = $request->source;
         $news->Condinent = $request->condinent;
-        $news->Country = $request->condinent;
+        $news->Country = $request->country;
         $news->Category = $request->category;
         $news->SubCategory = $request->sub_category;
         $news->NewsDiscription = $request->discription;

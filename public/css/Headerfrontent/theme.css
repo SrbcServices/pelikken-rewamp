@@ -2695,10 +2695,12 @@ SPACE CSS
   /* background: white;
   min-height: 70px;
   box-shadow: 0 72px 20px 0 #fbfbff; */
-  background: rgb(36, 35, 35);
+  /* background: rgb(36, 35, 35); */
+  background-image: linear-gradient(to right,#2e4059, #307773);
+  background-image: linear-gradient(50deg,#2e4059 50%, #307773);
   min-height: 70px;
   box-shadow: 0 72px 20px 0 #fbfbff;
-  border-bottom: 4px solid #307773;
+  /* border-bottom: 4px solid #307773; */
   color: #fbfbff;
 }
 .theme-1 .navbar {
@@ -7448,12 +7450,12 @@ body.dark-theme {
   background: #29333C !important;
 }
 .dark-theme .widget_tab ul li a {
-  background: #233340;
+  background: #307773;
   color: #FFFFFF;
 }
 .dark-theme .widget_tab ul li a.active {
   color: #FFFFFF;
-  background: #1091FF;
+  background: #307773;
 }
 .dark-theme .bold {
   background: #17222B;
@@ -14322,7 +14324,7 @@ span.tranding.tranding_border {
 }
 .widget_tab ul li a.active {
   color: #FFFFFF;
-  background: #1091FF;
+  background: #307773;
 }
 
 .tab-pane.fade.active.show {
@@ -15818,11 +15820,11 @@ textarea::placeholder {
     width: 40%;
     height: auto;
   }
-<<<<<<< HEAD
-=======
 
   .infoo{
     margin-top: 10px;
     color: white;
   }
->>>>>>> 824d7cdf11278542072f00aa5a3a693d6ffd1948
+.nm-logo{
+  width: 180px;
+}

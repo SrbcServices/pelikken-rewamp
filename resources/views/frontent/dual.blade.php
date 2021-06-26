@@ -29,7 +29,7 @@
                             </div>
                             <div class="single_post_text">
                                 <div class="meta3"> <a href="/news/{{$newses->category->slug}}">{{$newses->category->category_name}}</a>
-                                    <a href="#">March 26, 2020</a>
+                                    <a href="#">{{ $newses->local }}</a>
                                 </div>
                                 <h4><a href="/pelikken/news/{{$newses->slug}}">{{$newses->NewsHeading}}</a></h4>
                                 <div class="space-10"></div>
@@ -84,7 +84,7 @@
                                 </div>
                                 <div class="single_post_text">
                                     <div class="meta2 meta_separator1">	<a href="/news/{{$featured->category->slug}}">{{$featured->category->category_name}}</a>
-                                        <a href="#">March 26, 2020</a>
+                                        <a href="#">{{ $featured->local }}</a>
                                     </div>
                                     <h4><a href="/pelikken/news/{{$featured->slug}}">{{substr($featured->NewsHeading,0,100)}}</a></h4>
                                 </div>
@@ -119,7 +119,7 @@
                                 </div>
                                 <div class="single_post_text">
                                     <div class="meta2 meta_separator1">	<a href="/news/{{$highlights->category->slug}}">{{$highlights->category->category_name}}</a>
-                                        <a href="#">March 26, 2020</a>
+                                        <a href="#">{{ $highlights->local }}</a>
                                     </div>
                                     <h4><a href="/pelikken/news/{{$highlights->slug}}">{{substr($highlights->NewsHeading,0,60)}}</a></h4>
                                 </div>

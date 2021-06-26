@@ -11,6 +11,7 @@ use App\Models\contact;
 use App\Models\terms;
 
 use App\Models\privacy;
+use Session;
 
 class frontentController extends Controller
 {
@@ -72,7 +73,7 @@ class frontentController extends Controller
     public function latest_news()
     {
 
-        $latest_news = news::paginate(50);
+        $latest_news = news::orderBy('id','desc')->paginate(10);
 
         return view('frontent.latest_news', ['latest_news' => $latest_news]);
     }
@@ -189,16 +190,48 @@ class frontentController extends Controller
     //api calling
 
     public function api_fetch(){
-
-    
-
         $response = Http::withHeaders([
             'X-Client' => 'pelikkencomapi',   
-        ])->withToken('eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjQzNTcwNTIsImlhdCI6MTYyNDM0NjI1Miwic3ViIjoicGVsaWtrZW5jb21hcGkiLCJmZWVkIjoiQ05XfFBSTl9BU0lBfFBSTl9JTkRJQXxQUk4tVUstRElTQ0xPU0V8UFJORXxQUk5VUyJ9.AOmhT_-urs5CksdeOY-Od_eZNsuOQhkZnhwlM051ONg')
-        ->get('https://contentapi.cision.com/api/v1.0/releases?mod_startdate=20200801T102000-0000&language=en&industry=FIN&mm_type=any')->collect();
-        $data = collect($response);
-        return $data['data'];
+        ])->withToken(Session()->get('cision_token'))
+        ->get('https://contentapi.cision.com/api/v1.0/releases?mod_startdate=20200801T102000-0000&language=en&fields=multimedia|title|date|release_id|company|industry|subject|summary')->json();
+     
+        if(array_key_exists("data",$response)){
+           return $response['data'];
 
+        }else{
+             //token is invalid so generate a new token
+             $login = Http::withHeaders([
+                'X-Client' => 'pelikkencomapi',
+               
+            ])->post('https://contentapi.cision.com/api/v1.0/auth/login', [
+                "login"=>config('api_cision.api_user'),
+                "pwd"=>config('api_cision.api_secret')
+            ]);
+           
+            $token = $login['auth_token'];
+            //put new token to session
+            Session()->put('cision_token', $token);
+            $response = Http::withHeaders([
+                'X-Client' => 'pelikkencomapi',   
+            ])->withToken($token)
+            ->get('https://contentapi.cision.com/api/v1.0/releases?mod_startdate=20200801T102000-0000&language=en&fields=multimedia|title|date|release_id|company|industry|subject|summary')->json();
+           return $response['data'];
+        }
+
+    }
+   //api
+    public function api($id){
+        $response = Http::withHeaders([
+            'X-Client' => 'pelikkencomapi',   
+        ])->withToken(Session()->get('cision_token'))
+        ->get('https://contentapi.cision.com/api/v1.0/releases/'.$id.'')->collect();
+        $data = collect($response);
+        return view('frontent.Api_news',['api'=>$data]);
+    }
+    //api call here
+    public function all_api(){
+        $news =  $this->api_fetch();
+        return view('frontent.all_api_news',['api'=>$news]);
     }
 
   

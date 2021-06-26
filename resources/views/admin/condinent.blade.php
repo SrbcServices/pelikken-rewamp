@@ -3,7 +3,7 @@
     <div class="pt-4"></div>
     <div class="jumbotron bg-white p-3" style="margin-bottom: 10px">
         <h3 class="text-gray">Master</h3>
-        <p class="text-gray">Master / Condinent</p>
+        <p class="text-gray">Master / Continent</p>
     </div>
     <div class="container-fluid">
 
@@ -19,7 +19,7 @@
             <div class="modal-dialog modal-lg" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Condinent</h5>
+                        <h5 class="modal-title" id="exampleModalLabel">Continent</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>

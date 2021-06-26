@@ -81,6 +81,11 @@
                                             <button type="delete" id="delete_category" class="btn btn-secondary"
                                                 onclick="delete_news({{ $new->id }})">
                                                 <i class="fas fa-trash-alt"></i></button>
+                                            <button  id="copy" class="btn btn-secondary"
+                                                onclick="news_copy(event,'{{$new->slug}}')">
+                                                <i class="fas fa-copy" ></i></button>
+
+
                                         </td>
                                     </tr>
 
@@ -171,6 +176,12 @@
                  }
                 }
             });
+        }
+
+        //copy the news link
+        function news_copy(e,id){
+            navigator.clipboard.writeText(`${window.location.origin}/pelikken/news/${id}`);
+            $.simplyToast('Link Copied to clipboard', 'success')
         }
 
     </script>

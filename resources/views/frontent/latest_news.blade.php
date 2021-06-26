@@ -50,8 +50,10 @@
                     <div class="not-found">
                         <img src="{{asset('images/not-found.png')}}"/>
                     </div>
-@endif
+                    @endif
+                   
                     </div>
+                   
                 </div>
             </div>
         </div>

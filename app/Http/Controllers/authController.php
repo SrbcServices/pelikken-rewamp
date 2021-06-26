@@ -193,5 +193,10 @@ public function forgot(Request $request){
                  : back()->withErrors(['email' => [__($status)]]);
    }
 
+   //resend email verification link
+   public function resend_email(Request $request){
+      $request->user()->sendEmailVerificationNotification();
+      return response()->json(['status'=>'success','message'=>'verification link sended']);
+   }
 
 }

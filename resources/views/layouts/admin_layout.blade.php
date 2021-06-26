@@ -7,6 +7,7 @@
     <title>Pelikken News Portal</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="{{asset('img/title_logo/favicon.jpg')}}">
     {{-- Datatables --}}
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.css">
     <!-- Font Awesome -->
@@ -195,7 +196,7 @@
                             class="img-circle elevation-2" alt="User Image">
                     </div>
                     <div class="info">
-                        <a href="#" class="d-block">Alexander Pierce</a>
+                        <a href="#" class="d-block">{{ucfirst(Auth::user()->name)}}</a>
                     </div>
                 </div>
 
@@ -246,7 +247,7 @@
                                 <li class="nav-item">
                                     <a href="/admin/condinent" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
-                                        <p>Condinent</p>
+                                        <p>Continent</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
@@ -301,7 +302,7 @@
                             <a href="/admin/comment" class="nav-link">
                                 <i class="fa fa-comments" aria-hidden="true"></i>&nbsp;
                                 <p>
-                                    COMMENTS
+                                    Comment
                                 </p>
                             </a>
                         </li>

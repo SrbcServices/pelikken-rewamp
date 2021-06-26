@@ -27,7 +27,9 @@ class subCategory extends Model
 
         return $this->belongstoMany(category::class);
     }
-    
+    public function get_news(){
+        return $this->hasMany(news::class,'SubCategory','id');
+    }
 
 
 }

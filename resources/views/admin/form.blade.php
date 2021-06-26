@@ -369,7 +369,7 @@
                     },
                     success: function(response) {
                         if (response.status == 'success') {
-                            // window.location.href = '/news'
+                           window.location.href = '/all-news'
                         }else if(response.status == 'fail'){
                             $('#error-show').html('<li class="error">something went wrong, Please try again</li>')
                             $('#submit-news').html('submit')

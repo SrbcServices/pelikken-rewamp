@@ -30,7 +30,7 @@
                             </div>
                             <div class="single_post_text">
                                 <div class="meta3"> <a href="/news/{{$worlds->category->slug}}">{{$worlds->category->category_name}}</a>
-                                    <a href="#">March 26, 2020</a>
+                                    <a href="#">{{ $worlds->local }}</a>
                                 </div>
                                 <h4><a href="/pelikken/news/{{$worlds->slug}}">{{$worlds->NewsHeading}}</a></h4>
                                 <div class="space-10"></div>

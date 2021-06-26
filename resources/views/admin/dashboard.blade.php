@@ -106,7 +106,7 @@
                 <div class="tab-content p-0">
                   <!-- Morris chart - Sales -->
                   <div>
-                    <canvas id="myChart"></canvas>
+                    <canvas id="myChart" height="120px"></canvas>
                   </div>
                 </div>
               </div>
@@ -126,13 +126,34 @@
                   <div class="tab-content p-0">
                     <!-- Morris chart - Sales -->
                     <div>
-                      <canvas id="category" ></canvas>
+                      <canvas id="category" height="120px"></canvas>
                     </div>
                   </div><!-- /.card-body -->
                 </div>
 
               </div>
             </div>
+            <div class="col-md-12">
+              <div class="card">
+                <div class="card-header">
+                  <h3 class="card-title">
+                   
+                   Sub Category Wise News
+                  </h3>
+                </div><!-- /.card-header -->
+                <div class="card-body">
+                  <div class="tab-content p-0">
+                    <!-- Morris chart - Sales -->
+                    <div>
+                      <canvas id="subcategory" height="50px" ></canvas>
+                    </div>
+                  </div><!-- /.card-body -->
+                </div>
+  
+              </div>
+            </div>
+            
+
           </div>
         </div>
           <!-- /.card-body -->
@@ -176,7 +197,7 @@
           data: {
             labels: xValues,
             datasets: [{
-              backgroundColor: 'rgb(255, 99, 132,0)',
+              backgroundColor: 'rgb(255, 99, 132,.8)',
               borderColor: 'rgb(255, 99, 132)',
               data: yValues
             }]
@@ -208,6 +229,37 @@
             labels: xValues,
             datasets: [{
               backgroundColor: 'rgba(255, 99, 132, 0.2)',
+              borderColor: 'rgb(255, 99, 132)',
+              borderWidth: 1,
+              data: yValues
+            }]
+          },
+          options: {
+            legend: { display: false },
+            title: {
+              display: true,
+              text: "Category wise News"
+            },
+            layout: {
+            padding:{ 
+              left:30,
+              right:0,
+            }
+            },
+          },
+          
+        });
+
+
+        var xValues = <?php echo json_encode($sub_category_name) ?>;
+        var yValues = <?php echo json_encode($sub_category_count) ?>;
+
+        new Chart("subcategory", {
+          type: "line",
+          data: {
+            labels: xValues,
+            datasets: [{
+              backgroundColor: 'rgba(255, 99, 132, 0)',
             borderColor: 'rgb(255, 99, 132)',
               borderWidth: 1,
               data: yValues

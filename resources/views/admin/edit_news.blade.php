@@ -121,14 +121,14 @@
                                                 </label>
                                                 <select class="form-control" name="country" style="width: 100%;">
                                                     @foreach (App\Models\country::all() as $source)
-                                                        @if ($source->id == $news_details->Country)
+                                                        @if ($source->id == $news_details->Country) --}}
                                                             <option value="{{ $source->id }}" selected>
                                                                 {{ $source->country_name }}</option>
                                                         @else
                                                             <option value="{{ $source->id }}">
-                                                                {{ $source->contry_name }}
+                                                                {{ $source->country_name }}
                                                             </option>
-                                                        @endif
+                                                       @endif
                                                     @endforeach
                                                 </select>
 
