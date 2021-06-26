@@ -10,11 +10,10 @@
     <!--::::: ALL CSS FILES :::::::-->
     <link rel="stylesheet" href="{{asset('/css/all.min.css')}}">
 
-    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+ 
 
     <link rel="stylesheet" href="{{asset('/css/icheck-bootstrap.min.css')}}">
 
-    <link rel="stylesheet" href="{{asset('/css/adminlte.min.css')}}">
 
     <link rel="stylesheet" href="{{asset('/css/adminlte.min.css')}}">
     
@@ -25,11 +24,12 @@
 
         <div class="card">
             <div class="card-body register-card-body">
-                <p class="login-box-msg">Register a new membership</p>
+                <p class="login-box-msg">Register as a new membership</p>
 
-                <form action="../../index.html" method="post">
+                <form action="/register" method="post" id="register-form">
+                    @csrf
                     <div class="input-group mb-3">
-                        <input type="text" class="form-control" placeholder="Full name">
+                        <input type="text" class="form-control" placeholder="Full name" name="full_name">
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-user"></span>
@@ -37,7 +37,7 @@
                         </div>
                     </div>
                     <div class="input-group mb-3">
-                        <input type="email" class="form-control" placeholder="Email">
+                        <input type="email" class="form-control" placeholder="Email" name="email">
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-envelope"></span>
@@ -45,7 +45,7 @@
                         </div>
                     </div>
                     <div class="input-group mb-3">
-                        <input type="password" class="form-control" placeholder="Password">
+                        <input type="password" class="form-control" placeholder="Password" name="password">
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-lock"></span>
@@ -53,7 +53,7 @@
                         </div>
                     </div>
                     <div class="input-group mb-3">
-                        <input type="password" class="form-control" placeholder="Retype password">
+                        <input type="password" class="form-control" placeholder="Retype password" name="confirm_password">
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-lock"></span>
@@ -69,11 +69,11 @@
                                 </label>
                             </div>
                         </div>
-                        <!-- /.col -->
+                    
                         <div class="col-4">
-                            <button type="submit" class="btn btn-primary btn-block btn-flat">Register</button>
+                            <button type="submit" class="btn btn-primary btn-block btn-flat" id="register">Register</button>
                         </div>
-                        <!-- /.col -->
+                   
                     </div>
                 </form>
             </div>
@@ -86,16 +86,39 @@
 
     <script src="{{asset('/js/frontent/jquery.2.1.0.min.js')}}"></script>
 	<script src="{{asset('/js/frontent/bootstrap.min.js')}}"></script>
-	<script src="{{asset('/js/frontent/jquery.nav.js')}}"></script>
-	<script src="{{asset('/js/frontent/jquery.waypoints.min.js')}}"></script>
-	<script src="{{asset('/js/frontent/jquery-modal-video.min.js')}}"></script>
-	<script src="{{asset('/js/frontent/owl.carousel.js')}}"></script>
-	<script src="{{asset('/js/frontent/popper.min.js')}}"></script>
-	<script src="{{asset('/js/frontent/circle-progress.js')}}"></script>
-	<script src="{{asset('/js/frontent/slick.min.js')}}"></script>
-	<script src="{{asset('/js/frontent/stellarnav.js')}}"></script>
-	<script src="{{asset('/js/frontent/wow.min.js')}}"></script>
-	<script src="{{asset('/js/frontent/main.js')}}"></script>
+    <script src="{{ asset('js/simply-toast.min.js') }}"></script>
+	
+
+
+    <script>
+        $(document).ready(function(){
+            $('#register').on('click',function(e){
+                e.preventDefault();
+                $.ajax({
+                   
+                    method:'post',
+                    url:'/register',
+                    data:$('#register-form').serialize(),
+                    success:function(response){
+                        if(response.status == 'error'){
+                            Object.keys(response.message).forEach((index,value,array) => {
+                          console.log(response.message[index][0]);
+                          $.simplyToast(response.message[index][0], 'danger')
+                        });
+                    }
+                else if(response.status == 'password'){
+                        
+                          $.simplyToast(response.message, 'danger')
+                }
+
+                        
+                        
+                    }
+                })
+            })
+        })
+    </script>
+
 </body>
 
 

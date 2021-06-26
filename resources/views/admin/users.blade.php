@@ -10,20 +10,28 @@
                             <thead>
                                 
                                 <tr>
-                                    <th>User Name</th>
-                                    <th>Email Id</th>
-                                    <th>Phone</th>
-                                    <th>Reset Password</th>
+                                    <th>Email</th>
+                                    <th>Register Date</th>
+                                    <th>Role</th>
+                                    <th>Verified</th>
                                 </tr>
                             </thead>
                             <tbody>
 
+                    @if (count($user)>0)  
+                    @foreach ($user as $users)
+                        
+                   
+
+
                                 <tr>
-                                    <td>01</td>
-                                    <td>456</td>
+                                    <td>{{$users->email}}</td>
+                                    <td>{{date('d-m-Y', strtotime($users->created_at))}}</td>
                                     <td>45</td>
                                     <td>50</td>
                                 </tr>
+                    @endforeach
+                    @endif
                                
                             </tbody>
                         </table>

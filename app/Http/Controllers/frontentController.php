@@ -1,9 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use App\Models\about;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
 use App\Models\condinent;
 use App\Models\news;
 use App\Models\NewsArrangment;
@@ -159,8 +159,10 @@ class frontentController extends Controller
         return view('frontent.block',['news' => $result, 'main' => 'search', 'sub' => '']);
         
     }
+
     //about frontent
     public function about(){
+        
         $about = about::first();
         return view('frontent.about',['about'=>$about]);
     }
@@ -171,5 +173,36 @@ class frontentController extends Controller
 
           return view('frontent.privacy',['privacy'=>$privacy]);
       }
+
+    //api calling
+
+    public function api_fetch(){
+
+    //headers = {'Authorization': '[eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjQwODc4NjUsImlhdCI6MTYyNDA3NzA2NSwic3ViIjoicGVsaWtrZW5jb21hcGkiLCJmZWVkIjoiQ05XfFBSTl9BU0lBfFBSTl9JTkRJQXxQUk4tVUstRElTQ0xPU0V8UFJORXxQUk5VUyJ9.ug4reaiLjevIW0Vet0gawNabci-5-pUS01Jc5yRSygo]'}
+
+    //     // $api = \Http::get('https://contentapi.cision.com/api/v1.0/releases?mod_startdate=20200801T102000-0000&mod_enddate=20210618T102000-0000&language=en&industry=FIN')[' pelikkencomapi'];
+
+    //  $http({method: 'GET', url: '[https://contentapi.cision.com/api/v1.0/releases?mod_startdate=20200801T102000-0000&mod_enddate=20210618T102000-0000&language=en&industry=FIN]', headers: {
+    //         'Authorization': '[eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjQwODc4NjUsImlhdCI6MTYyNDA3NzA2NSwic3ViIjoicGVsaWtrZW5jb21hcGkiLCJmZWVkIjoiQ05XfFBSTl9BU0lBfFBSTl9JTkRJQXxQUk4tVUstRElTQ0xPU0V8UFJORXxQUk5VUyJ9.ug4reaiLjevIW0Vet0gawNabci-5-pUS01Jc5yRSygo]'}
+    //       });
+
+    // $api = Http::withHeaders([
+    //     'X-Client' => 'pelikkencomapi'
+        
+    // ])->get('https://contentapi.cision.com/api/v1.0/releases?mod_startdate=20200801T102000-0000&mod_enddate=20210618T102000-0000&language=en&industry=FIN', [
+    //     'name' => 'api',
+    // ]);
+    $token = bearerToken();
+    $api = request('get', 'https://contentapi.cision.com/api/v1.0/releases?mod_startdate=20200801T102000-0000&mod_enddate=20210618T102000-0000&language=en&industry=FIN', [
+        'headers' => [
+            'Authorization' => 'Bearer '.$token,
+            'Accept' => 'application/json',
+        ],
+    ]);
+
+    return $api;
+
+    }
+
   
 }

@@ -95,7 +95,6 @@
                                 </tr>
                             </thead>
                             <tbody>
-
                             @foreach ($sub_categories as $sub_category)
 
                                 <tr>
