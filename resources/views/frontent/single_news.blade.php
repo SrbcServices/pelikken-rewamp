@@ -182,7 +182,7 @@
                       
 							<div class="single_comment">
 								<div class="comment_img">
-									<img src="{{asset('img/news/single_post1.jpg')}}" alt="">
+									<img src="{{asset('img/title_logo/mobile.png')}}" alt="">
 								</div>
 								<div class="row">
 									<div class="col-sm-6">	<a href="#">{{$item->name}}</a>
