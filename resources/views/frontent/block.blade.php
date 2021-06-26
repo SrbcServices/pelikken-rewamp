@@ -19,12 +19,7 @@
         <div class="col-md-6 col-lg-8">
               @if(count($news)>0)
             <div class="row">
-                    <div class="col-12 align-self-center">
-                       
-                        <div class="categories_title">
-                            <h5>Category: <a href="#">@if($main){{ucfirst($main)}} @endif</a></h5>
-                        </div>
-                    </div>
+                    
                 </div>
                 <div class="row justify-content-center">
 

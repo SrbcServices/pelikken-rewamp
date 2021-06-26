@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="{{asset('/css/Headerfrontent/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{asset('/css/Headerfrontent/animate.min.css')}}">
     <link rel="stylesheet" href="{{asset('/css/Headerfrontent/fontawesome.css')}}">
-    <link rel="stylesheet" href="{{asset('/css/Headerfrontent/modal-video.min.css')}}">
+
     <link rel="stylesheet" href="{{asset('/css/Headerfrontent/stellarnav.css')}}">
     <link rel="stylesheet" href="{{asset('/css/Headerfrontent/owl.carousel.css')}}">
     <link rel="stylesheet" href="{{asset('/css/Headerfrontent/slick.css')}}">
@@ -414,15 +414,16 @@
     <!--::::: FOOTER AREA END :::::::-->
     <!--ALL JS FILE-->
 
-	<script src="{{asset('/js/frontent/jquery.2.1.0.min.js')}}"></script>
+    <script src="{{asset('/js/frontent/jquery.2.1.0.min.js')}}"></script>
 	<script src="{{asset('/js/frontent/bootstrap.min.js')}}"></script>
 	<script src="{{asset('/js/frontent/jquery.nav.js')}}"></script>
-
+	<script src="{{asset('/js/frontent/jquery.waypoints.min.js')}}"></script>
+	<script src="{{asset('/js/frontent/jquery-modal-video.min.js')}}"></script>
 	<script src="{{asset('/js/frontent/owl.carousel.js')}}"></script>
-
-    <script src="{{asset('/js/frontent/stellarnav.js')}}"></script>
+	<script src="{{asset('/js/frontent/popper.min.js')}}"></script>
+	<script src="{{asset('/js/frontent/circle-progress.js')}}"></script>
 	<script src="{{asset('/js/frontent/slick.min.js')}}"></script>
-
+	<script src="{{asset('/js/frontent/stellarnav.js')}}"></script>
 	<script src="{{asset('/js/frontent/wow.min.js')}}"></script>
 	<script src="{{asset('/js/frontent/main.js')}}"></script>
 	<script src="{{asset('/js/main.js')}}"></script>

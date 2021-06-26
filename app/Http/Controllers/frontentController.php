@@ -166,7 +166,7 @@ class frontentController extends Controller
             $q->where('slug',$request->tag_name);
         });
 
-        $news = $query->get();
+        $news = $query->paginate(50);
 
         return view('frontent.block',['news' => $news, 'main' => 'tags', 'sub' => $request->tag_name]);
         
@@ -174,9 +174,9 @@ class frontentController extends Controller
 
     //seaech functionalilty
     public function search(Request $request){
-        $result = news::where('NewsHeading', 'LIKE', '%' . $request->query_param .'%')->get();
+        $result = news::where('NewsHeading', 'LIKE', '%' . $request->query_param .'%')->paginate(50);
 
-        return view('frontent.block',['news' => $result, 'main' => 'search', 'sub' => '']);
+        return view('frontent.block',['news' => $result, 'main' => 'search', 'sub' => '','ser'=>true]);
         
     }
 
