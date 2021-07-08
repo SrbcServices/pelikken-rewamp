@@ -40,6 +40,7 @@ font weight
 /*SHADOW START*/
 /*SHADOW END*/
 @import url("https://fonts.googleapis.com/css2?family=Heebo:wght@100;300;400;500;700;800;900&display=swap");
+@import url('https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css');
 .theme-input input {
   font-size: 16px;
   font-weight: 400;
@@ -510,6 +511,24 @@ input:-webkit-autofill:hover {
 
 .font140 {
   font-size: 140px;
+}
+
+.cookie-alert {
+  position: fixed;
+  bottom: 50px;
+  right: 100px;
+  width: 500px;
+  margin: 0 !important;
+  z-index: 999;
+  opacity: 0;
+  transform: translateY(100%);
+  transition: all 500ms ease-out;
+}
+
+.cookie-alert.show {
+  opacity: 1;
+  transform: translateY(0%);
+  transition-delay: 1000ms;
 }
 
 /*------------------------------
@@ -15784,6 +15803,18 @@ textarea::placeholder {
     text-align: left !important;
     margin-top: 20px;
   }
+  .cookie-alert {
+    position: fixed;
+    bottom: 15px;
+    right: 0px;
+    left: 50px;
+    width: 300px!important;
+    margin: 0 !important;
+    z-index: 999;
+    opacity: 0;
+    transform: translateY(100%);
+    transition: all 500ms ease-out;
+  }
 }
 @media screen and (min-width: 768px) and (max-width: 960px) {
   a.single_social {
@@ -15828,3 +15859,20 @@ textarea::placeholder {
 .nm-logo{
   width: 180px;
 }
+
+@media (max-width: 300px) {
+  .cookie-alert {
+    position: fixed;
+    bottom: 15px;
+    right: 30px!important;
+    left: 5px;
+    width: 320px;
+    margin: 0 !important;
+    z-index: 999;
+    opacity: 0;
+    transform: translateY(100%);
+    transition: all 500ms ease-out;
+  }
+}
+
+

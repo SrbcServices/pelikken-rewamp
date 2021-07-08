@@ -4706,3 +4706,22 @@ color: red;
   padding: 5px 10px;
   margin-bottom: 10px;
 }
+@import url('https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css');
+
+.cookie-alert {
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+  width: 320px;
+  margin: 0 !important;
+  z-index: 999;
+  opacity: 0;
+  transform: translateY(100%);
+  transition: all 500ms ease-out;
+}
+
+.cookie-alert.show {
+  opacity: 1;
+  transform: translateY(0%);
+  transition-delay: 1000ms;
+}

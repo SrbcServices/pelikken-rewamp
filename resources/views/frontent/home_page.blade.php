@@ -28,7 +28,7 @@
 <div class="post_gallary_area fifth_bg mb40">
     <div class="container">
         <div class="row">
-           
+
             @foreach ($highlights as $index => $news)
 
 
@@ -126,7 +126,10 @@
                 @if ($index < 4) <div class="single_post post_type3">
                     <div class="post_img">
                         <div class="img_wrap">
-                            <img src="{{ asset('uploads/news/' . $news->ThumbImage . '') }}" alt="">
+
+                            <a href="/pelikken/news/{{ $news->slug }}">
+                                <img src="{{ asset('uploads/news/' . $news->ThumbImage . '') }}" alt="">
+                            </a>
                         </div>
                     </div>
                     <div class="single_post_text">
@@ -375,7 +378,7 @@
                             <div class="single_post post_type3 mb30">
                                 <div class="post_img">
                                     <div class="img_wrap">
-                                        <a href="#">
+                                        <a href="/pelikken/news/{{ $news->slug }}">
                                             <img src="{{ asset('uploads/news/' . $news->ThumbImage . '') }}" alt="">
                                         </a>
                                     </div>
@@ -403,69 +406,65 @@
 
             </div>
 
-<!-- api start -->
+            <!-- api start -->
 
-<div class="row">
-    @foreach ($api as $index=> $item)
-    @if ($index < 10)
-        
-   
-    
-    <div class="col-lg-6">
-        <div class="single_post widgets_small">
-            
-            <div class="post_img">
-                @if (count($item['multimedia'])>0)
-                <div class="img_wrap">
-                   
-                        
-                    
-                    <img src="{{$item['multimedia'][0]['thumbnailurl']}}" alt="">
-
-               </div> 
-               @else
-               <div class="img_wrap">
-                   
-                        
-                    
-                <img src="{{asset('/images/dummy.png')}}" alt="">
-
-               </div> 
-              
-               @endif
-            </div>
-            
-            <div class="single_post_text">
-                <div class="meta2"> <a href="#">{{$item['company'][0]}}</a>
-                    <a href="#">{{ date('d-m-Y', strtotime($item['date'])) }}</a>
-                </div>
-                <h4><a href="/api/news_wire/{{$item['release_id']}}">{{$item['title']}}</a></h4>
-            </div>
-        </div>
-        <div class="space-15"></div>
-        <div class="border_black"></div>
-        <div class="space-15"></div>
-    </div> 
- @endif
-    @endforeach
-
-    <a href="/api/newswire" class="readmore">See More</a> 
-
-
-
-</div>
-<hr>
-
-
-<!-- api End -->
-
-
-
-
-            <!--CAROUSEL END-->
-            @if (count($section_news_main) > 0)
             <div class="row">
-                <div class="col-12">
+                @foreach ($api as $index=> $item)
+                @if ($index < 10) <div class="col-lg-6">
+                    <div class="single_post widgets_small">
+
+                        <div class="post_img">
+                            @if (count($item['multimedia'])>0)
+                            <div class="img_wrap">
+
+
+
+                                <img src="{{$item['multimedia'][0]['thumbnailurl']}}" alt="">
+
+                            </div>
+                            @else
+                            <div class="img_wrap">
+
+
+
+                                <img src="{{asset('/images/dummy.png')}}" alt="">
+
+                            </div>
+
+                            @endif
+                        </div>
+
+                        <div class="single_post_text">
+                            <div class="meta2"> <a href="#">{{$item['company'][0]}}</a>
+                                <a href="#">{{ date('d-m-Y', strtotime($item['date'])) }}</a>
+                            </div>
+                            <h4><a href="/api/news_wire/{{$item['release_id']}}">{{$item['title']}}</a></h4>
+                        </div>
+                    </div>
+                    <div class="space-15"></div>
+                    <div class="border_black"></div>
+                    <div class="space-15"></div>
+            </div>
+            @endif
+            @endforeach
+
+            <a href="/api/newswire" class="readmore">See More</a>
+
+
+
+        </div>
+        <hr>
+
+
+        <!-- api End -->
+
+
+
+
+        <!--CAROUSEL END-->
+        @if (count($section_news_main) > 0)
+        <div class="row">
+            <div class="col-12">
 
 
 
@@ -473,86 +472,54 @@
 
 
 
-                    @foreach ($section_news_main as $section)
+                @foreach ($section_news_main as $section)
 
 
-                    <div class="sports">
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="heading">
-                                    <h2 class="widget-title">{{ $section->section_name }}</h2>
+                <div class="sports">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="heading">
+                                <h2 class="widget-title">{{ $section->section_name }}</h2>
+                            </div>
+                        </div>
+                    </div>
+                    @if (count($section->get_category->get_news) > 0)
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="single_post post_type3 mb30">
+                                <div class="post_img">
+                                    <a href="/pelikken/news/{{ $section->get_category->get_news[0]->slug }}">
+                                        <img src="{{ asset('uploads/news/' . $section->get_category->get_news[0]->ThumbImage . '') }}"
+                                            alt="">
+                                    </a>
+                                </div>
+                                <div class="single_post_text">
+                                    <div class="meta3"> <a href="news/{{ $section->get_category->category_name }}">{{
+                                            $section->get_category->category_name }}</a>
+                                        <a href="#">{{ $news->local }}</a>
+                                    </div>
+                                    <h4><a href="/pelikken/news/{{ $section->get_category->get_news[0]->slug }}">{{
+                                            $section->get_category->get_news[0]->NewsHeading }}</a>
+                                    </h4>
+                                    <div class="space-10"></div>
+                                    <p class="post-p">
+                                        {{ $section->get_category->get_news[0]->SubHeading }}
+                                    </p>
+                                    <div class="space-20"></div> <a
+                                        href="/pelikken/news/{{ $section->get_category->get_news[0]->slug }}"
+                                        class="readmore">Read More</a>
                                 </div>
                             </div>
                         </div>
-                        @if (count($section->get_category->get_news) > 0)
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="single_post post_type3 mb30">
-                                    <div class="post_img">
-                                        <a href="/pelikken/news/{{ $section->get_category->get_news[0]->slug }}">
-                                            <img src="{{ asset('uploads/news/' . $section->get_category->get_news[0]->ThumbImage . '') }}"
-                                                alt="">
-                                        </a>
-                                    </div>
-                                    <div class="single_post_text">
-                                        <div class="meta3"> <a
-                                                href="news/{{ $section->get_category->category_name }}">{{
-                                                $section->get_category->category_name }}</a>
-                                            <a href="#">{{ $news->local }}</a>
-                                        </div>
-                                        <h4><a href="/pelikken/news/{{ $section->get_category->get_news[0]->slug }}">{{
-                                                $section->get_category->get_news[0]->NewsHeading }}</a>
-                                        </h4>
-                                        <div class="space-10"></div>
-                                        <p class="post-p">
-                                            {{ $section->get_category->get_news[0]->SubHeading }}
-                                        </p>
-                                        <div class="space-20"></div> <a
-                                            href="/pelikken/news/{{ $section->get_category->get_news[0]->slug }}"
-                                            class="readmore">Read More</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="sports_carousel owl-carousel nav_style1">
-                                    <!--CAROUSEL START-->
-                                    <div class="sports_carousel_item">
-                                        @foreach ($section->get_category->get_news as $index => $news)
-                                        @if ($index >= 1 && $index <= 5) <div class="single_post widgets_small">
-                                            <div class="post_img">
-                                                <div class="img_wrap">
-                                                    <a href="pelikken/news/{{ $news->slug }}">
-                                                        <img src="{{ asset('uploads/news/' . $news->ThumbImage . '') }}"
-                                                            alt="">
-                                                    </a>
-                                                </div>
-                                            </div>
-                                            <div class="single_post_text">
-                                                <div class="meta2"> <a
-                                                        href="/news/{{ $section->get_category->slug }}">{{
-                                                        $section->get_category->category_name }}</a>
-                                                    <a href="#">{{ $news->local }}</a>
-                                                </div>
-                                                <h4><a href="pelikken/news/{{ $news->slug }}">{{
-                                                        substr($news->NewsHeading, 0, 60) }}</a>
-                                                </h4>
-                                            </div>
-                                    </div>
-                                    <div class="space-15"></div>
-                                    <div class="border_black"></div>
-                                    <div class="space-15"></div>
-                                    @endif
-                                    @endforeach
-
-
-
-                                </div>
+                        <div class="col-md-6">
+                            <div class="sports_carousel owl-carousel nav_style1">
+                                <!--CAROUSEL START-->
                                 <div class="sports_carousel_item">
                                     @foreach ($section->get_category->get_news as $index => $news)
-                                    @if ($index >= 6 && $index <= 10) <div class="single_post widgets_small">
+                                    @if ($index >= 1 && $index <= 5) <div class="single_post widgets_small">
                                         <div class="post_img">
                                             <div class="img_wrap">
-                                                <a href="/pelikken/news/{{ $news->slug }}">
+                                                <a href="pelikken/news/{{ $news->slug }}">
                                                     <img src="{{ asset('uploads/news/' . $news->ThumbImage . '') }}"
                                                         alt="">
                                                 </a>
@@ -563,8 +530,8 @@
                                                     $section->get_category->category_name }}</a>
                                                 <a href="#">{{ $news->local }}</a>
                                             </div>
-                                            <h4><a href="/pelikken/news/{{ $news->slug }}">{{ substr($news->NewsHeading,
-                                                    0, 60) }}</a>
+                                            <h4><a href="pelikken/news/{{ $news->slug }}">{{
+                                                    substr($news->NewsHeading, 0, 60) }}</a>
                                             </h4>
                                         </div>
                                 </div>
@@ -572,37 +539,66 @@
                                 <div class="border_black"></div>
                                 <div class="space-15"></div>
                                 @endif
-
-
                                 @endforeach
 
 
 
-
                             </div>
+                            <div class="sports_carousel_item">
+                                @foreach ($section->get_category->get_news as $index => $news)
+                                @if ($index >= 6 && $index <= 10) <div class="single_post widgets_small">
+                                    <div class="post_img">
+                                        <div class="img_wrap">
+                                            <a href="/pelikken/news/{{ $news->slug }}">
+                                                <img src="{{ asset('uploads/news/' . $news->ThumbImage . '') }}" alt="">
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="single_post_text">
+                                        <div class="meta2"> <a href="/news/{{ $section->get_category->slug }}">{{
+                                                $section->get_category->category_name }}</a>
+                                            <a href="#">{{ $news->local }}</a>
+                                        </div>
+                                        <h4><a href="/pelikken/news/{{ $news->slug }}">{{ substr($news->NewsHeading,
+                                                0, 60) }}</a>
+                                        </h4>
+                                    </div>
+                            </div>
+                            <div class="space-15"></div>
+                            <div class="border_black"></div>
+                            <div class="space-15"></div>
+                            @endif
+
+
+                            @endforeach
+
+
+
+
                         </div>
-                        <!--CAROUSEL END-->
                     </div>
+                    <!--CAROUSEL END-->
                 </div>
-                @endif
             </div>
-            @endforeach
-
-            <!-- Api Start -->
-
-            
-
-
-
-
-            <!-- Api End -->
-
-
-
+            @endif
         </div>
+        @endforeach
+
+        <!-- Api Start -->
+
+
+
+
+
+
+        <!-- Api End -->
+
+
 
     </div>
-    @endif
+
+</div>
+@endif
 
 
 </div>
@@ -704,7 +700,5 @@
 </div>
 
 </div>
-
-
 
 @endsection

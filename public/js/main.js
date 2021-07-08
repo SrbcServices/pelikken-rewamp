@@ -376,65 +376,10 @@ jQuery(document).ready(function($) {
   })
 
 
-  var c4 = $('.first_circle.circle');
-  c4.circleProgress({
-    startAngle: -Math.PI / 4 * 3,
-    value: 0.5,
-    size: 36,
-    thickness:4,
-    lineCap: 'round',
-    fill: {
-      color: '#FF5555',
-    }
-  });
 
-  var c4 = $('.second_circle.circle');
-  c4.circleProgress({
-    startAngle: -Math.PI / 4 * 3,
-    value: 0.7,
-    size: 36,
-    thickness:4,
-    lineCap: 'round',
-    fill: {
-      color: '#FF5555',
-    }
-  });
 
-  var c4 = $('.third_circle.circle');
-  c4.circleProgress({
-    startAngle: -Math.PI / 4 * 3,
-    value: 0.2,
-    size: 36,
-    thickness:4,
-    lineCap: 'round',
-    fill: {
-      color: '#FF5555',
-    }
-  });
 
-  var c4 = $('.fourth_circle.circle');
-  c4.circleProgress({
-    startAngle: -Math.PI / 4 * 3,
-    value: 0.5,
-    size: 36,
-    thickness:4,
-    lineCap: 'round',
-    fill: {
-      color: '#FF5555',
-    }
-  });
 
-  var c4 = $('.fifth_circle.circle');
-  c4.circleProgress({
-    startAngle: -Math.PI / 4 * 3,
-    value: 0.4,
-    size: 36,
-    thickness:4,
-    lineCap: 'round',
-    fill: {
-      color: '#FF5555',
-    }
-  });
 
 
 
@@ -584,7 +529,6 @@ var year = d.getFullYear();
 var full_date = day + "," + month + " " + date + " " + year;
 
 document.getElementById("date_now").innerText = full_date;
-document.getElementById("date").innerText = full_date;
 console.log(full_date);
 //end of date
 
