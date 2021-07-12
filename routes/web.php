@@ -223,3 +223,8 @@ Route::get('/reset-password/{token}',[authController::class,'reset_password'])->
 Route::post('/reset-password', [authController::class,'post_reset_password'])->middleware('guest')->name('password.update');
 //resend email verification link
 Route::post('/email/verification-notification', [authController::class,'resend_email'])->middleware(['auth', 'throttle:6,1'])->name('verification.send');
+
+
+Route::any('{slug}',function(){
+    abort(404);
+});

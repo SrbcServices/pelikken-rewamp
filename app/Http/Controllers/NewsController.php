@@ -192,7 +192,7 @@ class NewsController extends Controller
             'Sub_Heading' => 'required',
             'source' => 'required',
             'category' => 'required',
-            'News_Heading' => 'required',
+         
 
         ]);
         if ($validated->fails()) {
@@ -215,7 +215,7 @@ class NewsController extends Controller
 
         $news->save();
         if ($request->tags) {
-
+            $tags_array = explode(',', $request->tags);
             newstags::where('News_id', $id)->delete();
             foreach ($request->tags as $tag) {
                 $news_tag = new newstags();
