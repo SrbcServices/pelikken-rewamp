@@ -77,8 +77,6 @@ class settingsController extends Controller
                 }
      
              }
-
-             else{
                  //save to folder
                  if ($request->hasFile('newlogo')) {
                     
@@ -99,7 +97,7 @@ class settingsController extends Controller
                 }
                 $saved = $settings->save();
 
-             }
+ 
 
 
          if(!$saved){

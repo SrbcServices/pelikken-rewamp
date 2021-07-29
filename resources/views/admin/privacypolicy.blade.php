@@ -55,6 +55,9 @@ $(document).on("click", "#submit-privacy", function(e){
         processData: false,
 
         data: form,
+        beforeSend:function(){
+            $('#submit-privacy').html('<i class="fa fa-spinner" aria-hidden="true"></i>')
+        },
 
         success: function (response) {
             console.log(response)

@@ -455,6 +455,11 @@ console.log(selected);
                     url: "/news/update/thumbnail",
                     data: $('#thumb_data').serialize(),
 
+                    beforeSend: function() {
+                        $('#update_thumb').html(
+                            '<i class="fa fa-spinner" aria-hidden="true"></i>')
+                    },
+
                     success: function(response) {
                         if (response.status == 'success') {
                             $('#show_current_updated').attr('src', img)
@@ -521,6 +526,10 @@ console.log(selected);
                 contentType: false,
                 processData: false,
                 
+                beforeSend: function() {
+                        $('#basic_update').html(
+                            '<i class="fa fa-spinner" aria-hidden="true"></i>')
+                    },
 
                 success: function(response) {
                     if (response.status == 'error') {
@@ -561,7 +570,8 @@ console.log(selected);
 
         })
 
-        //update banner image and video
+        // update banner image and video
+
         $('#multimedia_update').on('click', function(e) {
             e.preventDefault();
             let banner_image = $(`input[name="news_banner"]`)[0].files;
@@ -580,6 +590,10 @@ console.log(selected);
                 data: multimedia_form,
                 contentType: false,
                 processData: false,
+                beforeSend: function() {
+                        $('#multimedia_update').html(
+                            '<i class="fa fa-spinner" aria-hidden="true"></i>')
+                    },
                 success: function(response) {
                    if(response.status == 'error'){
                     

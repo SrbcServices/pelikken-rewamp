@@ -167,6 +167,9 @@
                         discription: $(`input[name='discription']`).val(),
                         '_token': "{{ csrf_token() }}"
                     },
+                    beforeSend:function(){
+            $('#add-ad').html('<i class="fa fa-spinner" aria-hidden="true"></i>')
+        },
                     success: function(response) {
                         if(response.status == 'success'){
                             $('#exampleModal').modal('hide')
@@ -182,6 +185,7 @@
 $(document).on("click", "#delete-ad", function (e) {
 console.log('clicked');
 var id = $(this).attr('data-id');
+$(this).html('<i class="fa fa-spinner text-white" aria-hidden="true"></i>')
 
 
 

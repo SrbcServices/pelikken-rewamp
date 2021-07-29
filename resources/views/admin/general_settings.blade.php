@@ -39,7 +39,7 @@
 
         <div class="form-group">
             <h6 style="font-weight:bold; color: grey">New Logo</h6>
-            <label for="logo" style="color: grey"><img src="https://asvs.in/wp-content/uploads/2017/08/dummy.png"></label>
+            <label for="logo" style="color: grey"><img src="{{asset('images/dummy.png')}}"></label>
             <input type="file" name="newlogo" class="form-control-file" id="logo" style="display: none">
         </div>
 
@@ -91,6 +91,9 @@ form.append('newlogo',newlogo[0])
         processData: false,
 
         data: form,
+        beforeSend:function(){
+            $('#submit').html('<i class="fa fa-spinner" aria-hidden="true"></i>')
+        },
 
         success: function (response) {
             console.log(response)

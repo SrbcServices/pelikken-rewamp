@@ -491,11 +491,15 @@
 
     <script src="https://pelikken.com/js/whether.js"></script>
     <script>
+        
         $('#sub-submit').on('click', function () {
             $.ajax({
                 type: "post",
                 url: "/subscribe",
                 data: $('#subscribers').serialize(),
+                beforeSend:function(){
+                   $('#sub-submit').html('<i class="fas fa-spinner"></i>')
+               },
                 success: function (response) {
                     if (response.status == 'success') {
                         $('.infoo').html(response.message).css('color', 'green')

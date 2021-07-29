@@ -87,6 +87,9 @@ $(document).on("click", "#submit-about", function(e){
         processData: false,
 
         data: form,
+        beforeSend:function(){
+            $('#submit-about').html('<i class="fa fa-spinner" aria-hidden="true"></i>')
+        },
 
         success: function (response) {
             console.log(response)

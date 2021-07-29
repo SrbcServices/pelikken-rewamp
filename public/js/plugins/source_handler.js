@@ -22,6 +22,9 @@ $(document).ready(function () {
              type: "post",
              url: "/admin/source",
              data: $('#addform').serialize(),
+             beforeSend:function(){
+                $('#submit').html('<i class="fas fa-spinner"></i>')
+            },
  
              success: function (response) {
                   console.log(response)
@@ -65,6 +68,9 @@ $(document).ready(function () {
             url: "/admin/sourceupdate/"+id,
 
             data: data,
+            beforeSend:function(){
+                $('#update').html('<i class="fas fa-spinner"></i>')
+            },
 
             success: function (response) {
                 console.log(response)
@@ -81,6 +87,7 @@ $(document).ready(function () {
 $(document).on("click", "#delete_category", function () {
 
     var id = $(this).attr('data-id');
+    $(this).html('<i class="fa fa-spinner text-white" aria-hidden="true"></i>')
 
     $.ajax({
         type: "get",

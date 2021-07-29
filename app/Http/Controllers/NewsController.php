@@ -117,8 +117,13 @@ class NewsController extends Controller
 
                 if ($request->hasFile('banner_image')) {
                     $file = $request->file('banner_image');
+
+              
+
                     $filename = $file->getClientOriginalName();
-                    $banner_name = time() . str_replace(' ', '_', $filename);
+                    $bannerImg = substr($filename,0, 5).'.'.$file->getClientOriginalExtension();
+
+                    $banner_name = time() . str_replace(' ', '_',  $bannerImg);
                     //move file to the folder
                     $file->move(public_path('uploads/news_banners'), $banner_name);
                     $news_imag = new newsImages();
@@ -129,6 +134,7 @@ class NewsController extends Controller
                 if ($request->hasFile('news_video')) {
                     $video = $request->file('news_video');
                     $video_name = $video->getClientOriginalName();
+                    $video_name = substr($video_name,0, 5).'.'.$video->getClientOriginalExtension();
                     $news_videos = time() . str_replace(' ', '_', $video_name);
                     //move video to the folder
                     $video->move(public_path('uploads/news_video'), $video_name);
