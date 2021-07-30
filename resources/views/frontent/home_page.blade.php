@@ -1,4 +1,15 @@
 @extends('layouts.header-frontent')
+@section('title')
+Peliken.com | Home
+@endsection
+@section('discription')
+ELiKKEN is a non- partisan, non-profit, independent online news web portal dedicated to providing world news from experienced understanding starting from one end to the another. PELiKKEN seeks to gain a narrower glance at the dynamic global and national trends .
+@endsection
+@section('og-image')
+  
+         {{asset('img/title_logo/favicon.png')}}
+   
+@endsection
 @section('content')
 
 
@@ -370,8 +381,8 @@
                 <!--CAROUSEL START-->
                 <div class="entertrainment_item">
                     <div class="row justify-content-center">
-                        @if (count($global_trending_featured) > 0)
-                        @foreach ($global_trending_featured as $news)
+                        @if (count($global_feature_featured) > 0)
+                        @foreach ($global_feature_featured as $news)
 
 
                         <div class="col-md-6">

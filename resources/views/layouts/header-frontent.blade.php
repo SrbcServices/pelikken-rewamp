@@ -2,10 +2,12 @@
 <html lang="en">
 
 <head>
-    <title>HEADER</title>
+    <title>@yield('title')</title>
     <!-- META -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> 
+    <meta name="description" content="@yield('discription')">
+    <meta property="og:image" content="@yield('og-image')"/>
     <!--::::: FABICON ICON :::::::-->
     <link rel="icon" href="{{ asset('img/title_logo/favicon.jpg') }}">
     <!--::::: ALL CSS FILES :::::::-->

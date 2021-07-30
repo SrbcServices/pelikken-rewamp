@@ -206,7 +206,7 @@
                                     <div class="container">
                                         <h5 style="color: grey">News Discription</h5>
                                         <textarea name="discription" id="editor" rows="5" cols="33" required>
-                                                {!! $news_details->NewsDiscription !!}
+                                                {{ $news_details->NewsDiscription }}
 
                                               </textarea>
                                     </div>
@@ -488,11 +488,39 @@ console.log(selected);
         $('#basic_update').on('click', function(e) {
             e.preventDefault();
             console.log('cliked');
-            let update_data = $('#basic-form').serialize();
+            CKEDITOR.instances.editor.updateElement();
+               let news_heding = $(`input[name="News_Heading"]`).val();
+               let news_sub_heading = $(`input[name="Sub_Heading"]`).val();
+               let source = $(`select[name="source"]`).val();
+               let Condinent = $(`select[name="condinent"]`).val();
+               let Country =$(`select[name="country"]`).val();
+               let Category=$(`select[name="category"]`).val();
+               let SubCategory=$(`select[name="sub_category"]`).val();
+               let NewsDiscription =$(`textarea[name="discription"]`).val();
+               let tags = $(`#tags`).val();
+
+
+               var form = new FormData();
+
+                form.append("_token", "{{csrf_token()}}");
+                form.append("News_Heading",news_heding)
+                form.append('Sub_Heading',news_sub_heading)
+                form.append('source',source)
+                form.append('condinent',Condinent)
+                form.append('country',Country)
+                form.append('category',Category)
+                form.append('sub_category',SubCategory)
+                form.append('discription',NewsDiscription)
+                form.append('tags',tags)
+
+         
             $.ajax({
                 type: "post",
                 url: "/edit-news/{{ $news_details->id }}",
-                data: update_data,
+                data: form,
+                contentType: false,
+                processData: false,
+                
 
                 success: function(response) {
                     if (response.status == 'error') {

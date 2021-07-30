@@ -1,5 +1,22 @@
 @extends('layouts.header-frontent')
+@section('title')
+{{$news->NewsHeading}}
+@endsection
+@section('discription')
+{{$news->SubHeading}}
+@endsection
+@section('og-image')
+    @if($news->ThumbImage)
+     {{$news->ThumbImage}}  
+     @else
+         {{asset('img/title_logo/favicon.png')}}
+     @endif
+@endsection
+
+
+
 @section('content')
+
 
 <div class="archives post post1 padding-top-30">
     <div class="container">
@@ -8,6 +25,9 @@
                 <div class="bridcrumb"> <a href="#">Home</a> / news /{{$news->category->category_name}}</div>
             </div>
         </div>
+        <br>
+        <br>
+       
         <div class="space-30"></div>
         <div class="row">
             <div class="col-12 col-md-10 col-lg-8 m-auto">
@@ -37,6 +57,7 @@
                             </ul>
                         </div>
                     </div>
+                    
                     <div class="col-md-6 align-self-center">
                         <div class="author_social inline text-right">
                             <ul>
@@ -55,6 +76,10 @@
                     </div>
                 </div>
                 <div class="space-30"></div>
+
+                
+
+
                 <div class="row">
                     <div class="col-12">
                         <div class="page_comments">
@@ -66,6 +91,11 @@
                         </div>
                     </div>
                 </div>
+                <div style="padding-top: 10px">
+
+               <b>{{$estimateTime}} Minutes to Read</b> 
+                </div>
+                
                 <div class="space-20"></div>
                 <div>
                     {!!$news->NewsDiscription!!}

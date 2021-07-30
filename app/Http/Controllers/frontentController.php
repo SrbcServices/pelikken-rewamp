@@ -31,9 +31,9 @@ class frontentController extends Controller
     public function __construct(Request $request)
     {
         $latest_global_news = news::select('id', 'NewsHeading', 'created_at', 'ThumbImage', 'Category', 'slug')->orderBy('id', 'desc')->limit(10)->get();
-        $global_news_highlights = news::select('id', 'NewsHeading', 'created_at', 'ThumbImage', 'Category', 'slug')->where('Highlight', '!=', null)->orderBy('id', 'desc')->limit(10)->get();
-        $global_feature_featured = news::select('id', 'NewsHeading', 'created_at', 'ThumbImage', 'Category', 'slug')->where('featured', '!=', null)->orderBy('id', 'desc')->limit(10)->get();
-        $global_trending_featured = news::select('id', 'NewsHeading', 'SubHeading', 'created_at', 'ThumbImage', 'Category', 'slug')->where('trending', '!=', null)->orderBy('id', 'desc')->limit(10)->get();
+        $global_news_highlights = news::select('id', 'NewsHeading', 'created_at', 'ThumbImage', 'Category', 'slug')->where('Highlight', '!=', 'null')->orderBy('id', 'desc')->limit(10)->get();
+        $global_feature_featured = news::select('id', 'NewsHeading', 'created_at', 'ThumbImage', 'Category', 'slug')->where('featured', '!=', 'null')->orderBy('id', 'desc')->limit(10)->get();
+        $global_trending_featured = news::select('id', 'NewsHeading', 'SubHeading', 'created_at', 'ThumbImage', 'Category', 'slug')->where('trending', '!=', 'null')->orderBy('id', 'desc')->limit(10)->get();
 
         \View::share('latest_global_news', $latest_global_news);
 
@@ -53,8 +53,8 @@ class frontentController extends Controller
 
     public function index()
     {
-        $highlights = news::where('Highlight', '!=', null)->orderBy('id', 'desc')->limit(5)->get();
-        $trending = news::where('trending', '!=', null)->orderBy('id', 'desc')->limit(20)->get();
+        $highlights = news::where('Highlight', '!=', 'null')->orderBy('id', 'desc')->limit(5)->get();
+        $trending = news::where('trending', '!=', 'null')->orderBy('id', 'desc')->limit(20)->get();
         $latest_news = news::orderBy('id', 'desc')->limit(12)->get();
 
         //section news
@@ -75,7 +75,7 @@ class frontentController extends Controller
     public function latest_news()
     {
 
-        $latest_news = news::orderBy('id','desc')->paginate(10);
+        $latest_news = news::orderBy('id','desc')->paginate(30);
 
         return view('frontent.latest_news', ['latest_news' => $latest_news]);
     }
@@ -85,21 +85,25 @@ class frontentController extends Controller
     public function newses($slug)
     {
         $news = news::with('newsImages','newsVideo','tags','commends')->where('slug',$slug)->first();
-        
-
   
-        
-    // return $news;
+        $word = strip_tags($news->NewsDiscription );
+        $word_count = str_word_count( $news->NewsDiscription );
+        $estimateTime = ceil( $word_count / 230 );
 
-        return view('frontent.single_news',['news'=>$news]);
+          
+
+        return view('frontent.single_news',['news'=>$news,'estimateTime'=> $estimateTime]);
     }
 
 
     //all news in world
     public function world()
     {
+// PHP program to count number of
+        // words in a string 
 
-        $world = news::whereNotNull('condinent')->paginate(2);
+        
+        $world = news::whereNotNull('condinent')->paginate(30);
 
 
         return view('frontent.world', ['world' => $world]);
