@@ -6,23 +6,14 @@
         <h3 class="text-gray">Master</h3>
         <p class="text-gray">Master / News</p>
     </div>
-    <div class="container-fluid">
-
-        <!--button-->
-        <div class="btncustom">
-            <button type="button" id="add_new_category" style="float: right">
-                Add News</button>
-        </div>
-        <!--button End-->
-        <!--popup-->
-    </div>
-
+    <br><br>
     <!--Popup End-->
 
     <div class="card" style="width: 100%">
         <div class="card-header">
             <h3 class="card-title">Add News</h3>
         </div>
+       
         <!-- /.card-header -->
         <div class="card-body tg">
             <div id="example1_wrapper" class="dataTables_wrapper dt-bootstrap4">

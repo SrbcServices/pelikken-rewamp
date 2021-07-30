@@ -61,12 +61,12 @@ $(document).on("click", "#submit-privacy", function(e){
             if (response.status == 'error') {
 
                 $.simplyToast(response.message, 'danger')
-                console.log('error')
+          
 
             } else{
-                // $('#addform').load(document.URL + ' #addform');
+              
                 $.simplyToast(response.message, 'success')
-                console.log('Success')
+            
             }
         },
 

@@ -60,7 +60,7 @@
                         <div class="page_comments">
                             <ul class="inline">
                                 <li class="page_category">{{$news->sub_category ? $news->sub_category->sub_category_name : '' }}</li>
-                                <li><i class="fas fa-comment"></i>563</li>
+                                <li><i class="fas fa-comment"></i>{{count($news->commends)}}</li>
                             
                             </ul>
                         </div>
