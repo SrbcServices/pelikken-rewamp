@@ -26,7 +26,7 @@ class CreateNewsTable extends Migration
             $table->string('Highlight')->nullable();
             $table->string('Trending')->nullable();
             $table->string('ThumbImage')->nullable();
-            $table->text('NewsDiscription');
+            $table->longText('NewsDiscription');
             $table->foreign('Source')->references('id')->on('sources')->onDelete('cascade');
             $table->foreign('Condinent')->references('id')->on('condinents')->onDelete('cascade');
             $table->foreign('Country')->references('id')->on('countries')->onDelete('cascade');
