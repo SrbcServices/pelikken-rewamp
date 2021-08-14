@@ -227,11 +227,15 @@
                 <div class="row">
 
 
-                    <div class="col-md-6" style="margin-top:30px">
-                        <label for="bannerImage" style="font-weight: normal;margin-right:20px"><img
-                                src="https://asvs.in/wp-content/uploads/2017/08/dummy.png"></label>
-                        <input type="file" id="bannerImage" name="news_banner" style="display: none; " image* />
-
+                    <div class="col-md-6">
+                    
+                        <div class="col-md-3">
+                            <label for="bannerImage"><img src="https://asvs.in/wp-content/uploads/2017/08/dummy.png" alt=""
+                                    style="width: 400px" id="preview"></label>
+                        </div>
+                        <input type="file" name="news_banner" id="bannerImage" style="display: none"
+                            onchange="preview_image(event)">
+    
                     </div>
                     <div class="col-md-6" style="margin-top: 30px">
                         <label for="video" style="font-weight: normal"><img
@@ -281,6 +285,16 @@
             })
         })
 
+    </script>
+    <script>
+        function preview_image(event) {
+                    var reader = new FileReader();
+                    reader.onload = function() {
+                        var output = document.getElementById('preview');
+                        output.src = reader.result;
+                    }
+                    reader.readAsDataURL(event.target.files[0]);
+                }
     </script>
 
     <script>

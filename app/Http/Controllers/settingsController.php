@@ -9,7 +9,8 @@ class settingsController extends Controller
 {
     public function settings(){
 
-        $settings = \DB::table('settings')->select('id','Instagram','Facebook','Youtube','Twitter')->first();
+       
+        $settings = settings::first();
         // return $settings;
 
         return view('admin.general_settings',['settings'=>$settings]);

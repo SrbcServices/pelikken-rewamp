@@ -196,6 +196,7 @@ class frontentController extends Controller
         $privacy = privacy::first();
 
           return view('frontent.privacy',['privacy'=>$privacy]);
+
       }
 
     //api calling
@@ -204,7 +205,7 @@ class frontentController extends Controller
         $response = Http::withHeaders([
             'X-Client' => 'pelikkencomapi',   
         ])->withToken(Session()->get('cision_token'))
-        ->get('https://contentapi.cision.com/api/v1.0/releases?mod_startdate=20200801T102000-0000&language=en&fields=multimedia|title|date|release_id|company|industry|subject|summary')->json();
+        ->get('https://contentapi.cision.com/api/v1.0/releases?&language=en&fields=multimedia|title|date|release_id|company|industry|subject|summary')->json();
      
         if(array_key_exists("data",$response)){
            return $response['data'];
@@ -214,26 +215,29 @@ class frontentController extends Controller
              $login = Http::withHeaders([
                 'X-Client' => 'pelikkencomapi',
                
-            ])->post('https://contentapi.cision.com/api/v1.0/auth/login', [
+            ])->post('https://contentapi.cision.com/api/v1.0/auth/login',[
                 "login"=>config('api_cision.api_user'),
                 "pwd"=>config('api_cision.api_secret')
             ]);
            
+            
             $token = $login['auth_token'];
             //put new token to session
             Session()->put('cision_token', $token);
             $response = Http::withHeaders([
                 'X-Client' => 'pelikkencomapi',   
             ])->withToken($token)
-            ->get('https://contentapi.cision.com/api/v1.0/releases?mod_startdate=20200801T102000-0000&language=en&fields=multimedia|title|date|release_id|company|industry|subject|summary')->json();
+            ->get('https://contentapi.cision.com/api/v1.0/releases?&language=en&fields=multimedia|title|date|release_id|company|industry|subject|summary')->json();
            return $response['data'];
+           
         }
-
     }
+
+
    //api
     public function api($id){
         $response = Http::withHeaders([
-            'X-Client' => 'pelikkencomapi',   
+            'X-Client' => 'pelikkencomapi',
         ])->withToken(Session()->get('cision_token'))
         ->get('https://contentapi.cision.com/api/v1.0/releases/'.$id.'')->collect();
         $data = collect($response);

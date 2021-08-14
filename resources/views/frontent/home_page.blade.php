@@ -456,16 +456,14 @@ ELiKKEN is a non- partisan, non-profit, independent online news web portal dedic
                     <div class="border_black"></div>
                     <div class="space-15"></div>
             </div>
+            <br>
             @endif
             @endforeach
 
-            <a href="/api/newswire" class="readmore">See More</a>
-
-
-
         </div>
+        <a href="/api/newswire" class="readmore">See More</a>
         <hr>
-
+       
 
         <!-- api End -->
 
@@ -688,10 +686,7 @@ ELiKKEN is a non- partisan, non-profit, independent online news web portal dedic
     </div>
     @endforeach
     @endif
-
-
-
-
+    
     <!--:::::: POST TYPE 4 END :::::::-->
 </div>
 

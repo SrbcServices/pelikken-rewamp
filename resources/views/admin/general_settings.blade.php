@@ -11,6 +11,7 @@
 
     <form id="addform">
         @csrf
+
         <div class="form-group" style="margin-right: 20px; margin-top:0;">
             <label style="color: grey; padding-top: 30px;">Instagram Link</label>
             <input type="social" value="{{$settings? $settings->Instagram ? $settings->Instagram : '' :'' }}" class="form-control" name="instagram" id="social_media" placeholder="Copy Links">
@@ -39,10 +40,15 @@
 
         <div class="form-group">
             <h6 style="font-weight:bold; color: grey">New Logo</h6>
-            <label for="logo" style="color: grey"><img src="{{asset('images/dummy.png')}}"></label>
-            <input type="file" name="newlogo" class="form-control-file" id="logo" style="display: none">
+            <label for="logo" style="color: grey">
+            @if ($settings->LogoImageName)
+                <img src="{{ asset('uploads/logo/' . $settings->LogoImageName . '') }}" style="width: 400px" id="preview">
+            @else
+            <img src="{{asset('images/dummy.png')}}" style="width: 400px" id="preview"> 
+            @endif
+         </label>
+            <input type="file" name="newlogo" class="form-control-file" id="logo" style="display: none"  onchange="preview_image(event)">
         </div>
-
 
         <div class="form-group">
             <button id="submit" class="btn btn-secondary mt-3 mb-3 ml-2" >Submit</button>
@@ -61,6 +67,16 @@
 @section('scripts')
 
 <script src="{{ asset('js/simply-toast.min.js') }}"></script>
+<script>
+    function preview_image(event) {
+                var reader = new FileReader();
+                reader.onload = function() {
+                    var output = document.getElementById('preview');
+                    output.src = reader.result;
+                }
+                reader.readAsDataURL(event.target.files[0]);
+            }
+</script>
 
 <script>
 
